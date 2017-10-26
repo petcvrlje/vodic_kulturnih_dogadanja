@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  vodic_kulturnih_dogadanja
+//  vodic kulturnih dogadanja
 //
-//  Created by MTLab on 26/10/2017.
+//  Created by MTLab on 23/10/2017.
 //  Copyright © 2017 foi. All rights reserved.
 //
 

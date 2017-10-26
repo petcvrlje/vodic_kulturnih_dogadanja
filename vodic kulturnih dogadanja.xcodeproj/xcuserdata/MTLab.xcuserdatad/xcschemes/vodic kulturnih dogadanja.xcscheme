@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "524760151FA28229004D9F24"
-               BuildableName = "vodic_kulturnih_dogadanja.app"
-               BlueprintName = "vodic_kulturnih_dogadanja"
-               ReferencedContainer = "container:vodic_kulturnih_dogadanja.xcodeproj">
+               BlueprintIdentifier = "52B5BBFE1F9E6FC300CF033D"
+               BuildableName = "vodic kulturnih dogadanja.app"
+               BlueprintName = "vodic kulturnih dogadanja"
+               ReferencedContainer = "container:vodic kulturnih dogadanja.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "524760151FA28229004D9F24"
-            BuildableName = "vodic_kulturnih_dogadanja.app"
-            BlueprintName = "vodic_kulturnih_dogadanja"
-            ReferencedContainer = "container:vodic_kulturnih_dogadanja.xcodeproj">
+            BlueprintIdentifier = "52B5BBFE1F9E6FC300CF033D"
+            BuildableName = "vodic kulturnih dogadanja.app"
+            BlueprintName = "vodic kulturnih dogadanja"
+            ReferencedContainer = "container:vodic kulturnih dogadanja.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "524760151FA28229004D9F24"
-            BuildableName = "vodic_kulturnih_dogadanja.app"
-            BlueprintName = "vodic_kulturnih_dogadanja"
-            ReferencedContainer = "container:vodic_kulturnih_dogadanja.xcodeproj">
+            BlueprintIdentifier = "52B5BBFE1F9E6FC300CF033D"
+            BuildableName = "vodic kulturnih dogadanja.app"
+            BlueprintName = "vodic kulturnih dogadanja"
+            ReferencedContainer = "container:vodic kulturnih dogadanja.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "524760151FA28229004D9F24"
-            BuildableName = "vodic_kulturnih_dogadanja.app"
-            BlueprintName = "vodic_kulturnih_dogadanja"
-            ReferencedContainer = "container:vodic_kulturnih_dogadanja.xcodeproj">
+            BlueprintIdentifier = "52B5BBFE1F9E6FC300CF033D"
+            BuildableName = "vodic kulturnih dogadanja.app"
+            BlueprintName = "vodic kulturnih dogadanja"
+            ReferencedContainer = "container:vodic kulturnih dogadanja.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
