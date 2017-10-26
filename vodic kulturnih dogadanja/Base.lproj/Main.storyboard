@@ -34,15 +34,15 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNv-Sr-GJP">
-                                <rect key="frame" x="110" y="476" width="154" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Continue without login"/>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" image="22768399_1452971704788632_243767547_o.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ype-WQ-WMQ">
                                 <rect key="frame" x="17" y="69" width="342" height="342"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNv-Sr-GJP">
+                                <rect key="frame" x="110" y="483" width="154" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Continue without login"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -157,6 +157,24 @@
             <point key="canvasLocation" x="426" y="1112"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="pfz-GT-m5q">
+            <objects>
+                <viewController id="DS7-zP-vuH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FR1-3E-nkv"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ci6-dR-hNo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UkD-dt-pRy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NUd-m8-zSj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1634" y="1111"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="exf-QO-aqn">
             <objects>
                 <viewController id="c4E-WL-5bC" sceneMemberID="viewController">
@@ -241,6 +259,6 @@
         <image name="22768399_1452971704788632_243767547_o.png" width="1080" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HBb-yq-9N5"/>
+        <segue reference="6NK-77-02h"/>
     </inferredMetricsTieBreakers>
 </document>
