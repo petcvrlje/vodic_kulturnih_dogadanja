@@ -22,6 +22,8 @@
 		52B5BC0A1F9E6FC300CF033D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B5BC091F9E6FC300CF033D /* Assets.xcassets */; };
 		52B5BC0D1F9E6FC300CF033D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B5BC0B1F9E6FC300CF033D /* LaunchScreen.storyboard */; };
 		52B5BC151F9E7D5600CF033D /* 22768399_1452971704788632_243767547_o.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B5BC141F9E7D5600CF033D /* 22768399_1452971704788632_243767547_o.png */; };
+		52C525301FA7C4E100F43004 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5252F1FA7C4E100F43004 /* RegistrationViewController.swift */; };
+		76E45E39A27D7986A1427BC2 /* Pods_vodic_kulturnih_dogadanja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEBA9047EE8F6A6F2399E79 /* Pods_vodic_kulturnih_dogadanja.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,10 @@
 		52B5BC0C1F9E6FC300CF033D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52B5BC0E1F9E6FC300CF033D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B5BC141F9E7D5600CF033D /* 22768399_1452971704788632_243767547_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 22768399_1452971704788632_243767547_o.png; sourceTree = "<group>"; };
+		52C5252F1FA7C4E100F43004 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		5CC863FF6270E289B9A17493 /* Pods-vodic kulturnih dogadanja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vodic kulturnih dogadanja.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vodic kulturnih dogadanja/Pods-vodic kulturnih dogadanja.debug.xcconfig"; sourceTree = "<group>"; };
+		6261060265CDF6359B879B70 /* Pods-vodic kulturnih dogadanja.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vodic kulturnih dogadanja.release.xcconfig"; path = "Pods/Target Support Files/Pods-vodic kulturnih dogadanja/Pods-vodic kulturnih dogadanja.release.xcconfig"; sourceTree = "<group>"; };
+		ACEBA9047EE8F6A6F2399E79 /* Pods_vodic_kulturnih_dogadanja.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vodic_kulturnih_dogadanja.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +55,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E45E39A27D7986A1427BC2 /* Pods_vodic_kulturnih_dogadanja.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2958ABE86168E3D9D8975D0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACEBA9047EE8F6A6F2399E79 /* Pods_vodic_kulturnih_dogadanja.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		52B5BBF61F9E6FC200CF033D = {
 			isa = PBXGroup;
 			children = (
 				52B5BC011F9E6FC300CF033D /* vodic kulturnih dogadanja */,
 				52B5BC001F9E6FC300CF033D /* Products */,
+				836C60723B23C94E9F2C4D93 /* Pods */,
+				2958ABE86168E3D9D8975D0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +101,7 @@
 				52B5BC0B1F9E6FC300CF033D /* LaunchScreen.storyboard */,
 				52B5BC0E1F9E6FC300CF033D /* Info.plist */,
 				52B5BC161F9E7D6600CF033D /* slike */,
+				52C5252F1FA7C4E100F43004 /* RegistrationViewController.swift */,
 			);
 			path = "vodic kulturnih dogadanja";
 			sourceTree = "<group>";
@@ -102,6 +120,15 @@
 			name = slike;
 			sourceTree = "<group>";
 		};
+		836C60723B23C94E9F2C4D93 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5CC863FF6270E289B9A17493 /* Pods-vodic kulturnih dogadanja.debug.xcconfig */,
+				6261060265CDF6359B879B70 /* Pods-vodic kulturnih dogadanja.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +136,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52B5BC111F9E6FC300CF033D /* Build configuration list for PBXNativeTarget "vodic kulturnih dogadanja" */;
 			buildPhases = (
+				95C910027056637E8DBB2382 /* [CP] Check Pods Manifest.lock */,
 				52B5BBFB1F9E6FC300CF033D /* Sources */,
 				52B5BBFC1F9E6FC300CF033D /* Frameworks */,
 				52B5BBFD1F9E6FC300CF033D /* Resources */,
+				4344E666D9D3EE1959515026 /* [CP] Embed Pods Frameworks */,
+				E425C166B5F28B74099039E8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,11 +206,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4344E666D9D3EE1959515026 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-vodic kulturnih dogadanja/Pods-vodic kulturnih dogadanja-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-vodic kulturnih dogadanja/Pods-vodic kulturnih dogadanja-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95C910027056637E8DBB2382 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-vodic kulturnih dogadanja-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E425C166B5F28B74099039E8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-vodic kulturnih dogadanja/Pods-vodic kulturnih dogadanja-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		52B5BBFB1F9E6FC300CF033D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C525301FA7C4E100F43004 /* RegistrationViewController.swift in Sources */,
 				52B5BC051F9E6FC300CF033D /* ContainerVC.swift in Sources */,
 				52422CA01FA5FF640020F583 /* MainVC.swift in Sources */,
 				52B5BC031F9E6FC300CF033D /* AppDelegate.swift in Sources */,
@@ -306,6 +391,7 @@
 		};
 		52B5BC121F9E6FC300CF033D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CC863FF6270E289B9A17493 /* Pods-vodic kulturnih dogadanja.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -319,6 +405,7 @@
 		};
 		52B5BC131F9E6FC300CF033D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6261060265CDF6359B879B70 /* Pods-vodic kulturnih dogadanja.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";

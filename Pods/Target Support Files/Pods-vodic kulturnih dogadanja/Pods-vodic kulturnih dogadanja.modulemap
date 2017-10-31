@@ -1,0 +1,6 @@
+framework module Pods_vodic_kulturnih_dogadanja {
+  umbrella header "Pods-vodic kulturnih dogadanja-umbrella.h"
+
+  export *
+  module * { export * }
+}
