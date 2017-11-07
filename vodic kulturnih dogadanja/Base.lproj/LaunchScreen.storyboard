@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16G1036" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,12 +21,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="22768399_1452971704788632_243767547_o.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tb7-72-s04">
-                                <rect key="frame" x="-37" y="92" width="448" height="437"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="22768399_1452971704788632_243767547_o.png" translatesAutoresizingMaskIntoConstraints="NO" id="bkh-yV-KDa">
+                                <rect key="frame" x="-127" y="45" width="627" height="481"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.59999999999999998" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.20170247554779053" green="0.43670850992202759" blue="0.58381372690200806" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bkh-yV-KDa" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="-127" id="3dc-dd-kk6"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="bkh-yV-KDa" secondAttribute="bottom" constant="141" id="JXG-br-Qa4"/>
+                            <constraint firstItem="bkh-yV-KDa" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="25" id="YcH-rh-YAO"/>
+                            <constraint firstAttribute="trailing" secondItem="bkh-yV-KDa" secondAttribute="trailing" constant="-125" id="wYl-lZ-mcq"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
