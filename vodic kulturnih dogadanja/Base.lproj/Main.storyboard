@@ -46,6 +46,9 @@
                                 <rect key="frame" x="90" y="419" width="197" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Continue without login"/>
+                                <connections>
+                                    <segue destination="H4Z-RE-dVB" kind="show" id="tBt-L5-8ba"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -189,10 +192,10 @@
             </objects>
             <point key="canvasLocation" x="424.80000000000001" y="1111.3943028485758"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="exf-QO-aqn">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="c4E-WL-5bC" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="c4E-WL-5bC" customClass="LoginViewController" customModule="vodic_kulturnih_dogadanja" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8v4-MO-CVl"/>
                         <viewControllerLayoutGuide type="bottom" id="FR6-Af-ARk"/>
@@ -251,6 +254,7 @@
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
+                                            <action selector="loginButtonClick:" destination="c4E-WL-5bC" eventType="touchUpInside" id="E4L-Mb-JYE"/>
                                             <segue destination="H4Z-RE-dVB" kind="show" id="bwZ-ue-tg6"/>
                                         </connections>
                                     </button>
@@ -288,6 +292,10 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="K7c-3v-GwR" id="Bnt-Ai-TQT"/>
+                        <outlet property="userNameTextField" destination="cWK-im-hZn" id="4A5-Zl-OzV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMr-iG-WcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -497,6 +505,7 @@
         <image name="22768399_1452971704788632_243767547_o.png" width="1080" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6NK-77-02h"/>
+        <segue reference="bwZ-ue-tg6"/>
+        <segue reference="HBb-yq-9N5"/>
     </inferredMetricsTieBreakers>
 </document>

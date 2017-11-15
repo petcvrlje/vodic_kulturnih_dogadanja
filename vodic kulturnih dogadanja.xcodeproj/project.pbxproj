@@ -25,6 +25,7 @@
 		52C525301FA7C4E100F43004 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5252F1FA7C4E100F43004 /* RegistrationViewController.swift */; };
 		52C9197F1FAE6FCE0062802F /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9197E1FAE6FCE0062802F /* DesignableView.swift */; };
 		76E45E39A27D7986A1427BC2 /* Pods_vodic_kulturnih_dogadanja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEBA9047EE8F6A6F2399E79 /* Pods_vodic_kulturnih_dogadanja.framework */; };
+		D02D2AF71FBCDE68004F096D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D2AF61FBCDE68004F096D /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		5CC863FF6270E289B9A17493 /* Pods-vodic kulturnih dogadanja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vodic kulturnih dogadanja.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vodic kulturnih dogadanja/Pods-vodic kulturnih dogadanja.debug.xcconfig"; sourceTree = "<group>"; };
 		6261060265CDF6359B879B70 /* Pods-vodic kulturnih dogadanja.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vodic kulturnih dogadanja.release.xcconfig"; path = "Pods/Target Support Files/Pods-vodic kulturnih dogadanja/Pods-vodic kulturnih dogadanja.release.xcconfig"; sourceTree = "<group>"; };
 		ACEBA9047EE8F6A6F2399E79 /* Pods_vodic_kulturnih_dogadanja.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vodic_kulturnih_dogadanja.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D02D2AF61FBCDE68004F096D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		52B5BBF61F9E6FC200CF033D = {
 			isa = PBXGroup;
 			children = (
+				D02D2AF61FBCDE68004F096D /* LoginViewController.swift */,
 				52B5BC011F9E6FC300CF033D /* vodic kulturnih dogadanja */,
 				52B5BC001F9E6FC300CF033D /* Products */,
 				836C60723B23C94E9F2C4D93 /* Pods */,
@@ -281,6 +284,7 @@
 				52B5BC051F9E6FC300CF033D /* ContainerVC.swift in Sources */,
 				52422CA01FA5FF640020F583 /* MainVC.swift in Sources */,
 				52B5BC031F9E6FC300CF033D /* AppDelegate.swift in Sources */,
+				D02D2AF71FBCDE68004F096D /* LoginViewController.swift in Sources */,
 				52C9197F1FAE6FCE0062802F /* DesignableView.swift in Sources */,
 				52422C921FA5F00B0020F583 /* StartScreenVC.swift in Sources */,
 				52422C901FA5EF0B0020F583 /* SideMenuVC.swift in Sources */,
