@@ -255,7 +255,6 @@
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="loginButtonClick:" destination="c4E-WL-5bC" eventType="touchUpInside" id="E4L-Mb-JYE"/>
-                                            <segue destination="H4Z-RE-dVB" kind="show" id="bwZ-ue-tg6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZy-Xj-BpI">
@@ -505,7 +504,6 @@
         <image name="22768399_1452971704788632_243767547_o.png" width="1080" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bwZ-ue-tg6"/>
         <segue reference="HBb-yq-9N5"/>
     </inferredMetricsTieBreakers>
 </document>
