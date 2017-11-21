@@ -79,7 +79,6 @@
 		52B5BBF61F9E6FC200CF033D = {
 			isa = PBXGroup;
 			children = (
-				D02D2AF61FBCDE68004F096D /* LoginViewController.swift */,
 				52B5BC011F9E6FC300CF033D /* vodic kulturnih dogadanja */,
 				52B5BC001F9E6FC300CF033D /* Products */,
 				836C60723B23C94E9F2C4D93 /* Pods */,
@@ -110,6 +109,7 @@
 				52B5BC0E1F9E6FC300CF033D /* Info.plist */,
 				52B5BC161F9E7D6600CF033D /* slike */,
 				52C5252F1FA7C4E100F43004 /* RegistrationViewController.swift */,
+				D02D2AF61FBCDE68004F096D /* LoginViewController.swift */,
 			);
 			path = "vodic kulturnih dogadanja";
 			sourceTree = "<group>";
@@ -234,10 +234,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-vodic kulturnih dogadanja/Pods-vodic kulturnih dogadanja-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/HTTPStatusCodes/HTTPStatusCodes.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTTPStatusCodes.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

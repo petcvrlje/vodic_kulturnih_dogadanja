@@ -7,5 +7,6 @@ use_frameworks!
 
 # Pods for vodic kulturnih dogadanja 
 pod 'Alamofire'
+pod 'HTTPStatusCodes', '~> 3.1.2'
 
 end
