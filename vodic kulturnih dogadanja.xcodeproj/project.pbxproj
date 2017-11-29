@@ -434,6 +434,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "vodic kulturnih dogadanja/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.foi.vodic-kulturnih-dogadanja";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -449,6 +450,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "vodic kulturnih dogadanja/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.foi.vodic-kulturnih-dogadanja";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;

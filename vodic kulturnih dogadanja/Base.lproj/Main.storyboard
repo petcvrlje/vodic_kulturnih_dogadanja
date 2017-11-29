@@ -80,10 +80,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJG-O2-Rx1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Registration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJG-O2-Rx1">
                                 <rect key="frame" x="115" y="58" width="145" height="30.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="145" id="kTQ-ky-rhW"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="145" id="kTQ-ky-rhW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -185,9 +185,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="cJG-O2-Rx1" secondAttribute="trailing" constant="99" id="CAs-qm-tsu"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="cJG-O2-Rx1" secondAttribute="trailing" id="CAs-qm-tsu"/>
                             <constraint firstItem="cJG-O2-Rx1" firstAttribute="top" secondItem="RJA-zh-xaX" secondAttribute="bottom" constant="38" id="itn-29-WHT"/>
-                            <constraint firstItem="cJG-O2-Rx1" firstAttribute="leading" secondItem="aAz-CC-MsI" secondAttribute="leadingMargin" constant="99" id="tIi-jf-tEp"/>
+                            <constraint firstItem="cJG-O2-Rx1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aAz-CC-MsI" secondAttribute="leadingMargin" id="tIi-jf-tEp"/>
                         </constraints>
                     </view>
                     <connections>
@@ -269,10 +269,7 @@
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="loginButtonClick:" destination="c4E-WL-5bC" eventType="touchUpInside" id="E4L-Mb-JYE"/>
-<<<<<<< HEAD
                                             <segue destination="pRz-z3-7lk" kind="show" id="QhR-bn-H0Z"/>
-=======
->>>>>>> 69978560958710f421ded14e782cbaab8911ca6a
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZy-Xj-BpI">
@@ -788,10 +785,6 @@
         <image name="menu 11.22.23.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
         <segue reference="6NK-77-02h"/>
-=======
-        <segue reference="HBb-yq-9N5"/>
->>>>>>> 69978560958710f421ded14e782cbaab8911ca6a
     </inferredMetricsTieBreakers>
 </document>
