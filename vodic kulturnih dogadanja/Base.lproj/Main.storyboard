@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="23799000_1479281325491003_2047333813_o.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="E2E-aU-gIc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="23799000_1479281325491003_2047333813_o.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4fB-oy-GEJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -42,10 +42,6 @@
                                     <segue destination="c4E-WL-5bC" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Bmj-94-nJg"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" image="22768399_1452971704788632_243767547_o.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ype-WQ-WMQ">
-                                <rect key="frame" x="17" y="69" width="342" height="342"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNv-Sr-GJP">
                                 <rect key="frame" x="90" y="419" width="197" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -56,13 +52,17 @@
                                     <segue destination="vWQ-Qd-TzM" kind="show" id="zHP-j8-hLZ"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" layoutMarginsFollowReadableWidth="YES" image="22768399_1452971704788632_243767547_o.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ype-WQ-WMQ">
+                                <rect key="frame" x="17" y="28" width="342" height="342"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-482.39999999999998" y="122.78860569715144"/>
+            <point key="canvasLocation" x="-482.5" y="122.5"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="gHH-5t-sRw">
@@ -76,11 +76,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="23799000_1479281325491003_2047333813_o.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="y4B-Ky-FKp">
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="23799000_1479281325491003_2047333813_o.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="y4B-Ky-FKp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Registration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJG-O2-Rx1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJG-O2-Rx1">
                                 <rect key="frame" x="115" y="58" width="145" height="30.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="145" id="kTQ-ky-rhW"/>
@@ -185,7 +185,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="cJG-O2-Rx1" firstAttribute="leading" secondItem="aAz-CC-MsI" secondAttribute="leadingMargin" constant="99" id="Awz-B7-jGx"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="cJG-O2-Rx1" secondAttribute="trailing" id="CAs-qm-tsu"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="cJG-O2-Rx1" secondAttribute="trailing" id="Tjm-4a-iAQ"/>
                             <constraint firstItem="cJG-O2-Rx1" firstAttribute="top" secondItem="RJA-zh-xaX" secondAttribute="bottom" constant="38" id="itn-29-WHT"/>
                             <constraint firstItem="cJG-O2-Rx1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aAz-CC-MsI" secondAttribute="leadingMargin" id="tIi-jf-tEp"/>
                         </constraints>
@@ -218,7 +220,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nXq-6R-rhn">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nXq-6R-rhn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="lsB-qW-pov">
