@@ -97,17 +97,17 @@
 		52B5BC011F9E6FC300CF033D /* vodic kulturnih dogadanja */ = {
 			isa = PBXGroup;
 			children = (
+				52B5BC161F9E7D6600CF033D /* slike */,
 				52C9197D1FAE6F710062802F /* IBDesignables */,
+				52B5BC091F9E6FC300CF033D /* Assets.xcassets */,
 				52B5BC021F9E6FC300CF033D /* AppDelegate.swift */,
 				52422C911FA5F00B0020F583 /* StartScreenVC.swift */,
 				52B5BC041F9E6FC300CF033D /* ContainerVC.swift */,
 				52422C8F1FA5EF0B0020F583 /* SideMenuVC.swift */,
 				52422C9F1FA5FF630020F583 /* MainVC.swift */,
 				52B5BC061F9E6FC300CF033D /* Main.storyboard */,
-				52B5BC091F9E6FC300CF033D /* Assets.xcassets */,
 				52B5BC0B1F9E6FC300CF033D /* LaunchScreen.storyboard */,
 				52B5BC0E1F9E6FC300CF033D /* Info.plist */,
-				52B5BC161F9E7D6600CF033D /* slike */,
 				52C5252F1FA7C4E100F43004 /* RegistrationViewController.swift */,
 				D02D2AF61FBCDE68004F096D /* LoginViewController.swift */,
 			);
@@ -435,7 +435,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.foi.vodic-kulturnih-dogadanja";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -451,7 +451,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.foi.vodic-kulturnih-dogadanja";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

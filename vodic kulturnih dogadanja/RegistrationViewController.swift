@@ -20,26 +20,6 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var surnameTextField: UITextField!
     
     @IBAction func registerButtonClick(_ sender: UIButton) {
-        /*if (userNameTextField.text == nil || (userNameTextField.text?.isEmpty)!) {
-            print("username")
-            return
-        }
-        if (passwordTextField.text == nil || (passwordTextField.text?.isEmpty)!) {
-            print("password")
-            return
-        }
-        if (emailTextField.text == nil || (emailTextField.text?.isEmpty)!) {
-            print("email")
-            return
-        }
-        if (nameTextField.text == nil || (nameTextField.text?.isEmpty)!) {
-            print("name")
-            return
-        }
-        if (surnameTextField.text == nil || (surnameTextField.text?.isEmpty)!) {
-            print("surname")
-            return
-        }*/
         
         if (userNameTextField.text == nil || (userNameTextField.text?.isEmpty)!) || (passwordTextField.text == nil || (passwordTextField.text?.isEmpty)!) || (emailTextField.text == nil || (emailTextField.text?.isEmpty)!) || (nameTextField.text == nil || (nameTextField.text?.isEmpty)!) || (surnameTextField.text == nil || (surnameTextField.text?.isEmpty)!) {
             let emptyFieldsAlert = UIAlertController(title: "You have empty fields.", message: nil, preferredStyle: .alert)
