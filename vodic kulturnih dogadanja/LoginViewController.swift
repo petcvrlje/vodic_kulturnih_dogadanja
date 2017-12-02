@@ -39,14 +39,20 @@ class LoginViewController: UIViewController {
             let statusCode = (response.response?.statusCode)!
             print(statusCode)
             
-            if let result = response.result.value as? Dictionary<String, String> {
-                self.defaultValues.set(result["tokenId"]!, forKey: "tokenId")
-            }
-            else {
+            if (statusCode != 200) {
                 let alertController = UIAlertController(title: "LOGIN UNSUCCESSFUL", message: nil, preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
                 return
+            }
+            else {
+                if let result = response.result.value as? Dictionary<String, String> {
+                    self.defaultValues.set(result["tokenId"]!, forKey: "tokenId")
+                }
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "containerVC")
+                self.present(vc, animated: true, completion: nil)
+                
             }
         }
     }
