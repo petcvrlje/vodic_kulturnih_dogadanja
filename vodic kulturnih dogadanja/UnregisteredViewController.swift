@@ -15,7 +15,7 @@ class UnregisteredViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     var arrayOfEvents = [[String:AnyObject]]()
     
-    func currentTimeInMiliseconds() -> Int {
+    func currentDateInMiliseconds() -> Int {
         let currentDate = Date()
         let since1970 = currentDate.timeIntervalSince1970
         return Int(since1970 * 1000)
@@ -25,7 +25,7 @@ class UnregisteredViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let dateInMiliseconds = currentTimeInMiliseconds()
+        let dateInMiliseconds = currentDateInMiliseconds()
         let URL = "http://vodickulturnihdogadanja.1e29g6m.xip.io/eventList.php"
         
         let param = ["begin": dateInMiliseconds, "keyword": ""] as [String : Any]

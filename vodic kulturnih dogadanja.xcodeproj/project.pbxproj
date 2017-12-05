@@ -31,6 +31,8 @@
 		B6792A381FD31A3C008D575B /* UnregisteredEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6792A371FD31A3C008D575B /* UnregisteredEventTableViewCell.swift */; };
 		B6792A3A1FD31E27008D575B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6792A391FD31E27008D575B /* Event.swift */; };
 		D02D2AF71FBCDE68004F096D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D2AF61FBCDE68004F096D /* LoginViewController.swift */; };
+		D068F34C1FD6908600CD867F /* RegisteredEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D068F34B1FD6908600CD867F /* RegisteredEventTableViewCell.swift */; };
+		D068F34E1FD6BDC800CD867F /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D068F34D1FD6BDC800CD867F /* EventDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		B6792A371FD31A3C008D575B /* UnregisteredEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnregisteredEventTableViewCell.swift; sourceTree = "<group>"; };
 		B6792A391FD31E27008D575B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		D02D2AF61FBCDE68004F096D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D068F34B1FD6908600CD867F /* RegisteredEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredEventTableViewCell.swift; sourceTree = "<group>"; };
+		D068F34D1FD6BDC800CD867F /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,9 +120,11 @@
 				52422C8F1FA5EF0B0020F583 /* SideMenuVC.swift */,
 				52422C9F1FA5FF630020F583 /* MainVC.swift */,
 				B6792A331FD318CC008D575B /* UnregisteredViewController.swift */,
+				D068F34B1FD6908600CD867F /* RegisteredEventTableViewCell.swift */,
 				B6792A391FD31E27008D575B /* Event.swift */,
 				B6792A371FD31A3C008D575B /* UnregisteredEventTableViewCell.swift */,
 				52B5BC061F9E6FC300CF033D /* Main.storyboard */,
+				D068F34D1FD6BDC800CD867F /* EventDetailsViewController.swift */,
 				52B5BC0B1F9E6FC300CF033D /* LaunchScreen.storyboard */,
 				52B5BC0E1F9E6FC300CF033D /* Info.plist */,
 				52C5252F1FA7C4E100F43004 /* RegistrationViewController.swift */,
@@ -301,10 +307,12 @@
 			files = (
 				52C525301FA7C4E100F43004 /* RegistrationViewController.swift in Sources */,
 				B6792A3A1FD31E27008D575B /* Event.swift in Sources */,
+				D068F34E1FD6BDC800CD867F /* EventDetailsViewController.swift in Sources */,
 				52B5BC051F9E6FC300CF033D /* ContainerVC.swift in Sources */,
 				52422CA01FA5FF640020F583 /* MainVC.swift in Sources */,
 				52B5BC031F9E6FC300CF033D /* AppDelegate.swift in Sources */,
 				D02D2AF71FBCDE68004F096D /* LoginViewController.swift in Sources */,
+				D068F34C1FD6908600CD867F /* RegisteredEventTableViewCell.swift in Sources */,
 				B6792A381FD31A3C008D575B /* UnregisteredEventTableViewCell.swift in Sources */,
 				52C9197F1FAE6FCE0062802F /* DesignableView.swift in Sources */,
 				B6792A341FD318CC008D575B /* UnregisteredViewController.swift in Sources */,
