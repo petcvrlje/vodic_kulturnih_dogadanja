@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class EventDetailsViewController: UIViewController {
 
@@ -28,6 +29,11 @@ class EventDetailsViewController: UIViewController {
     var eventPrice = ""
     var eventLink = ""
     
+    var eventId = ""
+    
+    var paramEventId = 0
+    var paramUserId = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +46,14 @@ class EventDetailsViewController: UIViewController {
         eventDetailEnd.text = formatDate(eventEnd)
         eventDetailPrice.text = eventPrice + " kn"
         eventDetailLink.setTitle(eventLink, for: .normal)
+        
+        let loginViewController = LoginViewController()
+        let userId = (loginViewController.defaultValues.string(forKey: "userId"))!
+        
+        paramEventId = Int(eventId)!
+        paramUserId = Int(userId)!
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(addToFavorites))
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +79,27 @@ class EventDetailsViewController: UIViewController {
         let konacniDatum = dateFormatter.string(from: datum)
         
         return konacniDatum
+    }
+    
+    @objc private func addToFavorites() {
+        
+        let URLFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favorite.php"
+        
+        
+        
+        print(paramUserId)
+        print(paramEventId)
+        
+        let params: Parameters=[
+            "eventId":paramEventId,
+            "userId":paramUserId,
+        ]
+        
+        Alamofire.request(URLFavorites, method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON {
+            response in
+            print(response)
+        }
+        
     }
     
     /*

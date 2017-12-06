@@ -14,4 +14,5 @@ class SideMenuVC: UITableViewController {
         print(indexPath.row)
     }
 
+    
 }

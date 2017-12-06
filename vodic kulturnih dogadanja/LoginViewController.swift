@@ -18,7 +18,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    var userId : String = "0";
     
     @IBAction func loginButtonClick(_ sender: UIButton) {
         //provjera
@@ -50,9 +49,8 @@ class LoginViewController: UIViewController {
             else {
                 if let result = response.result.value as? Dictionary<String, String> {
                     self.defaultValues.set(result["tokenId"]!, forKey: "tokenId")
+                    self.defaultValues.set(result["userId"]!, forKey: "userId")
                     
-                    self.userId = result["userId"]!
-                    print(self.userId)
                 }
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "containerVC")

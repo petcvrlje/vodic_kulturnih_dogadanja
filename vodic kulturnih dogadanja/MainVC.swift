@@ -90,6 +90,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if segue.identifier == "eventDetails" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let event = arrayOfEvents[indexPath.row]
+                
+                let eventId = event["eventId"] as! String
+                eventDetailsViewController.eventId = eventId
+                
                 eventDetailsViewController.eventImage = event["photo"] as? UIImage
                 eventDetailsViewController.eventName = event["name"] as! String
                 eventDetailsViewController.eventDescription = event["description"] as! String
