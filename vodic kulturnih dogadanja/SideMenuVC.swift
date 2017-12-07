@@ -13,10 +13,23 @@ class SideMenuVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
         
-        if indexPath.row == 3 {
+        if indexPath.row == 1 {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "containerVC")
+            self.present(vc!, animated: true, completion: nil)
+        }
+        else if indexPath.row == 2 {
+            //profil
+        }
+        else if indexPath.row == 3 {
             //let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "containerFavoritesVC")
             self.present(vc!, animated: true, completion: nil)
+        }
+        else if indexPath.row == 4 {
+            //settings
+        }
+        else {
+            //logout
         }
     }
 
