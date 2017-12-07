@@ -29,6 +29,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorites", style: .done, target: self, action: #selector(favoritesButtonClicked))
+        
         let dateInMiliseconds = currentDateInMiliseconds()
         let URL = "http://vodickulturnihdogadanja.1e29g6m.xip.io/eventList.php"
         
@@ -49,6 +51,13 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    
+    /*
+    @objc private func favoritesButtonClicked() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "favoriteVC") as! FavoriteViewController
+        present(vc, animated: true, completion: nil)
+    }*/
     
     func dateFromMiliseconds(date: Int) -> Date {
         return Date(timeIntervalSince1970: TimeInterval(date)/1000)
