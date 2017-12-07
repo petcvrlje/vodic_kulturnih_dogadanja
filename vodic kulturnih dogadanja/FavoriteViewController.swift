@@ -28,6 +28,8 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         let URLFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favoriteList.php"
         
@@ -48,6 +50,9 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
                 if let resData = swiftyJsonVar[].arrayObject {
                     self.arrayFavorites = resData as! [[String:AnyObject]]
                 }
+                
+                print(self.arrayFavorites[0]["name"] as! String)
+                
                 if self.arrayFavorites.count > 0 {
                     self.tableView.reloadData()
                 }

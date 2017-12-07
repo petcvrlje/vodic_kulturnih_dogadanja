@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBAction func onMoreTapped(){
         print("Toggle side menu")
@@ -18,7 +18,13 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    
     var arrayOfEvents = [[String:AnyObject]]()
+    var filteredEvents = [[String:AnyObject]]()
+    
+    var inSearchMode = false
     
     func currentDateInMiliseconds() -> Int {
         let currentDate = Date()
@@ -29,7 +35,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Favorites", style: .done, target: self, action: #selector(favoritesButtonClicked))
+        searchBar.delegate = self
+        searchBar.returnKeyType = UIReturnKeyType.done
         
         let dateInMiliseconds = currentDateInMiliseconds()
         let URL = "http://vodickulturnihdogadanja.1e29g6m.xip.io/eventList.php"
@@ -52,45 +59,86 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    /*
-    @objc private func favoritesButtonClicked() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "favoriteVC") as! FavoriteViewController
-        present(vc, animated: true, completion: nil)
-    }*/
-    
     func dateFromMiliseconds(date: Int) -> Date {
         return Date(timeIntervalSince1970: TimeInterval(date)/1000)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if inSearchMode {
+            return filteredEvents.count
+        }
         return arrayOfEvents.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainEventsCell")! as? RegisteredEventTableViewCell
-        var dict = arrayOfEvents[indexPath.row]
         
-    
-        let imageString = dict["picture"] as? String
-        if let imageData = Data(base64Encoded: imageString!) {
-            let decodedImage = UIImage(data: imageData)
-            cell?.eventImageView.image = decodedImage
-        }
         
-        cell?.nameLabel.text = dict["name"] as? String
-        cell?.descriptionLabel.text = dict["description"] as? String
-        
-        if let kojiDatum = NumberFormatter().number(from: (dict["begin"] as? String)!)?.intValue {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            let datum = dateFromMiliseconds(date: kojiDatum)
+        if inSearchMode {
+            var filtered = filteredEvents[indexPath.row]
             
-            let konacniDatum = dateFormatter.string(from: datum)
-            cell?.beginLabel.text = konacniDatum
+            let imageString = filtered["picture"] as? String
+            if let imageData = Data(base64Encoded: imageString!) {
+                let decodedImage = UIImage(data: imageData)
+                cell?.eventImageView.image = decodedImage
+            }
+            
+            cell?.nameLabel.text = filtered["name"] as? String
+            cell?.descriptionLabel.text = filtered["description"] as? String
+            
+            if let whichDate = NumberFormatter().number(from: (filtered["begin"] as? String)!)?.intValue {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                let date = dateFromMiliseconds(date: whichDate)
+                
+                let finalDate = dateFormatter.string(from: date)
+                cell?.beginLabel.text = finalDate
+            }
+        }
+        else {
+            var dict = arrayOfEvents[indexPath.row]
+            
+            let imageString = dict["picture"] as? String
+            if let imageData = Data(base64Encoded: imageString!) {
+                let decodedImage = UIImage(data: imageData)
+                cell?.eventImageView.image = decodedImage
+            }
+            
+            cell?.nameLabel.text = dict["name"] as? String
+            cell?.descriptionLabel.text = dict["description"] as? String
+            
+            if let kojiDatum = NumberFormatter().number(from: (dict["begin"] as? String)!)?.intValue {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                let datum = dateFromMiliseconds(date: kojiDatum)
+                
+                let konacniDatum = dateFormatter.string(from: datum)
+                cell?.beginLabel.text = konacniDatum
+            }
         }
         
         return cell!
+    }
+ 
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            inSearchMode = false
+            view.endEditing(true)
+            tableView.reloadData()
+        }
+        else {
+            inSearchMode = true
+            //filteredEvents = arrayOfEvents.filter({$0["name"] as? String == searchBar.text})
+            filteredEvents = arrayOfEvents.filter({ (array: [String:AnyObject]) -> Bool in
+                if (array["name"]?.contains(searchBar.text!))! {
+                    return true
+                }
+                else {
+                    return false
+                }
+            })
+            tableView.reloadData()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
