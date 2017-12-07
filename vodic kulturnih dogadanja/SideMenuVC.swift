@@ -18,7 +18,8 @@ class SideMenuVC: UITableViewController {
             self.present(vc!, animated: true, completion: nil)
         }
         else if indexPath.row == 2 {
-            //profil
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "containerProfileVC")
+            self.present(vc!, animated: true, completion: nil)
         }
         else if indexPath.row == 3 {
             //let storyboard = UIStoryboard(name: "Main", bundle: nil)

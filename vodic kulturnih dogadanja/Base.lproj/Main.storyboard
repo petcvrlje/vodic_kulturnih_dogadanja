@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -523,6 +523,104 @@
             <point key="canvasLocation" x="2140.8000000000002" y="910.79460269865069"/>
         </scene>
         <!--ContainerVC-->
+        <scene sceneID="q2h-m4-osg">
+            <objects>
+                <viewController storyboardIdentifier="containerProfileVC" id="ATM-9o-RRE" customClass="ContainerVC" customModule="vodic_kulturnih_dogadanja" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FzT-kB-ISL"/>
+                        <viewControllerLayoutGuide type="bottom" id="JdS-w1-9f7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pSa-eB-udf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LDv-X5-lGS">
+                                <rect key="frame" x="-240" y="0.0" width="240" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="c0k-k3-Zn4"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="flv-O2-wHd" kind="embed" id="FdV-AY-TnB"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xz-9Y-g5S">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="87v-CH-NM0"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="hum-I6-KvC" kind="embed" id="NdL-NQ-aNT"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="3xz-9Y-g5S" firstAttribute="leading" secondItem="LDv-X5-lGS" secondAttribute="trailing" id="9F9-n7-8TN"/>
+                            <constraint firstItem="3xz-9Y-g5S" firstAttribute="top" secondItem="pSa-eB-udf" secondAttribute="top" id="HmV-nl-Iqr"/>
+                            <constraint firstAttribute="trailing" secondItem="3xz-9Y-g5S" secondAttribute="trailing" id="OgP-gd-jWW"/>
+                            <constraint firstItem="JdS-w1-9f7" firstAttribute="top" secondItem="LDv-X5-lGS" secondAttribute="bottom" id="fd1-9y-1EA"/>
+                            <constraint firstItem="LDv-X5-lGS" firstAttribute="top" secondItem="pSa-eB-udf" secondAttribute="top" id="jyL-sX-ngj"/>
+                            <constraint firstItem="LDv-X5-lGS" firstAttribute="leading" secondItem="pSa-eB-udf" secondAttribute="leading" constant="-240" id="u0B-lB-MAv"/>
+                            <constraint firstItem="JdS-w1-9f7" firstAttribute="top" secondItem="3xz-9Y-g5S" secondAttribute="bottom" id="w6q-p6-3pQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sideMenuConstraint" destination="u0B-lB-MAv" id="SPn-B4-crV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4hb-hL-xI8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2463.1999999999998" y="1871.5142428785609"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FJG-c1-ZHD">
+            <objects>
+                <navigationController id="hum-I6-KvC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uql-f2-oHX">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="T9Z-vY-fjD" kind="relationship" relationship="rootViewController" id="D8D-hH-HWk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MjF-gF-ypo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3356" y="1877"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="lwc-7M-fim">
+            <objects>
+                <viewController id="T9Z-vY-fjD" customClass="ProfileViewController" customModule="vodic_kulturnih_dogadanja" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cYC-Df-1Je"/>
+                        <viewControllerLayoutGuide type="bottom" id="hu0-ie-DBx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F8L-co-DoJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kVz-wL-hVC">
+                                <rect key="frame" x="127" y="72" width="120" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="Mg4-T5-tFB">
+                        <barButtonItem key="leftBarButtonItem" image="menu 11.22.23.png" id="eVQ-hW-yyB">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="onMoreTapped" destination="T9Z-vY-fjD" id="n4x-3C-xlE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zh2-NF-T40" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4274" y="1872"/>
+        </scene>
+        <!--ContainerVC-->
         <scene sceneID="tJO-Bi-56e">
             <objects>
                 <viewController storyboardIdentifier="containerFavoritesVC" id="N4B-G8-uGR" customClass="ContainerVC" customModule="vodic_kulturnih_dogadanja" customModuleProvider="target" sceneMemberID="viewController">
@@ -916,7 +1014,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OER-8i-4JQ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OER-8i-4JQ">
                                                     <rect key="frame" x="152" y="52" width="208" height="46"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1101,7 +1199,7 @@
         <image name="menu 11.22.23.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="un3-VA-pgI"/>
+        <segue reference="FdV-AY-TnB"/>
         <segue reference="6NK-77-02h"/>
     </inferredMetricsTieBreakers>
 </document>
