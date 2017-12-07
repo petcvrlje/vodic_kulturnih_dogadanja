@@ -15,8 +15,8 @@ class SideMenuVC: UITableViewController {
         
         if indexPath.row == 3 {
             //let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "favoritesVC")
-            present(vc!, animated: true, completion: nil)
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "containerFavoritesVC")
+            self.present(vc!, animated: true, completion: nil)
         }
     }
 

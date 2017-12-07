@@ -22,7 +22,6 @@ class ContainerVC: UIViewController {
                                                object: nil)
     }
 
-    
     @objc func toggleSideMenu(){
         if sideMenuOpen {
             sideMenuOpen = false

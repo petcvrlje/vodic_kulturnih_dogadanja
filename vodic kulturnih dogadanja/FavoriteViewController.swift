@@ -15,6 +15,7 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func onMoreTapped(){
         print("Toggle side menu")
         NotificationCenter.default.post(name: NSNotification.Name("toggleSideMenu"), object: nil)
+        
     }
     
     @IBOutlet weak var tableView: UITableView!
