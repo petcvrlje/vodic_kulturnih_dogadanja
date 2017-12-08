@@ -17,7 +17,7 @@
 		52422C9A1FA5FCB10020F583 /* Screenshot_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 52422C961FA5FCB10020F583 /* Screenshot_5.png */; };
 		52422C9C1FA5FCC00020F583 /* Screenshot_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 52422C9B1FA5FCC00020F583 /* Screenshot_3.png */; };
 		52422CA01FA5FF640020F583 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52422C9F1FA5FF630020F583 /* MainVC.swift */; };
-		526A91871FD9E1E9003993AE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A91861FD9E1E8003993AE /* ProfileViewController.swift */; };
+		526A91891FDA9AC3003993AE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A91881FDA9AC3003993AE /* ProfileViewController.swift */; };
 		52B5BC031F9E6FC300CF033D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B5BC021F9E6FC300CF033D /* AppDelegate.swift */; };
 		52B5BC051F9E6FC300CF033D /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B5BC041F9E6FC300CF033D /* ContainerVC.swift */; };
 		52B5BC081F9E6FC300CF033D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B5BC061F9E6FC300CF033D /* Main.storyboard */; };
@@ -49,7 +49,7 @@
 		52422C961FA5FCB10020F583 /* Screenshot_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot_5.png; sourceTree = "<group>"; };
 		52422C9B1FA5FCC00020F583 /* Screenshot_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot_3.png; sourceTree = "<group>"; };
 		52422C9F1FA5FF630020F583 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		526A91861FD9E1E8003993AE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
+		526A91881FDA9AC3003993AE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		52B5BBFF1F9E6FC300CF033D /* vodic kulturnih dogadanja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vodic kulturnih dogadanja.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B5BC021F9E6FC300CF033D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52B5BC041F9E6FC300CF033D /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 				52B5BC021F9E6FC300CF033D /* AppDelegate.swift */,
 				52422C911FA5F00B0020F583 /* StartScreenVC.swift */,
 				52B5BC041F9E6FC300CF033D /* ContainerVC.swift */,
-				526A91861FD9E1E8003993AE /* ProfileViewController.swift */,
+				526A91881FDA9AC3003993AE /* ProfileViewController.swift */,
 				52422C8F1FA5EF0B0020F583 /* SideMenuVC.swift */,
 				52422C9F1FA5FF630020F583 /* MainVC.swift */,
 				B6792A331FD318CC008D575B /* UnregisteredViewController.swift */,
@@ -320,7 +320,7 @@
 				52B5BC051F9E6FC300CF033D /* ContainerVC.swift in Sources */,
 				B6A250E31FD87AE800DCD104 /* FavoriteTableViewCell.swift in Sources */,
 				52422CA01FA5FF640020F583 /* MainVC.swift in Sources */,
-				526A91871FD9E1E9003993AE /* ProfileViewController.swift in Sources */,
+				526A91891FDA9AC3003993AE /* ProfileViewController.swift in Sources */,
 				52B5BC031F9E6FC300CF033D /* AppDelegate.swift in Sources */,
 				D02D2AF71FBCDE68004F096D /* LoginViewController.swift in Sources */,
 				D068F34C1FD6908600CD867F /* RegisteredEventTableViewCell.swift in Sources */,
