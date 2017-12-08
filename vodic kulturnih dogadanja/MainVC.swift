@@ -47,7 +47,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
             response in
             if ((response.result.value) != nil) {
                 let swiftyJsonVar = JSON(response.result.value!)
-                print(swiftyJsonVar)
+                //print(swiftyJsonVar)
                 
                 if let resData = swiftyJsonVar[].arrayObject {
                     self.arrayOfEvents = resData as! [[String:AnyObject]]

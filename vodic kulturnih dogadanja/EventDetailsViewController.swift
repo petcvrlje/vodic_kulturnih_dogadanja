@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class EventDetailsViewController: UIViewController {
 
@@ -31,8 +32,15 @@ class EventDetailsViewController: UIViewController {
     
     var eventId = ""
     
+    let defaults = UserDefaults.standard
+    
     var paramEventId = 0
     var paramUserId = 0
+    
+    var arrayFavorites = [[String:AnyObject]]()
+    var checkFavorites = [[String:AnyObject]]()
+    
+    var isFavorite = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,13 +55,52 @@ class EventDetailsViewController: UIViewController {
         eventDetailPrice.text = eventPrice + " kn"
         eventDetailLink.setTitle(eventLink, for: .normal)
         
-        let loginViewController = LoginViewController()
-        let userId = (loginViewController.defaultValues.string(forKey: "userId"))!
+        let URLFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favoriteList.php"
+        
+        let userId = Int(self.defaults.string(forKey: "userId")!)
         
         paramEventId = Int(eventId)!
-        paramUserId = Int(userId)!
+        paramUserId = userId!
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(addToFavorites))
+        let param = ["userId": userId!] as [String:Any]
+        
+        Alamofire.request(URLFavorites, method: .get, parameters: param).responseJSON {
+            response in
+            if ((response.result.value) != nil) {
+                let swiftyJsonVar = JSON(response.result.value!)
+                
+                if let resData = swiftyJsonVar[].arrayObject {
+                    self.arrayFavorites = resData as! [[String:AnyObject]]
+                }
+                
+            }
+            
+            /*
+            if (self.isFavorite()) {
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(self.removeFromFavorites))
+            }
+            else {
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(self.addToFavorites))
+            }
+            
+        }*/
+            
+            self.checkFavorites = self.arrayFavorites.filter({ (array: [String:AnyObject]) -> Bool in
+            if (array["eventId"]?.contains(self.eventId))! {
+                    return true
+                }
+                else {
+                    return false
+                }
+            })
+            
+            if self.checkFavorites.count == 1 {
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(self.removeFromFavorites))
+            }
+            else {
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(self.addToFavorites))
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,23 +130,43 @@ class EventDetailsViewController: UIViewController {
     
     @objc private func addToFavorites() {
         
-        let URLFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favorite.php"
-        
-        
+        let URLAddFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favorite.php"
         
         print(paramUserId)
         print(paramEventId)
         
-        let params: Parameters=[
+        let paramsAdd: Parameters=[
             "eventId":paramEventId,
             "userId":paramUserId,
         ]
         
-        Alamofire.request(URLFavorites, method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON {
+        Alamofire.request(URLAddFavorites, method: .post, parameters: paramsAdd, encoding: JSONEncoding.default).responseJSON {
             response in
             print(response)
         }
         
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(self.removeFromFavorites))
+    }
+    
+    @objc private func removeFromFavorites() {
+        let URLRemoveFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favorite.php"
+        
+        paramEventId = Int(eventId)!
+        
+        let paramsRemove: Parameters=[
+            "eventId":paramEventId,
+            "userId":paramUserId,
+            ]
+        
+        print(paramEventId)
+        print(paramUserId)
+        
+        Alamofire.request(URLRemoveFavorites, method: .delete, parameters: paramsRemove).responseJSON {
+            response in
+            print(response)
+        }
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(self.addToFavorites))
     }
     
     /*
