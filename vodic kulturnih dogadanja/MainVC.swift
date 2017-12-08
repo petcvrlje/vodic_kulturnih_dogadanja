@@ -151,7 +151,13 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
                 let eventId = event["eventId"] as! String
                 eventDetailsViewController.eventId = eventId
                 
-                eventDetailsViewController.eventImage = event["photo"] as? UIImage
+                let imageString = event["picture"] as? String
+                if let imageData = Data(base64Encoded: imageString!) {
+                    let decodedImage = UIImage(data: imageData)
+                    eventDetailsViewController.eventImage = decodedImage
+                }
+                
+                
                 eventDetailsViewController.eventName = event["name"] as! String
                 eventDetailsViewController.eventDescription = event["description"] as! String
                 eventDetailsViewController.eventBegin = event["begin"] as! String
