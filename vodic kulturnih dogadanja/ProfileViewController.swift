@@ -33,7 +33,7 @@ class ProfileViewController: UIViewController {
     var profile_Email = ""
     var profile_Password = ""
     
-    var arrayUser = [[String:AnyObject]]()
+    var user = NSDictionary()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,35 +45,40 @@ class ProfileViewController: UIViewController {
         let userId = Int(defaults.string(forKey: "userId")!)
         
         let param = ["userId": userId!] as [String:Any]
-        print(param)
+        //print(param)
         
         
         Alamofire.request(URLProfile, method: .get, parameters: param).responseJSON {
             response in
             print(response)
-            if (response.result.value != nil){
-                let swiftyJsonVar = JSON(response.result.value!)
-                print(swiftyJsonVar)
-                
-                if let resData = swiftyJsonVar[].arrayObject{
-                    self.arrayUser = resData as! [[String:AnyObject]]
-                    
-                    self.profile_Name = self.arrayUser[0]["name"] as! String
+            if let json = response.result.value as? NSDictionary{
+                self.profile_Name = json["name"] as! String
+                self.profile_Surname = json["surname"] as! String
+                self.profile_Username = json["username"] as! String
+                self.profile_Email = json["email"] as! String
+                //self.profile_Image = json["picture"] as! UIImage
+              
+                let imageString = json["picture"] as? String
+                if let imageData = Data(base64Encoded: imageString!) {
+                    let decodedImage = UIImage(data: imageData)
+                    self.profileImage.image = decodedImage
                 }
+                
+                self.profileName.text = self.profile_Name
+                self.profileSurname.text = self.profile_Surname
+                self.profileUsername.text = self.profile_Username
+                self.profileEmail.text = self.profile_Email
             }
-            
-            
         }
+        
+        viewWillAppear(true)
+        
+        
     }
-    /*profileImage.image = profile_Image
-     profileName.text = profile_Name
-     profileSurname.text = profile_Surname
-     profileUsername.text = profile_Username
-     profileEmail.text = profile_Email
-     profilePassword.text = profile_Password
+    
      
      
-     }*/
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
