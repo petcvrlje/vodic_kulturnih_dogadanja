@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		520602A01FC48E8D00A05850 /* 23799000_1479281325491003_2047333813_o.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5206029F1FC48E8C00A05850 /* 23799000_1479281325491003_2047333813_o.jpg */; };
 		520AB4081FC366B8008CD277 /* menu 11.22.23.png in Resources */ = {isa = PBXBuildFile; fileRef = 520AB4071FC366B8008CD277 /* menu 11.22.23.png */; };
+		522949741FDC5D0600769A90 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522949731FDC5D0600769A90 /* ProfileEditViewController.swift */; };
+		522949761FDC5F9E00769A90 /* blank-profile-picture-973460_640.png in Resources */ = {isa = PBXBuildFile; fileRef = 522949751FDC5F9D00769A90 /* blank-profile-picture-973460_640.png */; };
 		52422C901FA5EF0B0020F583 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52422C8F1FA5EF0B0020F583 /* SideMenuVC.swift */; };
 		52422C921FA5F00B0020F583 /* StartScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52422C911FA5F00B0020F583 /* StartScreenVC.swift */; };
 		52422C971FA5FCB10020F583 /* Screenshot_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 52422C931FA5FCB10020F583 /* Screenshot_1.png */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		5206029F1FC48E8C00A05850 /* 23799000_1479281325491003_2047333813_o.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 23799000_1479281325491003_2047333813_o.jpg; sourceTree = "<group>"; };
 		520AB4071FC366B8008CD277 /* menu 11.22.23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu 11.22.23.png"; sourceTree = "<group>"; };
+		522949731FDC5D0600769A90 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		522949751FDC5F9D00769A90 /* blank-profile-picture-973460_640.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blank-profile-picture-973460_640.png"; sourceTree = "<group>"; };
 		52422C8F1FA5EF0B0020F583 /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
 		52422C911FA5F00B0020F583 /* StartScreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenVC.swift; sourceTree = "<group>"; };
 		52422C931FA5FCB10020F583 /* Screenshot_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot_1.png; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 				52422C911FA5F00B0020F583 /* StartScreenVC.swift */,
 				52B5BC041F9E6FC300CF033D /* ContainerVC.swift */,
 				526A91881FDA9AC3003993AE /* ProfileViewController.swift */,
+				522949731FDC5D0600769A90 /* ProfileEditViewController.swift */,
 				52422C8F1FA5EF0B0020F583 /* SideMenuVC.swift */,
 				52422C9F1FA5FF630020F583 /* MainVC.swift */,
 				B6792A331FD318CC008D575B /* UnregisteredViewController.swift */,
@@ -151,6 +156,7 @@
 				52422C931FA5FCB10020F583 /* Screenshot_1.png */,
 				52422C941FA5FCB10020F583 /* Screenshot_2.png */,
 				52422C951FA5FCB10020F583 /* Screenshot_4.png */,
+				522949751FDC5F9D00769A90 /* blank-profile-picture-973460_640.png */,
 				52422C961FA5FCB10020F583 /* Screenshot_5.png */,
 				52B5BC141F9E7D5600CF033D /* 22768399_1452971704788632_243767547_o.png */,
 			);
@@ -246,6 +252,7 @@
 				520AB4081FC366B8008CD277 /* menu 11.22.23.png in Resources */,
 				52422C9A1FA5FCB10020F583 /* Screenshot_5.png in Resources */,
 				520602A01FC48E8D00A05850 /* 23799000_1479281325491003_2047333813_o.jpg in Resources */,
+				522949761FDC5F9E00769A90 /* blank-profile-picture-973460_640.png in Resources */,
 				52422C971FA5FCB10020F583 /* Screenshot_1.png in Resources */,
 				52B5BC081F9E6FC300CF033D /* Main.storyboard in Resources */,
 			);
@@ -325,6 +332,7 @@
 				D02D2AF71FBCDE68004F096D /* LoginViewController.swift in Sources */,
 				D068F34C1FD6908600CD867F /* RegisteredEventTableViewCell.swift in Sources */,
 				B6792A381FD31A3C008D575B /* UnregisteredEventTableViewCell.swift in Sources */,
+				522949741FDC5D0600769A90 /* ProfileEditViewController.swift in Sources */,
 				52C9197F1FAE6FCE0062802F /* DesignableView.swift in Sources */,
 				B6A250E11FD87ABD00DCD104 /* FavoriteViewController.swift in Sources */,
 				B6792A341FD318CC008D575B /* UnregisteredViewController.swift in Sources */,
