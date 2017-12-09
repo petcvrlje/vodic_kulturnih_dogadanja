@@ -75,21 +75,32 @@ class UnregisteredViewController: UIViewController, UITableViewDelegate, UITable
         cell?.descriptionLabel.text = dict["description"] as? String
         
         
-        if let kojiDatum = NumberFormatter().number(from: (dict["begin"] as? String)!)?.intValue {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            let datum = dateFromMilliseconds(date: kojiDatum)
-            
-            let konacniDatum = dateFormatter.string(from: datum)
-            cell?.beginLabel.text = konacniDatum
-            
+        let begin = formatDate(dict["begin"] as! String)
+        let end = dict["end"] as! String
+        
+        if end == "0" {
+            cell?.beginLabel.text = begin
+        }
+        else {
+            cell?.beginLabel.text = begin + " - " + end
         }
         
-        /*
-        let dateFormatter = DateFormatter()
-        cell?.beginLabel.text = dateFormatter.string(from: dateFromMilliseconds(date: (NumberFormatter().number(from: (dict["begin"] as? String)!)?.intValue)!))*/
-        
         return cell!
+    }
+    
+    func formatDate(_ someDate: String) -> String {
+        
+        if someDate == "" {
+            return ""
+        }
+        let dateInInt = Int(someDate)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = dateFromMilliseconds(date: dateInInt!)
+        
+        let finalDate = dateFormatter.string(from: date)
+        
+        return finalDate
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,10 +121,16 @@ class UnregisteredViewController: UIViewController, UITableViewDelegate, UITable
                     unregisteredDetailsViewController.eventImage = decodedImage
                 }
                 
+                if (event["end"] as! String)  == "0" {
+                    unregisteredDetailsViewController.eventEnd = ""
+                }
+                else {
+                    unregisteredDetailsViewController.eventEnd = event["end"] as! String
+                }
+                
                 unregisteredDetailsViewController.eventName = event["name"] as! String
                 unregisteredDetailsViewController.eventDescription = event["description"] as! String
                 unregisteredDetailsViewController.eventBegin = event["begin"] as! String
-                unregisteredDetailsViewController.eventEnd = event["end"] as! String
                 unregisteredDetailsViewController.eventPrice = event["price"] as! String
                 unregisteredDetailsViewController.eventLink = event["link"] as! String
                 

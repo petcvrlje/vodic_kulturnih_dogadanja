@@ -15,7 +15,6 @@ class FavoriteDetailsViewController: UIViewController {
     @IBOutlet weak var favoriteDetailName: UILabel!
     @IBOutlet weak var favoriteDetailDescription: UILabel!
     @IBOutlet weak var favoriteDetailBegin: UILabel!
-    @IBOutlet weak var favoriteDetailEnd: UILabel!
     @IBOutlet weak var favoriteDetailPrice: UILabel!
     @IBOutlet weak var favoriteDetailLink: UIButton!
     
@@ -65,11 +64,15 @@ class FavoriteDetailsViewController: UIViewController {
         favoriteDetailImage.image = favoriteImage
         favoriteDetailName.text = favoriteName
         favoriteDetailDescription.text = favoriteDescription
-        favoriteDetailBegin.text = formatDate(favoriteBegin)
-        favoriteDetailEnd.text = formatDate(favoriteEnd)
         favoriteDetailPrice.text = favoritePrice + " kn"
         favoriteDetailLink.setTitle(favoriteLink, for: .normal)
         
+        if formatDate(favoriteEnd) == "" {
+            favoriteDetailBegin.text = formatDate(favoriteBegin)
+        }
+        else {
+            favoriteDetailBegin.text = formatDate(favoriteBegin) + " - " + formatDate(favoriteEnd)
+        }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(removeFromFavorites))
         

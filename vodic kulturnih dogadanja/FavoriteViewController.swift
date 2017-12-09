@@ -81,15 +81,33 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         cell.favoriteName.text = dict["name"] as? String
         cell.favoriteDescription.text = dict["description"] as? String
         
-        if let whichDate = NumberFormatter().number(from: (dict["begin"] as? String)!)?.intValue {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            let date = dateFromMilliseconds(date: whichDate)
-            let finalDate = dateFormatter.string(from: date)
-            cell.favoriteBegin.text = finalDate
+        let begin = formatDate(dict["begin"] as! String)
+        let end = dict["end"] as! String
+        
+        if end == "0" {
+            cell.favoriteBegin.text = begin
         }
+        else {
+            cell.favoriteBegin.text = begin + " - " + end
+        }
+        
         return cell
      }
+    
+    func formatDate(_ someDate: String) -> String {
+        
+        if someDate == "" {
+            return ""
+        }
+        let dateInInt = Int(someDate)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = dateFromMilliseconds(date: dateInInt!)
+        
+        let finalDate = dateFormatter.string(from: date)
+        
+        return finalDate
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -112,10 +130,16 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
                     favoriteDetailsViewcController.favoriteImage = decodedImage
                 }
                 
+                if (favoriteEvent["end"] as! String)  == "0" {
+                    favoriteDetailsViewcController.favoriteEnd = ""
+                }
+                else {
+                    favoriteDetailsViewcController.favoriteEnd = favoriteEvent["end"] as! String
+                }
+                
                 favoriteDetailsViewcController.favoriteName = favoriteEvent["name"] as! String
                 favoriteDetailsViewcController.favoriteDescription = favoriteEvent["description"] as! String
                 favoriteDetailsViewcController.favoriteBegin = favoriteEvent["begin"] as! String
-                favoriteDetailsViewcController.favoriteEnd = favoriteEvent["end"] as! String
                 favoriteDetailsViewcController.favoritePrice = favoriteEvent["price"] as! String
                 favoriteDetailsViewcController.favoriteLink = favoriteEvent["link"] as! String
                 

@@ -73,6 +73,8 @@ class ProfileViewController: UIViewController{
                 self.profileEmail.text = self.profile_Email
                 
             }
+            //self.viewDidLoad()
+            //self.viewWillAppear(true)
         }
         
         viewWillAppear(true)

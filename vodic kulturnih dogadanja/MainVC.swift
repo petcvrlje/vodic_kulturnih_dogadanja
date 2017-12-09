@@ -86,13 +86,14 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
             cell?.nameLabel.text = filtered["name"] as? String
             cell?.descriptionLabel.text = filtered["description"] as? String
             
-            if let whichDate = NumberFormatter().number(from: (filtered["begin"] as? String)!)?.intValue {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                let date = dateFromMiliseconds(date: whichDate)
-                
-                let finalDate = dateFormatter.string(from: date)
-                cell?.beginLabel.text = finalDate
+            let begin = formatDate(filtered["begin"] as! String)
+            let end = filtered["end"] as! String
+            
+            if end == "0" {
+                cell?.beginLabel.text = begin
+            }
+            else {
+                cell?.beginLabel.text = begin + " - " + end
             }
         }
         else {
@@ -108,7 +109,15 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
             cell?.descriptionLabel.text = dict["description"] as? String
             
             
-            cell?.beginLabel.text = formatDate((dict["begin"] as? String)!)
+            let begin = formatDate(dict["begin"] as! String)
+            let end = dict["end"] as! String
+            
+            if end == "0" {
+                cell?.beginLabel.text = begin
+            }
+            else {
+                cell?.beginLabel.text = begin + " - " + end
+            }
         }
         
         return cell!

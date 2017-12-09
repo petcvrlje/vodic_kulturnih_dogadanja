@@ -15,7 +15,6 @@ class UnregisteredEventDetailsViewController: UIViewController {
     @IBOutlet weak var unregisteredEventName: UILabel!
     @IBOutlet weak var unregisteredEventDescription: UILabel!
     @IBOutlet weak var unregisteredEventBegin: UILabel!
-    @IBOutlet weak var unregiteredEventEnd: UILabel!
     @IBOutlet weak var unregisteredEventPrice: UILabel!
     @IBOutlet weak var unregisteredEventLink: UIButton!
     
@@ -59,8 +58,14 @@ class UnregisteredEventDetailsViewController: UIViewController {
         unregisteredEventImage.image = eventImage
         unregisteredEventName.text = eventName
         unregisteredEventDescription.text = eventDescription
-        unregisteredEventBegin.text = formatDate(eventBegin)
-        unregiteredEventEnd.text = formatDate(eventEnd)
+        
+        if formatDate(eventEnd) == "" {
+            unregisteredEventBegin.text = formatDate(eventBegin)
+        }
+        else {
+            unregisteredEventBegin.text = formatDate(eventBegin) + "-" + formatDate(eventEnd)
+        }
+        
         unregisteredEventPrice.text = eventPrice + " kn"
         unregisteredEventLink.setTitle(eventLink, for: .normal)
     }

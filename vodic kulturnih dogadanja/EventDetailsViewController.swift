@@ -17,7 +17,6 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var eventDetailName: UILabel!
     @IBOutlet weak var eventDetailDescription: UILabel!
     @IBOutlet weak var eventDetailBegin: UILabel!
-    @IBOutlet weak var eventDetailEnd: UILabel!
     @IBOutlet weak var eventDetailPrice: UILabel!
     @IBOutlet weak var eventDetailLink: UIButton!
     
@@ -44,17 +43,20 @@ class EventDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         eventDetailImage.image = eventImage
         eventDetailName.text = eventName
         eventDetailDescription.text = eventDescription
-        eventDetailBegin.text = formatDate(eventBegin)
-        eventDetailEnd.text = formatDate(eventEnd)
+        
         eventDetailPrice.text = eventPrice + " kn"
         eventDetailLink.setTitle(eventLink, for: .normal)
         
+        if formatDate(eventEnd) == "" {
+            eventDetailBegin.text = formatDate(eventBegin)
+        }
+        else {
+            eventDetailBegin.text = formatDate(eventBegin) + "-" + formatDate(eventEnd)
+        }
         
         let URLFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favoriteList.php"
         
@@ -76,15 +78,6 @@ class EventDetailsViewController: UIViewController {
                 
             }
             
-            /*
-            if (self.isFavorite()) {
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(self.removeFromFavorites))
-            }
-            else {
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(self.addToFavorites))
-            }
-            
-        }*/
             
             self.checkFavorites = self.arrayFavorites.filter({ (array: [String:AnyObject]) -> Bool in
             if (array["eventId"]?.contains(self.eventId))! {
