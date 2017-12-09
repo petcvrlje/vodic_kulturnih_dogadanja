@@ -10,6 +10,7 @@ import UIKit
 
 class UnregisteredEventTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var unregisteredImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var beginLabel: UILabel!

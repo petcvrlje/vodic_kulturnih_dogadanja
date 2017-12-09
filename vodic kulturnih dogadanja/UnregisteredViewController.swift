@@ -40,7 +40,7 @@ class UnregisteredViewController: UIViewController, UITableViewDelegate, UITable
             response in
             if ((response.result.value) != nil) {
                 let swiftyJsonVar = JSON(response.result.value!)
-                print(swiftyJsonVar)
+                //print(swiftyJsonVar)
                 
                 if let resData = swiftyJsonVar[].arrayObject {
                     self.arrayOfEvents = resData as! [[String:AnyObject]]
@@ -64,6 +64,13 @@ class UnregisteredViewController: UIViewController, UITableViewDelegate, UITable
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as? UnregisteredEventTableViewCell
         var dict = arrayOfEvents[indexPath.row]
+        
+        let imageString = dict["picture"] as? String
+        if let imageData = Data(base64Encoded: imageString!) {
+            let decodedImage = UIImage(data: imageData)
+            cell?.unregisteredImageView.image = decodedImage
+        }
+        
         cell?.nameLabel.text = dict["name"] as? String
         cell?.descriptionLabel.text = dict["description"] as? String
         
@@ -90,15 +97,28 @@ class UnregisteredViewController: UIViewController, UITableViewDelegate, UITable
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let unregisteredDetailsViewController = segue.destination as! UnregisteredEventDetailsViewController
+        
+        if segue.identifier == "unregisteredEventDetails" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let event = arrayOfEvents[indexPath.row]
+                
+                let imageString = event["picture"] as? String
+                if let imageData = Data(base64Encoded: imageString!) {
+                    let decodedImage = UIImage(data: imageData)
+                    unregisteredDetailsViewController.eventImage = decodedImage
+                }
+                
+                unregisteredDetailsViewController.eventName = event["name"] as! String
+                unregisteredDetailsViewController.eventDescription = event["description"] as! String
+                unregisteredDetailsViewController.eventBegin = event["begin"] as! String
+                unregisteredDetailsViewController.eventEnd = event["end"] as! String
+                unregisteredDetailsViewController.eventPrice = event["price"] as! String
+                unregisteredDetailsViewController.eventLink = event["link"] as! String
+                
+            }
+        }
     }
-    */
 
 }
