@@ -33,7 +33,6 @@
 		B65BFA051FD3555A00D940A1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65BFA061FD3555A00D940A1 /* SwiftyJSON.framework */; };
 		B6792A341FD318CC008D575B /* UnregisteredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6792A331FD318CC008D575B /* UnregisteredViewController.swift */; };
 		B6792A381FD31A3C008D575B /* UnregisteredEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6792A371FD31A3C008D575B /* UnregisteredEventTableViewCell.swift */; };
-		B6792A3A1FD31E27008D575B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6792A391FD31E27008D575B /* Event.swift */; };
 		B6A22A891FDC65FD0091853F /* FavoriteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A22A881FDC65FD0091853F /* FavoriteDetailsViewController.swift */; };
 		B6A22A8B1FDC76EB0091853F /* UnregisteredEventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A22A8A1FDC76EB0091853F /* UnregisteredEventDetailsViewController.swift */; };
 		B6A22A8F1FDC7B5E0091853F /* UnregisteredSideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A22A8E1FDC7B5E0091853F /* UnregisteredSideMenuTableViewController.swift */; };
@@ -75,7 +74,6 @@
 		B65BFA061FD3555A00D940A1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6792A331FD318CC008D575B /* UnregisteredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnregisteredViewController.swift; sourceTree = "<group>"; };
 		B6792A371FD31A3C008D575B /* UnregisteredEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnregisteredEventTableViewCell.swift; sourceTree = "<group>"; };
-		B6792A391FD31E27008D575B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		B6A22A881FDC65FD0091853F /* FavoriteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailsViewController.swift; sourceTree = "<group>"; };
 		B6A22A8A1FDC76EB0091853F /* UnregisteredEventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnregisteredEventDetailsViewController.swift; sourceTree = "<group>"; };
 		B6A22A8E1FDC7B5E0091853F /* UnregisteredSideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnregisteredSideMenuTableViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 				52422C8F1FA5EF0B0020F583 /* SideMenuVC.swift */,
 				52422C9F1FA5FF630020F583 /* MainVC.swift */,
 				D068F34B1FD6908600CD867F /* RegisteredEventTableViewCell.swift */,
-				B6792A391FD31E27008D575B /* Event.swift */,
 				52B5BC061F9E6FC300CF033D /* Main.storyboard */,
 				B6792A331FD318CC008D575B /* UnregisteredViewController.swift */,
 				B6792A371FD31A3C008D575B /* UnregisteredEventTableViewCell.swift */,
@@ -336,7 +333,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C525301FA7C4E100F43004 /* RegistrationViewController.swift in Sources */,
-				B6792A3A1FD31E27008D575B /* Event.swift in Sources */,
 				D068F34E1FD6BDC800CD867F /* EventDetailsViewController.swift in Sources */,
 				52B5BC051F9E6FC300CF033D /* ContainerVC.swift in Sources */,
 				B6A250E31FD87AE800DCD104 /* FavoriteTableViewCell.swift in Sources */,

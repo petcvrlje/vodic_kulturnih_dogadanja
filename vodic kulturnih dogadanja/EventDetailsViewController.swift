@@ -55,6 +55,7 @@ class EventDetailsViewController: UIViewController {
         eventDetailPrice.text = eventPrice + " kn"
         eventDetailLink.setTitle(eventLink, for: .normal)
         
+        
         let URLFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favoriteList.php"
         
         let userId = Int(self.defaults.string(forKey: "userId")!)
@@ -118,11 +119,15 @@ class EventDetailsViewController: UIViewController {
     }
     
     func formatDate(_ someDate: String) -> String {
+        
+        if someDate == "" {
+            return ""
+        }
         let dateInInt = Int(someDate)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let datum = dateFromMilliseconds(date: dateInInt!)
-            
+        
         let konacniDatum = dateFormatter.string(from: datum)
         
         return konacniDatum
@@ -161,7 +166,7 @@ class EventDetailsViewController: UIViewController {
         print(paramEventId)
         print(paramUserId)
         
-        Alamofire.request(URLRemoveFavorites, method: .post, parameters: paramsRemove).responseJSON {
+        Alamofire.request(URLRemoveFavorites, method: .post, parameters: paramsRemove, encoding: JSONEncoding.default).responseJSON {
             response in
             print(response)
         }

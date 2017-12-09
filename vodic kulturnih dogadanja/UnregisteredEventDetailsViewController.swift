@@ -37,6 +37,11 @@ class UnregisteredEventDetailsViewController: UIViewController {
     }
     
     func formatDate(_ someDate: String) -> String {
+        
+        if someDate == "" {
+            return ""
+        }
+        
         let dateInInt = Int(someDate)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
