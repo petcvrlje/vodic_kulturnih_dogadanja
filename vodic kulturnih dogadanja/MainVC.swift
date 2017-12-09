@@ -107,17 +107,30 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
             cell?.nameLabel.text = dict["name"] as? String
             cell?.descriptionLabel.text = dict["description"] as? String
             
-            if let kojiDatum = NumberFormatter().number(from: (dict["begin"] as? String)!)?.intValue {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-                let datum = dateFromMiliseconds(date: kojiDatum)
-                
-                let konacniDatum = dateFormatter.string(from: datum)
-                cell?.beginLabel.text = konacniDatum
-            }
+            
+            cell?.beginLabel.text = formatDate((dict["begin"] as? String)!)
         }
         
         return cell!
+    }
+    
+    func dateFromMilliseconds(date: Int) -> Date {
+        return Date(timeIntervalSince1970: TimeInterval(date)/1000)
+    }
+    
+    func formatDate(_ someDate: String) -> String {
+        
+        if someDate == "" {
+            return ""
+        }
+        let dateInInt = Int(someDate)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = dateFromMilliseconds(date: dateInInt!)
+        
+        let finalDate = dateFormatter.string(from: date)
+        
+        return finalDate
     }
  
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -157,11 +170,17 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
                     eventDetailsViewController.eventImage = decodedImage
                 }
                 
+                if (event["end"] as! String)  == "0" {
+                    eventDetailsViewController.eventEnd = ""
+                }
+                else {
+                    eventDetailsViewController.eventEnd = event["end"] as! String
+                }
                 
                 eventDetailsViewController.eventName = event["name"] as! String
                 eventDetailsViewController.eventDescription = event["description"] as! String
                 eventDetailsViewController.eventBegin = event["begin"] as! String
-                eventDetailsViewController.eventEnd = event["end"] as! String
+                
                 eventDetailsViewController.eventPrice = event["price"] as! String
                 eventDetailsViewController.eventLink = event["link"] as! String
             }

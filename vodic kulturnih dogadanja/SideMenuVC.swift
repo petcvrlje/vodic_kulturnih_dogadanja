@@ -29,8 +29,9 @@ class SideMenuVC: UITableViewController {
         else if indexPath.row == 4 {
             //settings
         }
-        else {
-            //logout
+        else if indexPath.row == 6 {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "containerFavoritesVC")
+            self.present(vc!, animated: true, completion: nil)
         }
     }
 

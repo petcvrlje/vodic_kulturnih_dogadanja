@@ -44,6 +44,11 @@ class FavoriteDetailsViewController: UIViewController {
     }
     
     func formatDate(_ someDate: String) -> String {
+        
+        if someDate == "" {
+            return ""
+        }
+        
         let dateInInt = Int(someDate)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -83,11 +88,12 @@ class FavoriteDetailsViewController: UIViewController {
         
         
         
-        Alamofire.request(URLRemoveFavorites, method: .post, parameters: paramsRemove).responseJSON {
+        Alamofire.request(URLRemoveFavorites, method: .post, parameters: paramsRemove, encoding: JSONEncoding.default).responseJSON {
             response in
             print(response)
         }
         
+
         navigationItem.rightBarButtonItem = nil
     }
 

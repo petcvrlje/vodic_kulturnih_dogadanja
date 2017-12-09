@@ -57,7 +57,11 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
                     self.tableView.reloadData()
                 }
             }
+            self.viewDidLoad()
+            self.viewWillAppear(true)
         }
+        
+       
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
