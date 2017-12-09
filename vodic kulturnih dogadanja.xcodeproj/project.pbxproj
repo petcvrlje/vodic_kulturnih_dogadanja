@@ -26,6 +26,7 @@
 		52B5BC0A1F9E6FC300CF033D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B5BC091F9E6FC300CF033D /* Assets.xcassets */; };
 		52B5BC0D1F9E6FC300CF033D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B5BC0B1F9E6FC300CF033D /* LaunchScreen.storyboard */; };
 		52B5BC151F9E7D5600CF033D /* 22768399_1452971704788632_243767547_o.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B5BC141F9E7D5600CF033D /* 22768399_1452971704788632_243767547_o.png */; };
+		52C175DB1FDC8D710036F30A /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52C175DA1FDC8D700036F30A /* background.jpg */; };
 		52C525301FA7C4E100F43004 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5252F1FA7C4E100F43004 /* RegistrationViewController.swift */; };
 		52C9197F1FAE6FCE0062802F /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9197E1FAE6FCE0062802F /* DesignableView.swift */; };
 		76E45E39A27D7986A1427BC2 /* Pods_vodic_kulturnih_dogadanja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEBA9047EE8F6A6F2399E79 /* Pods_vodic_kulturnih_dogadanja.framework */; };
@@ -65,6 +66,7 @@
 		52B5BC0C1F9E6FC300CF033D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52B5BC0E1F9E6FC300CF033D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B5BC141F9E7D5600CF033D /* 22768399_1452971704788632_243767547_o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 22768399_1452971704788632_243767547_o.png; sourceTree = "<group>"; };
+		52C175DA1FDC8D700036F30A /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		52C5252F1FA7C4E100F43004 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		52C9197E1FAE6FCE0062802F /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		5CC863FF6270E289B9A17493 /* Pods-vodic kulturnih dogadanja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vodic kulturnih dogadanja.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vodic kulturnih dogadanja/Pods-vodic kulturnih dogadanja.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				52422C9B1FA5FCC00020F583 /* Screenshot_3.png */,
 				52422C931FA5FCB10020F583 /* Screenshot_1.png */,
 				52422C941FA5FCB10020F583 /* Screenshot_2.png */,
+				52C175DA1FDC8D700036F30A /* background.jpg */,
 				52422C951FA5FCB10020F583 /* Screenshot_4.png */,
 				522949751FDC5F9D00769A90 /* blank-profile-picture-973460_640.png */,
 				52422C961FA5FCB10020F583 /* Screenshot_5.png */,
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52B5BC0D1F9E6FC300CF033D /* LaunchScreen.storyboard in Resources */,
+				52C175DB1FDC8D710036F30A /* background.jpg in Resources */,
 				52B5BC151F9E7D5600CF033D /* 22768399_1452971704788632_243767547_o.png in Resources */,
 				52422C981FA5FCB10020F583 /* Screenshot_2.png in Resources */,
 				52422C991FA5FCB10020F583 /* Screenshot_4.png in Resources */,
