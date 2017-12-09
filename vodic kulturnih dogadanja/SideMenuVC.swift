@@ -29,8 +29,14 @@ class SideMenuVC: UITableViewController {
         else if indexPath.row == 4 {
             //settings
         }
+        else if indexPath.row == 5{
+            
+        }
         else if indexPath.row == 6 {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "containerFavoritesVC")
+            UserDefaults.standard.set(nil, forKey: "tokenId")
+            UserDefaults.standard.set(nil, forKey: "userId")
+
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "firstScreen")
             self.present(vc!, animated: true, completion: nil)
         }
     }
