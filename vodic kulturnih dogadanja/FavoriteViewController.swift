@@ -91,16 +91,33 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let favoriteDetailsViewcController = segue.destination as! FavoriteDetailsViewController
+        
+        if segue.identifier == "favoriteDetails" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let favoriteEvent = arrayFavorites[indexPath.row]
+                
+                let favoriteId = favoriteEvent["eventId"] as! String
+                favoriteDetailsViewcController.favoriteId = favoriteId
+                
+                let imageString = favoriteEvent["picture"] as? String
+                if let imageData = Data(base64Encoded: imageString!) {
+                    let decodedImage = UIImage(data: imageData)
+                    favoriteDetailsViewcController.favoriteImage = decodedImage
+                }
+                
+                favoriteDetailsViewcController.favoriteName = favoriteEvent["name"] as! String
+                favoriteDetailsViewcController.favoriteDescription = favoriteEvent["description"] as! String
+                favoriteDetailsViewcController.favoriteBegin = favoriteEvent["begin"] as! String
+                favoriteDetailsViewcController.favoriteEnd = favoriteEvent["end"] as! String
+                favoriteDetailsViewcController.favoritePrice = favoriteEvent["price"] as! String
+                favoriteDetailsViewcController.favoriteLink = favoriteEvent["link"] as! String
+                
+            }
+        }
     }
-    */
+    
 
 }

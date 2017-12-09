@@ -31,6 +31,7 @@
 		B6792A341FD318CC008D575B /* UnregisteredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6792A331FD318CC008D575B /* UnregisteredViewController.swift */; };
 		B6792A381FD31A3C008D575B /* UnregisteredEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6792A371FD31A3C008D575B /* UnregisteredEventTableViewCell.swift */; };
 		B6792A3A1FD31E27008D575B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6792A391FD31E27008D575B /* Event.swift */; };
+		B6A22A891FDC65FD0091853F /* FavoriteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A22A881FDC65FD0091853F /* FavoriteDetailsViewController.swift */; };
 		B6A250E11FD87ABD00DCD104 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A250E01FD87ABD00DCD104 /* FavoriteViewController.swift */; };
 		B6A250E31FD87AE800DCD104 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A250E21FD87AE800DCD104 /* FavoriteTableViewCell.swift */; };
 		D02D2AF71FBCDE68004F096D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02D2AF61FBCDE68004F096D /* LoginViewController.swift */; };
@@ -67,6 +68,7 @@
 		B6792A331FD318CC008D575B /* UnregisteredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnregisteredViewController.swift; sourceTree = "<group>"; };
 		B6792A371FD31A3C008D575B /* UnregisteredEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnregisteredEventTableViewCell.swift; sourceTree = "<group>"; };
 		B6792A391FD31E27008D575B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		B6A22A881FDC65FD0091853F /* FavoriteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailsViewController.swift; sourceTree = "<group>"; };
 		B6A250E01FD87ABD00DCD104 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		B6A250E21FD87AE800DCD104 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		D02D2AF61FBCDE68004F096D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				B6792A391FD31E27008D575B /* Event.swift */,
 				B6792A371FD31A3C008D575B /* UnregisteredEventTableViewCell.swift */,
 				52B5BC061F9E6FC300CF033D /* Main.storyboard */,
+				B6A22A881FDC65FD0091853F /* FavoriteDetailsViewController.swift */,
 				B6A250E21FD87AE800DCD104 /* FavoriteTableViewCell.swift */,
 				B6A250E01FD87ABD00DCD104 /* FavoriteViewController.swift */,
 				D068F34D1FD6BDC800CD867F /* EventDetailsViewController.swift */,
@@ -209,6 +212,7 @@
 				TargetAttributes = {
 					52B5BBFE1F9E6FC300CF033D = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = LTA2622XD5;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
@@ -327,6 +331,7 @@
 				B6792A381FD31A3C008D575B /* UnregisteredEventTableViewCell.swift in Sources */,
 				52C9197F1FAE6FCE0062802F /* DesignableView.swift in Sources */,
 				B6A250E11FD87ABD00DCD104 /* FavoriteViewController.swift in Sources */,
+				B6A22A891FDC65FD0091853F /* FavoriteDetailsViewController.swift in Sources */,
 				B6792A341FD318CC008D575B /* UnregisteredViewController.swift in Sources */,
 				52422C921FA5F00B0020F583 /* StartScreenVC.swift in Sources */,
 				52422C901FA5EF0B0020F583 /* SideMenuVC.swift in Sources */,
@@ -467,11 +472,11 @@
 			baseConfigurationReference = 5CC863FF6270E289B9A17493 /* Pods-vodic kulturnih dogadanja.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LTA2622XD5;
 				INFOPLIST_FILE = "vodic kulturnih dogadanja/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.foi.vodic-kulturnih-dogadanja";
+				PRODUCT_BUNDLE_IDENTIFIER = vodickulturnihdogadanja;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -483,11 +488,11 @@
 			baseConfigurationReference = 6261060265CDF6359B879B70 /* Pods-vodic kulturnih dogadanja.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LTA2622XD5;
 				INFOPLIST_FILE = "vodic kulturnih dogadanja/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.foi.vodic-kulturnih-dogadanja";
+				PRODUCT_BUNDLE_IDENTIFIER = vodickulturnihdogadanja;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;

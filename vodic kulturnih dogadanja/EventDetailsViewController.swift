@@ -149,7 +149,7 @@ class EventDetailsViewController: UIViewController {
     }
     
     @objc private func removeFromFavorites() {
-        let URLRemoveFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favorite.php"
+        let URLRemoveFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favoriteDelete.php"
         
         paramEventId = Int(eventId)!
         
@@ -161,7 +161,7 @@ class EventDetailsViewController: UIViewController {
         print(paramEventId)
         print(paramUserId)
         
-        Alamofire.request(URLRemoveFavorites, method: .delete, parameters: paramsRemove).responseJSON {
+        Alamofire.request(URLRemoveFavorites, method: .post, parameters: paramsRemove).responseJSON {
             response in
             print(response)
         }
