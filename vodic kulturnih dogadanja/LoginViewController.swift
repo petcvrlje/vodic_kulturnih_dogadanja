@@ -50,7 +50,6 @@ class LoginViewController: UIViewController {
                 if let result = response.result.value as? Dictionary<String, String> {
                     self.defaultValues.set(result["tokenId"]!, forKey: "tokenId")
                     self.defaultValues.set(result["userId"]!, forKey: "userId")
-                    
                 }
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "containerVC")

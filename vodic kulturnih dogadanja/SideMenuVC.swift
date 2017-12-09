@@ -7,9 +7,53 @@
 //
 
 import UIKit
+import Alamofire
 
 class SideMenuVC: UITableViewController {
-
+    
+    
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userNameSurname: UILabel!
+    @IBOutlet weak var userEmail: UILabel!
+    
+    var user_Image : UIImage? = nil
+    var user_Name = ""
+    var user_Surname = ""
+    var user_Email = ""
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let URLProfile = "http://vodickulturnihdogadanja.1e29g6m.xip.io/user.php"
+        
+        let defaults = UserDefaults.standard
+        
+        let userId = Int(defaults.string(forKey: "userId")!)
+        
+        let param = ["userId": userId!] as [String:Any]
+        
+        Alamofire.request(URLProfile, method: .get, parameters: param).responseJSON {
+            response in
+            print(response)
+            
+            if let json = response.result.value as? NSDictionary{
+                self.user_Name = json["name"] as! String
+                self.user_Surname = json["surname"] as! String
+                self.user_Email = json["email"] as! String
+                
+                let imageString = json["picture"] as? String
+                    if let imageData = Data(base64Encoded: imageString!) {
+                        let decodedImage = UIImage(data: imageData)
+                        self.user_Image = decodedImage
+                    }
+                self.userImage.image = self.user_Image
+                self.userNameSurname.text = self.user_Name + " " + self.user_Surname
+                self.userEmail.text = self.user_Email
+                }
+            }
+        //viewWillAppear(true)
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
         

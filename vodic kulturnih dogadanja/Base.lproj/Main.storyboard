@@ -517,6 +517,11 @@
                             <outlet property="delegate" destination="flv-O2-wHd" id="FoH-eO-2Hj"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="userEmail" destination="GZr-W7-cPb" id="9sM-kO-VAc"/>
+                        <outlet property="userImage" destination="Yv3-FZ-gAJ" id="QnX-Od-T0W"/>
+                        <outlet property="userNameSurname" destination="kfH-p1-fT3" id="swz-gq-Dhb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acq-Qq-Prf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
