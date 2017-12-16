@@ -20,6 +20,7 @@
 		52422C9C1FA5FCC00020F583 /* Screenshot_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 52422C9B1FA5FCC00020F583 /* Screenshot_3.png */; };
 		52422CA01FA5FF640020F583 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52422C9F1FA5FF630020F583 /* MainVC.swift */; };
 		526A91891FDA9AC3003993AE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A91881FDA9AC3003993AE /* ProfileViewController.swift */; };
+		52B20DA91FE50D0800E92760 /* Design.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B20DA81FE50D0800E92760 /* Design.png */; };
 		52B5BC031F9E6FC300CF033D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B5BC021F9E6FC300CF033D /* AppDelegate.swift */; };
 		52B5BC051F9E6FC300CF033D /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B5BC041F9E6FC300CF033D /* ContainerVC.swift */; };
 		52B5BC081F9E6FC300CF033D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B5BC061F9E6FC300CF033D /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		52422C9B1FA5FCC00020F583 /* Screenshot_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot_3.png; sourceTree = "<group>"; };
 		52422C9F1FA5FF630020F583 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		526A91881FDA9AC3003993AE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		52B20DA81FE50D0800E92760 /* Design.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Design.png; path = ../../Desktop/Design.png; sourceTree = "<group>"; };
 		52B5BBFF1F9E6FC300CF033D /* vodic kulturnih dogadanja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vodic kulturnih dogadanja.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B5BC021F9E6FC300CF033D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52B5BC041F9E6FC300CF033D /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
@@ -127,7 +129,6 @@
 		52B5BC011F9E6FC300CF033D /* vodic kulturnih dogadanja */ = {
 			isa = PBXGroup;
 			children = (
-				B6A22A8E1FDC7B5E0091853F /* UnregisteredSideMenuTableViewController.swift */,
 				52B5BC161F9E7D6600CF033D /* slike */,
 				52C9197D1FAE6F710062802F /* IBDesignables */,
 				52B5BC091F9E6FC300CF033D /* Assets.xcassets */,
@@ -143,6 +144,7 @@
 				B6792A331FD318CC008D575B /* UnregisteredViewController.swift */,
 				B6792A371FD31A3C008D575B /* UnregisteredEventTableViewCell.swift */,
 				B6A22A8A1FDC76EB0091853F /* UnregisteredEventDetailsViewController.swift */,
+				B6A22A8E1FDC7B5E0091853F /* UnregisteredSideMenuTableViewController.swift */,
 				B6A22A881FDC65FD0091853F /* FavoriteDetailsViewController.swift */,
 				B6A250E21FD87AE800DCD104 /* FavoriteTableViewCell.swift */,
 				B6A250E01FD87ABD00DCD104 /* FavoriteViewController.swift */,
@@ -162,6 +164,7 @@
 				520AB4071FC366B8008CD277 /* menu 11.22.23.png */,
 				52422C9B1FA5FCC00020F583 /* Screenshot_3.png */,
 				52422C931FA5FCB10020F583 /* Screenshot_1.png */,
+				52B20DA81FE50D0800E92760 /* Design.png */,
 				52422C941FA5FCB10020F583 /* Screenshot_2.png */,
 				52C175DA1FDC8D700036F30A /* background.jpg */,
 				52422C951FA5FCB10020F583 /* Screenshot_4.png */,
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52B5BC0D1F9E6FC300CF033D /* LaunchScreen.storyboard in Resources */,
+				52B20DA91FE50D0800E92760 /* Design.png in Resources */,
 				52C175DB1FDC8D710036F30A /* background.jpg in Resources */,
 				52B5BC151F9E7D5600CF033D /* 22768399_1452971704788632_243767547_o.png in Resources */,
 				52422C981FA5FCB10020F583 /* Screenshot_2.png in Resources */,
