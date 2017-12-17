@@ -28,9 +28,13 @@ class LoginViewController: UIViewController {
             return
         }
         
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let deviceId = appDelegate?.tokenId
+        
         let params: Parameters=[
             "username":userNameTextField.text!,
             "password":passwordTextField.text!,
+            "deviceId": deviceId!,
         ]
         
         
