@@ -8,5 +8,7 @@ use_frameworks!
 # Pods for vodic kulturnih dogadanja 
 pod 'Alamofire'
 pod 'SwiftyJSON'
+pod 'Firebase/Core'
+pod 'Firebase/Messaging'
 
 end
