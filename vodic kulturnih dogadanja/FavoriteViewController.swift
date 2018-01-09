@@ -58,7 +58,7 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             }
             self.viewDidLoad()
-            self.viewWillAppear(true)
+            //self.viewWillAppear(true)
         }
         
        

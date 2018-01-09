@@ -11,7 +11,8 @@ import Alamofire
 import SwiftyJSON
 
 class EventDetailsViewController: UIViewController {
-
+    
+    
     
     @IBOutlet weak var eventDetailImage: UIImageView!
     @IBOutlet weak var eventDetailName: UILabel!
@@ -21,13 +22,14 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var eventDetailLink: UIButton!
     
     
-    var eventImage : UIImage? = nil
+    var eventImage: UIImage?
     var eventName = ""
     var eventDescription = ""
     var eventBegin = ""
     var eventEnd = ""
     var eventPrice = ""
     var eventLink = ""
+    
     
     var eventId = ""
     
@@ -36,6 +38,7 @@ class EventDetailsViewController: UIViewController {
     var paramEventId = 0
     var paramUserId = 0
     
+    var arrayEvents = [[String:AnyObject]]()
     var arrayFavorites = [[String:AnyObject]]()
     var checkFavorites = [[String:AnyObject]]()
     
@@ -44,6 +47,7 @@ class EventDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
         eventDetailImage.image = eventImage
         eventDetailName.text = eventName
         eventDetailDescription.text = eventDescription
@@ -56,19 +60,79 @@ class EventDetailsViewController: UIViewController {
         }
         else {
             eventDetailBegin.text = formatDate(eventBegin) + "-" + formatDate(eventEnd)
-        }
+        }*/
         
-        let URLFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favoriteList.php"
+        eventId = TabMainViewController.eventId
         
         let userId = Int(self.defaults.string(forKey: "userId")!)
         
         paramEventId = Int(eventId)!
         paramUserId = userId!
         
-        let param = ["userId": userId!] as [String:Any]
+        let eventParam = ["eventId": paramEventId] as [String:Any]
+        
+        let URLEvent = "http://vodickulturnihdogadanja.1e29g6m.xip.io/event.php"
+        
+        Alamofire.request(URLEvent, method: .get, parameters: eventParam).responseJSON {
+            response in
+            print(response)
+            if let json = response.result.value as? NSDictionary{
+                /*
+                self.profile_Name = json["name"] as! String
+                self.profile_Surname = json["surname"] as! String
+                self.profile_Username = json["username"] as! String
+                self.profile_Email = json["email"] as! String
+                self.profile_Password = json["password"] as! String
+                
+                let imageString = json["picture"] as? String
+                if let imageData = Data(base64Encoded: imageString!) {
+                    let decodedImage = UIImage(data: imageData)
+                    self.profileImage.image = decodedImage
+                }
+                
+                self.profileName.text = self.profile_Name
+                self.profileSurname.text = self.profile_Surname
+                self.profileUsername.text = self.profile_Username
+                self.profileEmail.text = self.profile_Email
+                */
+                let imageString = json["picture"] as? String
+                if let imageData = Data(base64Encoded: imageString!) {
+                    let decodedImage = UIImage(data: imageData)
+                    self.eventImage = decodedImage
+                }
+                
+                self.eventName = json["name"] as! String
+                self.eventDescription = json["description"] as! String
+                self.eventBegin = json["begin"] as! String
+                self.eventEnd = json["end"] as! String
+                self.eventPrice = json["price"] as! String
+                self.eventLink = json["link"] as! String
+                
+                self.eventDetailImage.image = self.eventImage
+                self.eventDetailName.text = self.eventName
+                self.eventDetailDescription.text = self.eventDescription
+                
+                self.eventDetailPrice.text = self.eventPrice + " kn"
+                self.eventDetailLink.setTitle(self.eventLink, for: .normal)
+                
+                if self.formatDate(self.eventEnd) == "" {
+                    self.eventDetailBegin.text = self.formatDate(self.eventBegin)
+                }
+                else {
+                    self.eventDetailBegin.text = self.formatDate(self.eventBegin) + "-" + self.formatDate(self.eventEnd)
+                }
+            }
+            //self.viewDidLoad()
+            //self.viewWillAppear(true)
+        }
+        
+        let URLFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favoriteList.php"
+        
+        let param = ["userId": paramUserId] as [String:Any]
         
         Alamofire.request(URLFavorites, method: .get, parameters: param).responseJSON {
             response in
+            print(response)
             if ((response.result.value) != nil) {
                 let swiftyJsonVar = JSON(response.result.value!)
                 
@@ -78,9 +142,10 @@ class EventDetailsViewController: UIViewController {
                 
             }
             
+            let event = self.eventId
             
             self.checkFavorites = self.arrayFavorites.filter({ (array: [String:AnyObject]) -> Bool in
-            if (array["eventId"]?.contains(self.eventId))! {
+            if (array["eventId"]?.contains(event))! {
                     return true
                 }
                 else {
@@ -88,8 +153,9 @@ class EventDetailsViewController: UIViewController {
                 }
             })
             
+            print(self.checkFavorites.count)
             if self.checkFavorites.count == 1 {
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(self.removeFromFavorites))
+                self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(self.removeFromFavorites))
             }
             else {
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(self.addToFavorites))
@@ -143,7 +209,7 @@ class EventDetailsViewController: UIViewController {
             print(response)
         }
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(self.removeFromFavorites))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(self.removeFromFavorites))
     }
     
     @objc private func removeFromFavorites() {
@@ -164,7 +230,7 @@ class EventDetailsViewController: UIViewController {
             print(response)
         }
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(self.addToFavorites))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(self.addToFavorites))
     }
     
     /*
