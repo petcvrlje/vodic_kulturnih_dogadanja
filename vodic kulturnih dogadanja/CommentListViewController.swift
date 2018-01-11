@@ -55,8 +55,21 @@ class CommentListViewController: UIViewController, UITableViewDelegate, UITableV
         
         var comment = arrayComments[indexPath.row]
         
-        cell?.commentUser.text = comment["userId"] as? String
+        let userId = Int(UserDefaults.standard.string(forKey: "userId")!)
+        let param = ["userId": userId!] as [String:Any]
+        
+        let URLUser = "http://vodickulturnihdogadanja.1e29g6m.xip.io/user.php"
+        
+        Alamofire.request(URLUser, method: .get, parameters: param).responseJSON {
+            response in
+            print(response)
+            if let json = response.result.value as? NSDictionary {
+                cell?.commentUser.text = json["username"] as? String
+            }
+        }
+        
         cell?.commentText.text = comment["text"] as? String
+        cell?.commentTime.text = formatDate((comment["time"] as? String)!)
         
         return cell!
     }
@@ -65,6 +78,25 @@ class CommentListViewController: UIViewController, UITableViewDelegate, UITableV
         let currentDate = Date()
         let since1970 = currentDate.timeIntervalSince1970
         return Int(since1970*1000)
+    }
+    
+    func dateFromMilliseconds(date: Int) -> Date {
+        return Date(timeIntervalSince1970: TimeInterval(date)/1000)
+    }
+    
+    func formatDate(_ someDate: String) -> String {
+        
+        if someDate == "" {
+            return ""
+        }
+        let dateInInt = Int(someDate)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let datum = dateFromMilliseconds(date: dateInInt!)
+        
+        let konacniDatum = dateFormatter.string(from: datum)
+        
+        return konacniDatum
     }
     
     @IBAction func addCommentPressed(_ sender: UIButton) {

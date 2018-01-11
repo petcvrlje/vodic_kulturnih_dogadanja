@@ -12,6 +12,7 @@ class CommentListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var commentUser: UILabel!
     @IBOutlet weak var commentText: UILabel!
+    @IBOutlet weak var commentTime: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
