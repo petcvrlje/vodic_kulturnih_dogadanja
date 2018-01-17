@@ -714,6 +714,9 @@
                             <constraint firstItem="4UF-Bg-h3I" firstAttribute="leading" secondItem="jqo-mj-hJk" secondAttribute="leading" constant="-240" id="xFF-OO-27r"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sideMenuConstraint" destination="xFF-OO-27r" id="OmP-Ea-xdH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIj-mX-C28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
