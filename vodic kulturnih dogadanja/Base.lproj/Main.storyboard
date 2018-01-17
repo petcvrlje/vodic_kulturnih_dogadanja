@@ -1064,6 +1064,24 @@
             </objects>
             <point key="canvasLocation" x="4896.8000000000002" y="909.89505247376314"/>
         </scene>
+        <!--Tab Main View Controller-->
+        <scene sceneID="ufw-tB-Els">
+            <objects>
+                <tabBarController storyboardIdentifier="tabMain" id="S5X-hF-Obp" customClass="TabMainViewController" customModule="vodic_kulturnih_dogadanja" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9Wy-sl-kke">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dpU-KK-HIh" kind="relationship" relationship="viewControllers" id="bWS-rw-b9h"/>
+                        <segue destination="AfQ-Hz-nVV" kind="relationship" relationship="viewControllers" id="ehC-At-LFv"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MpC-wO-Rfm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4663" y="45"/>
+        </scene>
         <!--Favorite Details View Controller-->
         <scene sceneID="Lu7-hg-eyl">
             <objects>
@@ -1452,7 +1470,7 @@
                                             <outlet property="descriptionLabel" destination="OER-8i-4JQ" id="137-w8-T24"/>
                                             <outlet property="eventImageView" destination="MUP-n4-9va" id="hba-Z4-joB"/>
                                             <outlet property="nameLabel" destination="oyg-ps-dHe" id="oow-ae-Nbr"/>
-                                            <segue destination="vB6-kl-qnU" kind="show" identifier="eventDetails" id="I7t-YC-lvK"/>
+                                            <segue destination="S5X-hF-Obp" kind="show" identifier="eventDetails" id="QyU-Q0-tZG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1484,7 +1502,7 @@
         <!--Event Details View Controller-->
         <scene sceneID="iN6-rD-r9W">
             <objects>
-                <viewController id="vB6-kl-qnU" customClass="EventDetailsViewController" customModule="vodic_kulturnih_dogadanja" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventDetails" id="vB6-kl-qnU" customClass="EventDetailsViewController" customModule="vodic_kulturnih_dogadanja" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tqb-za-BJ7"/>
                         <viewControllerLayoutGuide type="bottom" id="Nzf-x7-s6t"/>
@@ -1554,6 +1572,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9ua-Cd-r5R">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="ra1-9r-2bP"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="eventDetailBegin" destination="NPE-BQ-sL0" id="tgF-hb-Fcn"/>
                         <outlet property="eventDetailDescription" destination="GZd-yY-kGg" id="5p3-gA-rQb"/>
@@ -1565,7 +1586,88 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="425-yb-bic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4557.6000000000004" y="124.58770614692655"/>
+            <point key="canvasLocation" x="6871" y="-602"/>
+        </scene>
+        <!--Comment List View Controller-->
+        <scene sceneID="lNK-wx-4ho">
+            <objects>
+                <viewController id="pVA-U9-hgj" customClass="CommentListViewController" customModule="vodic_kulturnih_dogadanja" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MK1-OR-BNL"/>
+                        <viewControllerLayoutGuide type="bottom" id="tOZ-QZ-ZbI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vdM-9l-6lY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZVv-S8-xzQ">
+                                <rect key="frame" x="0.0" y="63" width="375" height="427"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="commentCell" id="hFS-Us-POw" customClass="CommentListTableViewCell" customModule="vodic_kulturnih_dogadanja" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hFS-Us-POw" id="B7v-ag-au0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ale-u2-3ZF">
+                                                    <rect key="frame" x="15" y="11" width="345" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="56U-U9-E0G">
+                                                    <rect key="frame" x="15" y="39" width="345" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="commentText" destination="56U-U9-E0G" id="C3p-kz-xIA"/>
+                                            <outlet property="commentUser" destination="ale-u2-3ZF" id="QIP-ag-wgq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pVA-U9-hgj" id="2VQ-fL-Bt4"/>
+                                    <outlet property="delegate" destination="pVA-U9-hgj" id="npp-cK-4pz"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PjF-ue-cDy">
+                                <rect key="frame" x="0.0" y="498" width="375" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rW9-4e-TtE">
+                                <rect key="frame" x="0.0" y="588" width="375" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add comment">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addCommentPressed:" destination="pVA-U9-hgj" eventType="touchUpInside" id="iQD-um-s4w"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="z8k-hx-apu"/>
+                    <connections>
+                        <outlet property="tableView" destination="ZVv-S8-xzQ" id="uG9-9h-3M6"/>
+                        <outlet property="text" destination="PjF-ue-cDy" id="c3A-c6-nXD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgn-8i-Qcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6869.6000000000004" y="182.15892053973016"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bnr-4q-djY">
@@ -1618,6 +1720,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQ1-Uu-TW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="617.60000000000002" y="969.71514242878573"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="KEl-fn-Zx7">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N4Y-RX-hjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dpU-KK-HIh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Details" id="dKX-qg-Wbo"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D82-O7-uZG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vB6-kl-qnU" kind="relationship" relationship="rootViewController" id="vit-fV-7b5"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="6051.1999999999998" y="-601.79910044977521"/>
+        </scene>
+        <!--Comments-->
+        <scene sceneID="tAb-Hd-taM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AfQ-Hz-nVV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Comments" id="BU8-GR-sB2"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oc2-AX-sGN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pVA-U9-hgj" kind="relationship" relationship="rootViewController" id="8nR-hi-CKs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cpJ-va-6j6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6051.1999999999998" y="183.50824587706148"/>
         </scene>
     </scenes>
     <resources>

@@ -163,8 +163,9 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         }
     }
     
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let eventDetailsViewController = segue.destination as! EventDetailsViewController
+        let eventDetailsViewController = EventDetailsViewController()
         
         if segue.identifier == "eventDetails" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
@@ -172,6 +173,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
                 
                 let eventId = event["eventId"] as! String
                 eventDetailsViewController.eventId = eventId
+                print(eventId)
                 
                 let imageString = event["picture"] as? String
                 if let imageData = Data(base64Encoded: imageString!) {
@@ -192,6 +194,21 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
                 
                 eventDetailsViewController.eventPrice = event["price"] as! String
                 eventDetailsViewController.eventLink = event["link"] as! String
+                
+                //let commentListViewController = CommentListViewController()
+                //commentListViewController.eventId = event["eventId"] as! String
+            }
+        }
+    }*/
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "eventDetails" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let event = arrayOfEvents[indexPath.row]
+                
+                TabMainViewController.eventId = event["eventId"] as! String
             }
         }
     }
