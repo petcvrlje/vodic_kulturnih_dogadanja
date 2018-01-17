@@ -15,13 +15,15 @@ class CommentListViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var text: UITextField!
     
+    @IBOutlet weak var addCommentButton: UIButton!
+    
     var arrayComments = [[String:AnyObject]]()
     var eventId = "0"
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addCommentButton.setTitle(NSLocalizedString("addComment", comment: ""), for: .normal)
 
         let URL = "http://vodickulturnihdogadanja.1e29g6m.xip.io/commentList.php"
         

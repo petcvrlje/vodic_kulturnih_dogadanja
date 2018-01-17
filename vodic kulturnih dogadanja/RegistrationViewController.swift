@@ -19,6 +19,16 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var surnameTextField: UITextField!
     
+    @IBOutlet weak var registrationLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var surnameLabel: UILabel!
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    
+    
     @IBAction func registerButtonClick(_ sender: UIButton) {
         
         if (userNameTextField.text == nil || (userNameTextField.text?.isEmpty)!) || (passwordTextField.text == nil || (passwordTextField.text?.isEmpty)!) || (emailTextField.text == nil || (emailTextField.text?.isEmpty)!) || (nameTextField.text == nil || (nameTextField.text?.isEmpty)!) || (surnameTextField.text == nil || (surnameTextField.text?.isEmpty)!) {
@@ -49,7 +59,20 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        registrationLabel.text = NSLocalizedString("registration", comment: "")
+        usernameLabel.text = NSLocalizedString("username", comment: "")
+        passwordLabel.text = NSLocalizedString("password", comment: "")
+        emailLabel.text = NSLocalizedString("email", comment: "")
+        nameLabel.text = NSLocalizedString("name", comment: "")
+        surnameLabel.text = NSLocalizedString("surname", comment: "")
+        registerButton.setTitle(NSLocalizedString("register", comment: ""), for: .normal)
+        cancelButton.setTitle(NSLocalizedString("cancel", comment: ""), for: .normal)
+        
+        userNameTextField.placeholder = NSLocalizedString("usernamePlaceholder", comment: "")
+        passwordTextField.placeholder = NSLocalizedString("passwordPlaceholder", comment: "")
+        nameTextField.placeholder = NSLocalizedString("namePlaceholder", comment: "")
+        surnameTextField.placeholder = NSLocalizedString("surnamePlaceholder", comment: "")
+        emailTextField.placeholder = NSLocalizedString("emailPlaceholder", comment: "")
     }
 
     override func didReceiveMemoryWarning() {

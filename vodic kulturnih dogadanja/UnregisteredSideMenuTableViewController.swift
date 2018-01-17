@@ -9,6 +9,19 @@
 import UIKit
 
 class UnregisteredSideMenuTableViewController: UITableViewController {
+    
+    @IBOutlet weak var unregisteredHomeLabel: UILabel!
+    @IBOutlet weak var unregisteredSettingsLabel: UILabel!
+    @IBOutlet weak var unregisteredSignUpLabel: UILabel!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        unregisteredHomeLabel.text = NSLocalizedString("menuHome", comment: "")
+        unregisteredSettingsLabel.text = NSLocalizedString("menuSettings", comment: "")
+        unregisteredSignUpLabel.text = NSLocalizedString("unregisteredMenuSignUp", comment: "")
+    }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
@@ -21,9 +34,6 @@ class UnregisteredSideMenuTableViewController: UITableViewController {
             
         }
         else if indexPath.row == 2 {
-            
-        }
-        else if indexPath.row == 3 {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "signUp")
             self.present(vc!, animated: true, completion: nil)
         }

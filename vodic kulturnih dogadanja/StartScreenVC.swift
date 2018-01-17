@@ -9,11 +9,16 @@
 import UIKit
 
 class StartScreenVC: UIViewController {
+    
+    @IBOutlet weak var loginLabel: UIButton!
+    @IBOutlet weak var continueWithoutLoginLabel: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        loginLabel.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
+        continueWithoutLoginLabel.setTitle(NSLocalizedString("continueWithoutLogin", comment: ""), for: .normal)
     }
 
     override func didReceiveMemoryWarning() {

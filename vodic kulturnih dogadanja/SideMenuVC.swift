@@ -16,6 +16,13 @@ class SideMenuVC: UITableViewController {
     @IBOutlet weak var userNameSurname: UILabel!
     @IBOutlet weak var userEmail: UILabel!
     
+    @IBOutlet weak var menuHomeLabel: UILabel!
+    @IBOutlet weak var menuProfileLabel: UILabel!
+    @IBOutlet weak var menuFavoritesLabel: UILabel!
+    @IBOutlet weak var menuSettingsLabel: UILabel!
+    @IBOutlet weak var menuLogoutLabel: UILabel!
+    
+    
     var user_Image : UIImage? = nil
     var user_Name = ""
     var user_Surname = ""
@@ -23,6 +30,12 @@ class SideMenuVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        menuHomeLabel.text = NSLocalizedString("menuHome", comment: "")
+        menuProfileLabel.text = NSLocalizedString("menuProfile", comment: "")
+        menuFavoritesLabel.text = NSLocalizedString("menuFavorites", comment: "")
+        menuSettingsLabel.text = NSLocalizedString("menuSettings", comment: "")
+        menuLogoutLabel.text = NSLocalizedString("menuLogout", comment: "")
         
         let URLProfile = "http://vodickulturnihdogadanja.1e29g6m.xip.io/user.php"
         
@@ -66,17 +79,14 @@ class SideMenuVC: UITableViewController {
             self.present(vc!, animated: true, completion: nil)
         }
         else if indexPath.row == 3 {
-            //let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "containerFavoritesVC")
             self.present(vc!, animated: true, completion: nil)
         }
-        else if indexPath.row == 4 {
-            //settings
+        else if indexPath.row == 4{
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "containerSettingsVC")
+            self.present(vc!, animated: true, completion: nil)
         }
-        else if indexPath.row == 5{
-            
-        }
-        else if indexPath.row == 6 {
+        else if indexPath.row == 5 {
             UserDefaults.standard.set(nil, forKey: "tokenId")
             UserDefaults.standard.set(nil, forKey: "userId")
 

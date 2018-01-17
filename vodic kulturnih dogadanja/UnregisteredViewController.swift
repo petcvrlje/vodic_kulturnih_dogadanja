@@ -30,6 +30,8 @@ class UnregisteredViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = NSLocalizedString("titleAllEvents", comment: "")
+        
         let dateInMiliseconds = currentDateInMiliseconds()
         let URL = "http://vodickulturnihdogadanja.1e29g6m.xip.io/eventList.php"
         

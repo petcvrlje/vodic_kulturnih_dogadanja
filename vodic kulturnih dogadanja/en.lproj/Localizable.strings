@@ -1,0 +1,61 @@
+/* 
+  Localizable.strings
+  vodic kulturnih dogadanja
+
+  Created by Petra Cvrljevic on 16/01/2018.
+  Copyright © 2018 foi. All rights reserved.
+*/
+
+//meni
+"menuHome" = "Home";
+"menuSettings" = "Settings";
+"unregisteredMenuSignUp" = "Sign up";
+
+"menuProfile" = "Profile";
+"menuFavorites" = "Favorites";
+"menuLogout" = "Log out";
+
+//naslovi
+"titleAllEvents" = "List of events";
+"titleProfile" = "Profile";
+
+//eventdetails
+"date" = "Date: ";
+"price" = "Price: ";
+
+//firstscreen
+"login" = "Login";
+"continueWithoutLogin" = "Continue without login";
+
+//login screen
+"username" = "Username";
+"password" = "Password";
+"register" = "Register";
+"cancel" = "Cancel";
+
+//registration
+"registration" = "Registration";
+"email" = "E-mail";
+"name" = "Name";
+"surname" = "Surname";
+
+"edit" = "Edit";
+"save" = "Save";
+
+//tabovi
+"tabDetails" = "Details";
+"tabComments" = "Comments";
+
+"addComment" = "Add comment";
+
+"searchBar" = "search";
+
+//placeholderi
+"usernamePlaceholder" = "username";
+"passwordPlaceholder" = "password";
+"namePlaceholder" = "name";
+"surnamePlaceholder" = "surname";
+"emailPlaceholder" = "email";
+
+"notifications" = "Notifications";
+"language" = "Language";

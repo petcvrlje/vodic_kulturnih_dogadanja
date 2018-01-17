@@ -12,8 +12,6 @@ import SwiftyJSON
 
 class EventDetailsViewController: UIViewController {
     
-    
-    
     @IBOutlet weak var eventDetailImage: UIImageView!
     @IBOutlet weak var eventDetailName: UILabel!
     @IBOutlet weak var eventDetailDescription: UILabel!
@@ -21,7 +19,9 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var eventDetailPrice: UILabel!
     @IBOutlet weak var eventDetailLink: UIButton!
     
-    
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+
     var eventImage: UIImage?
     var eventName = ""
     var eventDescription = ""
@@ -47,20 +47,10 @@ class EventDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*
-        eventDetailImage.image = eventImage
-        eventDetailName.text = eventName
-        eventDetailDescription.text = eventDescription
-        
-        eventDetailPrice.text = eventPrice + " kn"
-        eventDetailLink.setTitle(eventLink, for: .normal)
-        
-        if formatDate(eventEnd) == "" {
-            eventDetailBegin.text = formatDate(eventBegin)
-        }
-        else {
-            eventDetailBegin.text = formatDate(eventBegin) + "-" + formatDate(eventEnd)
-        }*/
+        dateLabel.text = NSLocalizedString("date", comment: "")
+        priceLabel.text = NSLocalizedString("price", comment: "")
+        self.tabBarController?.tabBar.items![0].title = NSLocalizedString("tabDetails", comment: "")
+        self.tabBarController?.tabBar.items![1].title = NSLocalizedString("tabComments", comment: "")
         
         eventId = TabMainViewController.eventId
         
@@ -77,24 +67,6 @@ class EventDetailsViewController: UIViewController {
             response in
             print(response)
             if let json = response.result.value as? NSDictionary{
-                /*
-                self.profile_Name = json["name"] as! String
-                self.profile_Surname = json["surname"] as! String
-                self.profile_Username = json["username"] as! String
-                self.profile_Email = json["email"] as! String
-                self.profile_Password = json["password"] as! String
-                
-                let imageString = json["picture"] as? String
-                if let imageData = Data(base64Encoded: imageString!) {
-                    let decodedImage = UIImage(data: imageData)
-                    self.profileImage.image = decodedImage
-                }
-                
-                self.profileName.text = self.profile_Name
-                self.profileSurname.text = self.profile_Surname
-                self.profileUsername.text = self.profile_Username
-                self.profileEmail.text = self.profile_Email
-                */
                 let imageString = json["picture"] as? String
                 if let imageData = Data(base64Encoded: imageString!) {
                     let decodedImage = UIImage(data: imageData)
@@ -155,10 +127,14 @@ class EventDetailsViewController: UIViewController {
             
             print(self.checkFavorites.count)
             if self.checkFavorites.count == 1 {
-                self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(self.removeFromFavorites))
+                let removeFavoriteButton = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(self.removeFromFavorites))
+                let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
+                self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, removeFavoriteButton]
             }
             else {
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(self.addToFavorites))
+                let addFavoriteButton = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(self.addToFavorites))
+                let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
+                self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, addFavoriteButton]
             }
         }
     }
@@ -209,7 +185,9 @@ class EventDetailsViewController: UIViewController {
             print(response)
         }
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(self.removeFromFavorites))
+        let removeFavoriteButton = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(self.removeFromFavorites))
+        let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
+        self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, removeFavoriteButton]
     }
     
     @objc private func removeFromFavorites() {
@@ -230,8 +208,27 @@ class EventDetailsViewController: UIViewController {
             print(response)
         }
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(self.addToFavorites))
+        let addFavoriteButton = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(self.addToFavorites))
+        let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
+        self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, addFavoriteButton]
     }
+    
+    @objc private func shareEvent() {
+        let actionSheetController = UIAlertController(title: "Choose where to share.", message: nil, preferredStyle: .actionSheet)
+        let facebookAction = UIAlertAction(title: "Facebook", style: .default) { (action) in
+            //to do facebook share
+        }
+        let twitterAction = UIAlertAction(title: "Twitter", style: .default) { (action) in
+            //twitter share
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        actionSheetController.addAction(facebookAction)
+        actionSheetController.addAction(twitterAction)
+        actionSheetController.addAction(cancelAction)
+        present(actionSheetController, animated: true, completion: nil)
+    }
+    
     
     /*
     // MARK: - Navigation

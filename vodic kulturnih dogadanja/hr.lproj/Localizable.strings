@@ -1,0 +1,53 @@
+/* 
+  Localizable.strings
+  vodic kulturnih dogadanja
+
+  Created by Petra Cvrljevic on 16/01/2018.
+  Copyright © 2018 foi. All rights reserved.
+*/
+
+"menuHome" = "Početna";
+"menuSettings" = "Postavke";
+"unregisteredMenuSignUp" = "Registracija";
+
+"menuProfile" = "Profil";
+"menuFavorites" = "Favoriti";
+"menuLogout" = "Odjava";
+
+"titleAllEvents" = "Popis događaja";
+"titleProfile" = "Profil";
+
+"date" = "Datum: ";
+"price" = "Cijena: ";
+
+"login" = "Prijava";
+"continueWithoutLogin" = "Nastavi bez prijave";
+
+"username" = "Korisničko ime";
+"password" = "Lozinka";
+"register" = "Registracija";
+"cancel" = "Odustani";
+
+"registration" = "Registracija";
+"email" = "E-mail";
+"name" = "Ime";
+"surname" = "Prezime";
+
+"edit" = "Izmijeni";
+"save" = "Spremi";
+
+"tabDetails" = "Detalji";
+"tabComments" = "Komentari";
+
+"addComment" = "Dodaj komentar";
+
+"searchBar" = "pretraži";
+
+"usernamePlaceholder" = "korisničko ime";
+"passwordPlaceholder" = "lozinka";
+"namePlaceholder" = "ime";
+"surnamePlaceholder" = "prezime";
+"emailPlaceholder" = "email";
+
+"notifications" = "Obavijesti";
+"language" = "Jezik";

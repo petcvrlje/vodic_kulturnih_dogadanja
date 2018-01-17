@@ -18,6 +18,10 @@ class FavoriteDetailsViewController: UIViewController {
     @IBOutlet weak var favoriteDetailPrice: UILabel!
     @IBOutlet weak var favoriteDetailLink: UIButton!
     
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    
     var favoriteImage : UIImage? = nil
     var favoriteName = ""
     var favoriteDescription = ""
@@ -60,6 +64,9 @@ class FavoriteDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dateLabel.text = NSLocalizedString("date", comment: "")
+        priceLabel.text = NSLocalizedString("price", comment: "")
 
         favoriteDetailImage.image = favoriteImage
         favoriteDetailName.text = favoriteName

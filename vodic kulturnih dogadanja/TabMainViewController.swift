@@ -14,8 +14,7 @@ class TabMainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(TabMainViewController.eventId)
+        
     }
 
     override func didReceiveMemoryWarning() {
