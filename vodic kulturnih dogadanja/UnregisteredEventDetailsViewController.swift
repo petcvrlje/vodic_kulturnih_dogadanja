@@ -18,6 +18,9 @@ class UnregisteredEventDetailsViewController: UIViewController {
     @IBOutlet weak var unregisteredEventPrice: UILabel!
     @IBOutlet weak var unregisteredEventLink: UIButton!
     
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
     var eventImage : UIImage? = nil
     var eventName = ""
     var eventDescription = ""
@@ -54,6 +57,9 @@ class UnregisteredEventDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dateLabel.text = NSLocalizedString("date", comment: "")
+        priceLabel.text = NSLocalizedString("price", comment: "")
 
         unregisteredEventImage.image = eventImage
         unregisteredEventName.text = eventName

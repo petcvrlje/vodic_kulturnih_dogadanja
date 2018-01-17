@@ -29,7 +29,7 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        navigationItem.title = NSLocalizedString("menuFavorites", comment: "")
 
         let URLFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favoriteList.php"
         

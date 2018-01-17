@@ -15,6 +15,12 @@ class LoginViewController: UIViewController {
     
     let defaultValues = UserDefaults.standard
     
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
+    
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -67,7 +73,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        usernameLabel.text = NSLocalizedString("username", comment: "")
+        passwordLabel.text = NSLocalizedString("password", comment: "")
+        loginButton.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
+        registerButton.setTitle(NSLocalizedString("register", comment: ""), for: .normal)
+        cancelButton.setTitle(NSLocalizedString("cancel", comment: ""), for: .normal)
+        
+        userNameTextField.placeholder = NSLocalizedString("usernamePlaceholder", comment: "")
+        passwordTextField.placeholder = NSLocalizedString("passwordPlaceholder", comment: "")
     }
 
     override func didReceiveMemoryWarning() {

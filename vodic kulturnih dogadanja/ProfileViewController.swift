@@ -18,13 +18,18 @@ class ProfileViewController: UIViewController{
         
     }
     
-
     @IBOutlet weak var profileImageButton: UIButton!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileSurname: UITextField!
     @IBOutlet weak var profileName: UITextField!
     @IBOutlet weak var profileUsername: UITextField!
     @IBOutlet weak var profileEmail: UITextField!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var surnameLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var editButton: UIButton!
     
     
     
@@ -40,6 +45,14 @@ class ProfileViewController: UIViewController{
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        nameLabel.text = NSLocalizedString("name", comment: "")
+        surnameLabel.text = NSLocalizedString("surname", comment: "")
+        usernameLabel.text = NSLocalizedString("username", comment: "")
+        emailLabel.text = NSLocalizedString("email", comment: "")
+        editButton.setTitle(NSLocalizedString("edit", comment: ""), for: .normal)
+        
+        navigationItem.title = NSLocalizedString("titleProfile", comment: "")
         
         let URLProfile = "http://vodickulturnihdogadanja.1e29g6m.xip.io/user.php"
         

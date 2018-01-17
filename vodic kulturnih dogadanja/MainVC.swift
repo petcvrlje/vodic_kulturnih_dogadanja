@@ -35,8 +35,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = NSLocalizedString("menuHome", comment: "")
+        
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
+        searchBar.placeholder = NSLocalizedString("searchBar", comment: "")
         
         let dateInMiliseconds = currentDateInMiliseconds()
         let URL = "http://vodickulturnihdogadanja.1e29g6m.xip.io/eventList.php"

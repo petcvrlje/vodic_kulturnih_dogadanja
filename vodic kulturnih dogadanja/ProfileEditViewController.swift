@@ -22,6 +22,12 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var profilePassword: UITextField!
     @IBOutlet weak var profilePasswordNew: UITextField!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var surnameLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
+    
     var user = NSDictionary()
     var profile_Image = ""
     var profile_Email = ""
@@ -36,6 +42,12 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nameLabel.text = NSLocalizedString("name", comment: "")
+        surnameLabel.text = NSLocalizedString("surname", comment: "")
+        usernameLabel.text = NSLocalizedString("username", comment: "")
+        passwordLabel.text = NSLocalizedString("password", comment: "")
+        saveButton.setTitle(NSLocalizedString("save", comment: ""), for: .normal)
 
         imagePicker.delegate = self
         

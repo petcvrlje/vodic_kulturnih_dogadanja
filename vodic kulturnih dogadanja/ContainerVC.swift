@@ -31,8 +31,6 @@ class ContainerVC: UIViewController {
         }else{
             sideMenuOpen = true
             sideMenuConstraint.constant = 0
-            
-  
         }
 
     }
