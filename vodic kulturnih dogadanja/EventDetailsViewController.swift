@@ -12,6 +12,9 @@ import SwiftyJSON
 
 class EventDetailsViewController: UIViewController {
     
+    
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var dislikeButton: UIButton!
     @IBOutlet weak var eventDetailImage: UIImageView!
     @IBOutlet weak var eventDetailName: UILabel!
     @IBOutlet weak var eventDetailDescription: UILabel!
@@ -227,6 +230,45 @@ class EventDetailsViewController: UIViewController {
         actionSheetController.addAction(twitterAction)
         actionSheetController.addAction(cancelAction)
         present(actionSheetController, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func dislikeEvent(_ sender: UIButton) {
+        let URLUpdate = "http://vodickulturnihdogadanja.1e29g6m.xip.io/evaluation.php"
+        
+        let dislike = 0
+        
+        let paramsDislike: Parameters=[
+            "eventId":paramEventId,
+            "userId":paramUserId,
+            "mark": dislike
+        ]
+        
+        Alamofire.request(URLUpdate, method: .post, parameters: paramsDislike, encoding: JSONEncoding.default).responseString {
+            (response) in
+            print(response)
+            
+        }
+    }
+    
+    @IBAction func likeEvent(_ sender: UIButton) {
+    
+        let URLUpdate = "http://vodickulturnihdogadanja.1e29g6m.xip.io/evaluation.php"
+        
+        let like = 1
+        
+        let paramsLike: Parameters=[
+            "eventId":paramEventId,
+            "userId":paramUserId,
+            "mark": like
+        ]
+        
+        Alamofire.request(URLUpdate, method: .post, parameters: paramsLike, encoding: JSONEncoding.default).responseString {
+            (response) in
+            print(response)
+            
+        }
+    
     }
     
     

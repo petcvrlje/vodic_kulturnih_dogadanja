@@ -29,6 +29,9 @@
 		52C175DB1FDC8D710036F30A /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52C175DA1FDC8D700036F30A /* background.jpg */; };
 		52C525301FA7C4E100F43004 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5252F1FA7C4E100F43004 /* RegistrationViewController.swift */; };
 		52C9197F1FAE6FCE0062802F /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9197E1FAE6FCE0062802F /* DesignableView.swift */; };
+		52E6C0672011122600F22C0F /* Design.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E6C0662011122400F22C0F /* Design.png */; };
+		52E6C06A2011123400F22C0F /* icons8-unlike-filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E6C0682011123300F22C0F /* icons8-unlike-filled-50.png */; };
+		52E6C06B2011123400F22C0F /* icons8-good-quality-filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E6C0692011123400F22C0F /* icons8-good-quality-filled-50.png */; };
 		76E45E39A27D7986A1427BC2 /* Pods_vodic_kulturnih_dogadanja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEBA9047EE8F6A6F2399E79 /* Pods_vodic_kulturnih_dogadanja.framework */; };
 		B65BFA051FD3555A00D940A1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65BFA061FD3555A00D940A1 /* SwiftyJSON.framework */; };
 		B6792A341FD318CC008D575B /* UnregisteredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6792A331FD318CC008D575B /* UnregisteredViewController.swift */; };
@@ -76,6 +79,9 @@
 		52C175DA1FDC8D700036F30A /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		52C5252F1FA7C4E100F43004 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		52C9197E1FAE6FCE0062802F /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		52E6C0662011122400F22C0F /* Design.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Design.png; path = ../../Desktop/Design.png; sourceTree = "<group>"; };
+		52E6C0682011123300F22C0F /* icons8-unlike-filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-unlike-filled-50.png"; sourceTree = "<group>"; };
+		52E6C0692011123400F22C0F /* icons8-good-quality-filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-good-quality-filled-50.png"; sourceTree = "<group>"; };
 		5CC863FF6270E289B9A17493 /* Pods-vodic kulturnih dogadanja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vodic kulturnih dogadanja.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vodic kulturnih dogadanja/Pods-vodic kulturnih dogadanja.debug.xcconfig"; sourceTree = "<group>"; };
 		6261060265CDF6359B879B70 /* Pods-vodic kulturnih dogadanja.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vodic kulturnih dogadanja.release.xcconfig"; path = "Pods/Target Support Files/Pods-vodic kulturnih dogadanja/Pods-vodic kulturnih dogadanja.release.xcconfig"; sourceTree = "<group>"; };
 		ACEBA9047EE8F6A6F2399E79 /* Pods_vodic_kulturnih_dogadanja.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vodic_kulturnih_dogadanja.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,8 +192,11 @@
 				5206029F1FC48E8C00A05850 /* 23799000_1479281325491003_2047333813_o.jpg */,
 				520AB4071FC366B8008CD277 /* menu 11.22.23.png */,
 				52422C9B1FA5FCC00020F583 /* Screenshot_3.png */,
+				52E6C0692011123400F22C0F /* icons8-good-quality-filled-50.png */,
+				52E6C0682011123300F22C0F /* icons8-unlike-filled-50.png */,
 				52422C931FA5FCB10020F583 /* Screenshot_1.png */,
 				52422C941FA5FCB10020F583 /* Screenshot_2.png */,
+				52E6C0662011122400F22C0F /* Design.png */,
 				52C175DA1FDC8D700036F30A /* background.jpg */,
 				52422C951FA5FCB10020F583 /* Screenshot_4.png */,
 				522949751FDC5F9D00769A90 /* blank-profile-picture-973460_640.png */,
@@ -294,12 +303,15 @@
 				52C175DB1FDC8D710036F30A /* background.jpg in Resources */,
 				52B5BC151F9E7D5600CF033D /* 22768399_1452971704788632_243767547_o.png in Resources */,
 				52422C981FA5FCB10020F583 /* Screenshot_2.png in Resources */,
+				52E6C06B2011123400F22C0F /* icons8-good-quality-filled-50.png in Resources */,
+				52E6C06A2011123400F22C0F /* icons8-unlike-filled-50.png in Resources */,
 				52422C991FA5FCB10020F583 /* Screenshot_4.png in Resources */,
 				52B5BC0A1F9E6FC300CF033D /* Assets.xcassets in Resources */,
 				52422C9C1FA5FCC00020F583 /* Screenshot_3.png in Resources */,
 				520AB4081FC366B8008CD277 /* menu 11.22.23.png in Resources */,
 				52422C9A1FA5FCB10020F583 /* Screenshot_5.png in Resources */,
 				520602A01FC48E8D00A05850 /* 23799000_1479281325491003_2047333813_o.jpg in Resources */,
+				52E6C0672011122600F22C0F /* Design.png in Resources */,
 				522949761FDC5F9E00769A90 /* blank-profile-picture-973460_640.png in Resources */,
 				52422C971FA5FCB10020F583 /* Screenshot_1.png in Resources */,
 				B6C4B5F81FF69BC800CBED58 /* favorites-remove-icon.jpg in Resources */,

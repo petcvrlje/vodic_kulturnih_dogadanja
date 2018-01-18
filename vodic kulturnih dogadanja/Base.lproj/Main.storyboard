@@ -1577,7 +1577,10 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEh-x6-VZW">
                                 <rect key="frame" x="16" y="237" width="343" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" header="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1604,7 +1607,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41e-Gd-Gbd">
-                                <rect key="frame" x="16" y="556" width="75" height="21"/>
+                                <rect key="frame" x="16" y="519" width="75" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1617,8 +1620,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bui-ab-LBE">
+                                <rect key="frame" x="218" y="556" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="dislikeButton"/>
+                                <state key="normal" image="icons8-unlike-filled-50.png"/>
+                                <connections>
+                                    <action selector="dislikeEvent:" destination="vB6-kl-qnU" eventType="touchUpInside" id="8Wu-lL-oS8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5N9-kI-sRq">
+                                <rect key="frame" x="309" y="556" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="likeButton"/>
+                                <state key="normal" image="icons8-good-quality-filled-50.png"/>
+                                <connections>
+                                    <action selector="likeEvent:" destination="vB6-kl-qnU" eventType="touchUpInside" id="ynf-SN-QUF"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfx-Wb-7j0">
-                                <rect key="frame" x="79" y="556" width="217" height="21"/>
+                                <rect key="frame" x="79" y="518" width="217" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1632,12 +1653,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="KIN-Mu-JMR" id="cSs-TZ-l0q"/>
+                        <outlet property="dislikeButton" destination="bui-ab-LBE" id="BNE-mk-pzl"/>
                         <outlet property="eventDetailBegin" destination="NPE-BQ-sL0" id="tgF-hb-Fcn"/>
                         <outlet property="eventDetailDescription" destination="GZd-yY-kGg" id="5p3-gA-rQb"/>
                         <outlet property="eventDetailImage" destination="Eq3-aJ-HNQ" id="S7a-1a-5dh"/>
                         <outlet property="eventDetailLink" destination="Kqz-Cz-AO5" id="koJ-Va-jNB"/>
                         <outlet property="eventDetailName" destination="WEh-x6-VZW" id="CBC-ed-vlN"/>
                         <outlet property="eventDetailPrice" destination="vfx-Wb-7j0" id="wNN-cz-PEn"/>
+                        <outlet property="likeButton" destination="5N9-kI-sRq" id="taN-pd-kdl"/>
                         <outlet property="priceLabel" destination="41e-Gd-Gbd" id="fEt-nu-jak"/>
                     </connections>
                 </viewController>
@@ -1916,6 +1939,8 @@
         <image name="Design.png" width="600" height="300"/>
         <image name="Screenshot_1.png" width="981" height="575"/>
         <image name="blank-profile-picture-973460_640.png" width="640" height="640"/>
+        <image name="icons8-good-quality-filled-50.png" width="50" height="50"/>
+        <image name="icons8-unlike-filled-50.png" width="50" height="50"/>
         <image name="menu 11.22.23.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
