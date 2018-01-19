@@ -21,9 +21,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
     @IBOutlet weak var searchBar: UISearchBar!
     
     
-    var arrayOfEvents = [[String:AnyObject]]()
-    var filteredEvents = [[String:AnyObject]]()
-    
+    var activeEvents = [[String:AnyObject]]()
+    var allEvents = [[String:AnyObject]]()
+    var filteredActiveEvents = [[String:AnyObject]]()
+    var filteredAllEvents = [[String:AnyObject]]()
+
     var inSearchMode = false
     
     func currentDateInMiliseconds() -> Int {
@@ -37,9 +39,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         
         navigationItem.title = NSLocalizedString("menuHome", comment: "")
         
-        searchBar.delegate = self
-        searchBar.returnKeyType = UIReturnKeyType.done
-        searchBar.placeholder = NSLocalizedString("searchBar", comment: "")
+        setupSearchBar()
         
         let dateInMiliseconds = currentDateInMiliseconds()
         let URL = "http://vodickulturnihdogadanja.1e29g6m.xip.io/eventList.php"
@@ -53,9 +53,26 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
                 //print(swiftyJsonVar)
                 
                 if let resData = swiftyJsonVar[].arrayObject {
-                    self.arrayOfEvents = resData as! [[String:AnyObject]]
+                    self.activeEvents = resData as! [[String:AnyObject]]
+                    self.filteredActiveEvents = self.activeEvents
                 }
-                if self.arrayOfEvents.count > 0 {
+                if self.activeEvents.count > 0 {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        
+        let URLAllEvents = "http://vodickulturnihdogadanja.1e29g6m.xip.io/eventListAll.php"
+        
+        Alamofire.request(URLAllEvents).responseJSON {
+            response in
+            if ((response.result.value) != nil) {
+                let swiftyJSONVar = JSON(response.result.value!)
+                if let resData = swiftyJSONVar[].arrayObject {
+                    self.allEvents = resData as! [[String:AnyObject]]
+                    self.filteredAllEvents = self.allEvents
+                }
+                if self.allEvents.count > 0 {
                     self.tableView.reloadData()
                 }
             }
@@ -67,59 +84,127 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if inSearchMode {
-            return filteredEvents.count
+
+        var returnValue = 1
+        
+        if (searchBar.text?.isEmpty)! {
+            switch searchBar.selectedScopeButtonIndex {
+            case 0: returnValue = activeEvents.count
+            case 1: returnValue = allEvents.count
+            default: print("Error")
+            }
         }
-        return arrayOfEvents.count
+        else {
+            switch searchBar.selectedScopeButtonIndex {
+            case 0: returnValue = filteredActiveEvents.count
+            case 1: returnValue = filteredAllEvents.count
+            default: print("Error")
+            }
+        }
+        
+        print("Return value: \(returnValue)")
+        return returnValue
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainEventsCell")! as? RegisteredEventTableViewCell
         
-        
-        if inSearchMode {
-            var filtered = filteredEvents[indexPath.row]
+        if (searchBar.text?.isEmpty)! {
             
-            let imageString = filtered["picture"] as? String
-            if let imageData = Data(base64Encoded: imageString!) {
-                let decodedImage = UIImage(data: imageData)
-                cell?.eventImageView.image = decodedImage
-            }
-            
-            cell?.nameLabel.text = filtered["name"] as? String
-            cell?.descriptionLabel.text = filtered["description"] as? String
-            
-            let begin = formatDate(filtered["begin"] as! String)
-            let end = filtered["end"] as! String
-            
-            if end == "0" {
-                cell?.beginLabel.text = begin
-            }
-            else {
-                cell?.beginLabel.text = begin + " - " + end
+            switch searchBar.selectedScopeButtonIndex {
+            case 0:
+                var events = activeEvents[indexPath.row]
+                
+                let imageString = events["picture"] as? String
+                if let imageData = Data(base64Encoded: imageString!) {
+                    let decodedImage = UIImage(data: imageData)
+                    cell?.eventImageView.image = decodedImage
+                }
+                
+                cell?.nameLabel.text = events["name"] as? String
+                cell?.descriptionLabel.text = events["description"] as? String
+                
+                let begin = formatDate(events["begin"] as! String)
+                let end = formatDate(events["end"] as! String)
+                
+                if end == "0" {
+                    cell?.beginLabel.text = begin
+                }
+                else {
+                    cell?.beginLabel.text = begin + " - " + end
+                }
+            case 1:
+                var eventsAll = allEvents[indexPath.row]
+                
+                let imageString = eventsAll["picture"] as? String
+                if let imageData = Data(base64Encoded: imageString!) {
+                    let decodedImage = UIImage(data: imageData)
+                    cell?.eventImageView.image = decodedImage
+                }
+                
+                cell?.nameLabel.text = eventsAll["name"] as? String
+                cell?.descriptionLabel.text = eventsAll["description"] as? String
+                
+                let begin = formatDate(eventsAll["begin"] as! String)
+                let end = formatDate(eventsAll["end"] as! String)
+                
+                if end == "0" {
+                    cell?.beginLabel.text = begin
+                }
+                else {
+                    cell?.beginLabel.text = begin + " - " + end
+                }
+            default:
+                print("Error")
             }
         }
         else {
-            var dict = arrayOfEvents[indexPath.row]
-            
-            let imageString = dict["picture"] as? String
-            if let imageData = Data(base64Encoded: imageString!) {
-                let decodedImage = UIImage(data: imageData)
-                cell?.eventImageView.image = decodedImage
-            }
-            
-            cell?.nameLabel.text = dict["name"] as? String
-            cell?.descriptionLabel.text = dict["description"] as? String
-            
-            
-            let begin = formatDate(dict["begin"] as! String)
-            let end = dict["end"] as! String
-            
-            if end == "0" {
-                cell?.beginLabel.text = begin
-            }
-            else {
-                cell?.beginLabel.text = begin + " - " + end
+            switch searchBar.selectedScopeButtonIndex {
+            case 0:
+                var filtered = filteredActiveEvents[indexPath.row]
+                
+                let imageString = filtered["picture"] as? String
+                if let imageData = Data(base64Encoded: imageString!) {
+                    let decodedImage = UIImage(data: imageData)
+                    cell?.eventImageView.image = decodedImage
+                }
+                
+                cell?.nameLabel.text = filtered["name"] as? String
+                cell?.descriptionLabel.text = filtered["description"] as? String
+                
+                let begin = formatDate(filtered["begin"] as! String)
+                let end = formatDate(filtered["end"] as! String)
+                
+                if end == "0" {
+                    cell?.beginLabel.text = begin
+                }
+                else {
+                    cell?.beginLabel.text = begin + " - " + end
+                }
+            case 1:
+                var dict = filteredAllEvents[indexPath.row]
+                
+                let imageString = dict["picture"] as? String
+                if let imageData = Data(base64Encoded: imageString!) {
+                    let decodedImage = UIImage(data: imageData)
+                    cell?.eventImageView.image = decodedImage
+                }
+                
+                cell?.nameLabel.text = dict["name"] as? String
+                cell?.descriptionLabel.text = dict["description"] as? String
+                
+                
+                let begin = formatDate(dict["begin"] as! String)
+                let end = formatDate(dict["end"] as! String)
+                
+                if end == "0" {
+                    cell?.beginLabel.text = begin
+                }
+                else {
+                    cell?.beginLabel.text = begin + " - " + end
+                }
+            default:
+                print("Error")
             }
         }
         
@@ -146,70 +231,82 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
     }
  
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text == nil || searchBar.text == "" {
+        
+        if (searchText.isEmpty) {
             inSearchMode = false
             view.endEditing(true)
+            filteredActiveEvents = activeEvents
+            filteredAllEvents = allEvents
             tableView.reloadData()
         }
         else {
             inSearchMode = true
-            //filteredEvents = arrayOfEvents.filter({$0["name"] as? String == searchBar.text})
-            filteredEvents = arrayOfEvents.filter({ (array: [String:AnyObject]) -> Bool in
-                if (array["name"]?.contains(searchBar.text!))! {
-                    return true
-                }
-                else {
-                    return false
-                }
-            })
-            tableView.reloadData()
+            filterTableView(index: searchBar.selectedScopeButtonIndex, text: searchText)
         }
     }
     
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let eventDetailsViewController = EventDetailsViewController()
-        
-        if segue.identifier == "eventDetails" {
-            if let indexPath = self.tableView.indexPathForSelectedRow {
-                let event = arrayOfEvents[indexPath.row]
-                
-                let eventId = event["eventId"] as! String
-                eventDetailsViewController.eventId = eventId
-                print(eventId)
-                
-                let imageString = event["picture"] as? String
-                if let imageData = Data(base64Encoded: imageString!) {
-                    let decodedImage = UIImage(data: imageData)
-                    eventDetailsViewController.eventImage = decodedImage
-                }
-                
-                if (event["end"] as! String)  == "0" {
-                    eventDetailsViewController.eventEnd = ""
-                }
-                else {
-                    eventDetailsViewController.eventEnd = event["end"] as! String
-                }
-                
-                eventDetailsViewController.eventName = event["name"] as! String
-                eventDetailsViewController.eventDescription = event["description"] as! String
-                eventDetailsViewController.eventBegin = event["begin"] as! String
-                
-                eventDetailsViewController.eventPrice = event["price"] as! String
-                eventDetailsViewController.eventLink = event["link"] as! String
-                
-                //let commentListViewController = CommentListViewController()
-                //commentListViewController.eventId = event["eventId"] as! String
-            }
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        if (searchBar.text?.isEmpty)! {
+            inSearchMode = false
+            view.endEditing(true)
+            filteredActiveEvents = activeEvents
+            filteredAllEvents = allEvents
+            tableView.reloadData()
         }
-    }*/
+        else {
+            inSearchMode = true
+            filterTableView(index: selectedScope, text: searchBar.text!)
+        }
+        
+    }
     
+    func setupSearchBar() {
+        searchBar.showsScopeBar = true
+        searchBar.scopeButtonTitles = ["Active events", "All events"]
+        searchBar.selectedScopeButtonIndex = 0
+        searchBar.delegate = self
+        searchBar.returnKeyType = UIReturnKeyType.done
+        searchBar.placeholder = NSLocalizedString("searchBar", comment: "")
+    }
+    
+    func filterTableView(index: Int, text: String) {
+        switch searchBar.selectedScopeButtonIndex {
+        case 0:
+            filteredActiveEvents = activeEvents.filter({ (array: [String:AnyObject]) -> Bool in
+                return (array["name"]?.lowercased.contains(text.lowercased()))!
+            })
+            self.tableView.reloadData()
+        case 1:
+            filteredAllEvents = allEvents.filter({ (array: [String:AnyObject]) -> Bool in
+                return (array["name"]?.lowercased.contains(text.lowercased()))!
+            })
+            self.tableView.reloadData()
+        default:
+            print("Error")
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "eventDetails" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let event = arrayOfEvents[indexPath.row]
+                
+                var event = activeEvents[indexPath.row]
+                
+                if (searchBar.text?.isEmpty)! {
+                    switch searchBar.selectedScopeButtonIndex {
+                    case 0: event = activeEvents[indexPath.row]
+                    case 1: event = activeEvents[indexPath.row]
+                    default: print("Error")
+                    }
+                }
+                else {
+                    switch searchBar.selectedScopeButtonIndex {
+                    case 0: event = filteredActiveEvents[indexPath.row]
+                    case 1: event = filteredAllEvents[indexPath.row]
+                    default: print("Error")
+                    }
+                }
                 
                 TabMainViewController.eventId = event["eventId"] as! String
             }
