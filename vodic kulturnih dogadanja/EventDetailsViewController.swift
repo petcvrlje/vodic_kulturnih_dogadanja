@@ -94,7 +94,7 @@ class EventDetailsViewController: UIViewController {
                     self.eventDetailBegin.text = self.formatDate(self.eventBegin)
                 }
                 else {
-                    self.eventDetailBegin.text = self.formatDate(self.eventBegin) + "-" + self.formatDate(self.eventEnd)
+                    self.eventDetailBegin.text = self.formatDate(self.eventBegin) + "h  -  " + self.formatDate(self.eventEnd) + "h"
                 }
             }
             //self.viewDidLoad()
@@ -163,7 +163,7 @@ class EventDetailsViewController: UIViewController {
         }
         let dateInInt = Int(someDate)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "dd.MM.YYYY. HH:mm"
         let datum = dateFromMilliseconds(date: dateInInt!)
         
         let konacniDatum = dateFormatter.string(from: datum)

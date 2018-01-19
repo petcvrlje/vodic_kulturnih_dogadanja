@@ -54,7 +54,7 @@ class FavoriteDetailsViewController: UIViewController {
         
         let dateInInt = Int(someDate)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "dd.MM.YYYY. HH:mm"
         let date = dateFromMilliseconds(date: dateInInt!)
         
         let finalDate = dateFormatter.string(from: date)
@@ -75,10 +75,10 @@ class FavoriteDetailsViewController: UIViewController {
         favoriteDetailLink.setTitle(favoriteLink, for: .normal)
         
         if formatDate(favoriteEnd) == "" {
-            favoriteDetailBegin.text = formatDate(favoriteBegin)
+            favoriteDetailBegin.text = formatDate(favoriteBegin) + "h"
         }
         else {
-            favoriteDetailBegin.text = formatDate(favoriteBegin) + " - " + formatDate(favoriteEnd)
+            favoriteDetailBegin.text = formatDate(favoriteBegin) + "h  -  " + formatDate(favoriteEnd) + "h"
         }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(removeFromFavorites))
