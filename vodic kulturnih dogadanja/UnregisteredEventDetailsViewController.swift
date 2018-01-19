@@ -46,7 +46,7 @@ class UnregisteredEventDetailsViewController: UIViewController {
         
         let dateInInt = Int(someDate)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "dd.MM.YYYY. HH:mm"
         let date = dateFromMilliseconds(date: dateInInt!)
         
         let finalDate = dateFormatter.string(from: date)
@@ -66,10 +66,10 @@ class UnregisteredEventDetailsViewController: UIViewController {
         unregisteredEventDescription.text = eventDescription
         
         if formatDate(eventEnd) == "" {
-            unregisteredEventBegin.text = formatDate(eventBegin)
+            unregisteredEventBegin.text = formatDate(eventBegin) + "h"
         }
         else {
-            unregisteredEventBegin.text = formatDate(eventBegin) + "-" + formatDate(eventEnd)
+            unregisteredEventBegin.text = formatDate(eventBegin) + "h  -  " + formatDate(eventEnd) + "h"
         }
         
         unregisteredEventPrice.text = eventPrice + " kn"

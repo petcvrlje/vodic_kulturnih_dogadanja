@@ -78,13 +78,13 @@ class UnregisteredViewController: UIViewController, UITableViewDelegate, UITable
         
         
         let begin = formatDate(dict["begin"] as! String)
-        let end = dict["end"] as! String
+        let end = formatDate(dict["end"] as! String)
         
         if end == "0" {
-            cell?.beginLabel.text = begin
+            cell?.beginLabel.text = begin + "h"
         }
         else {
-            cell?.beginLabel.text = begin + " - " + end
+            cell?.beginLabel.text = begin + "h  -  " + end + "h"
         }
         
         return cell!
@@ -97,7 +97,7 @@ class UnregisteredViewController: UIViewController, UITableViewDelegate, UITable
         }
         let dateInInt = Int(someDate)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "dd.MM.YYYY. HH:mm"
         let date = dateFromMilliseconds(date: dateInInt!)
         
         let finalDate = dateFormatter.string(from: date)

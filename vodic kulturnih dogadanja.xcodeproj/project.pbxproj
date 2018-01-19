@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		520602A01FC48E8D00A05850 /* 23799000_1479281325491003_2047333813_o.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5206029F1FC48E8C00A05850 /* 23799000_1479281325491003_2047333813_o.jpg */; };
 		520AB4081FC366B8008CD277 /* menu 11.22.23.png in Resources */ = {isa = PBXBuildFile; fileRef = 520AB4071FC366B8008CD277 /* menu 11.22.23.png */; };
+		521F045C20122C91001444FE /* add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 521F045920122C8F001444FE /* add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle.png */; };
+		521F045D20122C91001444FE /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 521F045A20122C90001444FE /* home.png */; };
+		521F045E20122C91001444FE /* settings-gears.png in Resources */ = {isa = PBXBuildFile; fileRef = 521F045B20122C91001444FE /* settings-gears.png */; };
 		522949741FDC5D0600769A90 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522949731FDC5D0600769A90 /* ProfileEditViewController.swift */; };
 		522949761FDC5F9E00769A90 /* blank-profile-picture-973460_640.png in Resources */ = {isa = PBXBuildFile; fileRef = 522949751FDC5F9D00769A90 /* blank-profile-picture-973460_640.png */; };
 		52422C901FA5EF0B0020F583 /* SideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52422C8F1FA5EF0B0020F583 /* SideMenuVC.swift */; };
@@ -57,6 +60,9 @@
 /* Begin PBXFileReference section */
 		5206029F1FC48E8C00A05850 /* 23799000_1479281325491003_2047333813_o.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 23799000_1479281325491003_2047333813_o.jpg; sourceTree = "<group>"; };
 		520AB4071FC366B8008CD277 /* menu 11.22.23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu 11.22.23.png"; sourceTree = "<group>"; };
+		521F045920122C8F001444FE /* add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle.png"; sourceTree = "<group>"; };
+		521F045A20122C90001444FE /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		521F045B20122C91001444FE /* settings-gears.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-gears.png"; sourceTree = "<group>"; };
 		522949731FDC5D0600769A90 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		522949751FDC5F9D00769A90 /* blank-profile-picture-973460_640.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blank-profile-picture-973460_640.png"; sourceTree = "<group>"; };
 		52422C8F1FA5EF0B0020F583 /* SideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuVC.swift; sourceTree = "<group>"; };
@@ -192,6 +198,9 @@
 				5206029F1FC48E8C00A05850 /* 23799000_1479281325491003_2047333813_o.jpg */,
 				520AB4071FC366B8008CD277 /* menu 11.22.23.png */,
 				52422C9B1FA5FCC00020F583 /* Screenshot_3.png */,
+				521F045920122C8F001444FE /* add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle.png */,
+				521F045A20122C90001444FE /* home.png */,
+				521F045B20122C91001444FE /* settings-gears.png */,
 				52E6C0692011123400F22C0F /* icons8-good-quality-filled-50.png */,
 				52E6C0682011123300F22C0F /* icons8-unlike-filled-50.png */,
 				52422C931FA5FCB10020F583 /* Screenshot_1.png */,
@@ -300,6 +309,7 @@
 			files = (
 				B6A59220200E1F9B00101FCF /* Localizable.strings in Resources */,
 				52B5BC0D1F9E6FC300CF033D /* LaunchScreen.storyboard in Resources */,
+				521F045D20122C91001444FE /* home.png in Resources */,
 				52C175DB1FDC8D710036F30A /* background.jpg in Resources */,
 				52B5BC151F9E7D5600CF033D /* 22768399_1452971704788632_243767547_o.png in Resources */,
 				52422C981FA5FCB10020F583 /* Screenshot_2.png in Resources */,
@@ -317,7 +327,9 @@
 				B6C4B5F81FF69BC800CBED58 /* favorites-remove-icon.jpg in Resources */,
 				52B5BC081F9E6FC300CF033D /* Main.storyboard in Resources */,
 				B6C4B5F71FF69BC800CBED58 /* favorites-add-icon.jpg in Resources */,
+				521F045E20122C91001444FE /* settings-gears.png in Resources */,
 				B6E3025F1FE5D920005BA991 /* GoogleService-Info.plist in Resources */,
+				521F045C20122C91001444FE /* add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
