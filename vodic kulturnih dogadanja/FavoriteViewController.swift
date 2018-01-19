@@ -82,13 +82,13 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         cell.favoriteDescription.text = dict["description"] as? String
         
         let begin = formatDate(dict["begin"] as! String)
-        let end = dict["end"] as! String
+        let end = formatDate(dict["end"] as! String)
         
         if end == "0" {
             cell.favoriteBegin.text = begin
         }
         else {
-            cell.favoriteBegin.text = begin + " - " + end
+            cell.favoriteBegin.text = begin + "h  -  " + end + "h"
         }
         
         return cell
@@ -101,7 +101,7 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         }
         let dateInInt = Int(someDate)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "dd.MM.YYYY. HH:mm"
         let date = dateFromMilliseconds(date: dateInInt!)
         
         let finalDate = dateFormatter.string(from: date)
