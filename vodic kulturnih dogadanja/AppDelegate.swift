@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import UserNotifications
+import FBSDKCoreKit
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -36,6 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         application.registerForRemoteNotifications()
+        
+        //Facebook
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        //Twitter
+        TWTRTwitter.sharedInstance().start(withConsumerKey: "RRjXx4R1BelW3sRUGMxGyQpgW", consumerSecret: "lRqt25kHvghT7lii2b2x4YBD12uxslLeM3K1syY5XGltvsGgeG")
         
         return true
     }
@@ -66,6 +73,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("APNs token retrieved: \(deviceToken)")
         
         Messaging.messaging().apnsToken = deviceToken
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        if TWTRTwitter.sharedInstance().application(app, open: url, options: options) {
+            return true
+        }
+        let sourceApplication: String? = options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String
+        return FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: sourceApplication, annotation: nil)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

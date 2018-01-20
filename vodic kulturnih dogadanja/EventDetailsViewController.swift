@@ -10,6 +10,10 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+protocol SocialShare {
+    func share(network: String, link:String, vc: UIViewController)
+}
+
 class EventDetailsViewController: UIViewController {
     
     
@@ -219,10 +223,12 @@ class EventDetailsViewController: UIViewController {
     @objc private func shareEvent() {
         let actionSheetController = UIAlertController(title: "Choose where to share.", message: nil, preferredStyle: .actionSheet)
         let facebookAction = UIAlertAction(title: "Facebook", style: .default) { (action) in
-            //to do facebook share
+            let facebook: SocialShare = Facebook()
+            facebook.share(network: "Facebook", link: "http://vodickulturnihdogadanja.1e29g6m.xip.io/webPage/events.php?eventId=\(self.eventId)", vc: self.navigationController!)
         }
         let twitterAction = UIAlertAction(title: "Twitter", style: .default) { (action) in
-            //twitter share
+            let twitter : SocialShare = Twitter()
+            twitter.share(network: "Twitter", link: "http://vodickulturnihdogadanja.1e29g6m.xip.io/webPage/events.php?eventId=\(self.eventId)", vc: self.navigationController!)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
@@ -231,7 +237,6 @@ class EventDetailsViewController: UIViewController {
         actionSheetController.addAction(cancelAction)
         present(actionSheetController, animated: true, completion: nil)
     }
-    
     
     @IBAction func dislikeEvent(_ sender: UIButton) {
         let URLUpdate = "http://vodickulturnihdogadanja.1e29g6m.xip.io/evaluation.php"

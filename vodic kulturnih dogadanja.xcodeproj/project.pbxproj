@@ -39,6 +39,8 @@
 		52E6C06A2011123400F22C0F /* icons8-unlike-filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E6C0682011123300F22C0F /* icons8-unlike-filled-50.png */; };
 		52E6C06B2011123400F22C0F /* icons8-good-quality-filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E6C0692011123400F22C0F /* icons8-good-quality-filled-50.png */; };
 		76E45E39A27D7986A1427BC2 /* Pods_vodic_kulturnih_dogadanja.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEBA9047EE8F6A6F2399E79 /* Pods_vodic_kulturnih_dogadanja.framework */; };
+		B628F7262012BC5800F8F2B9 /* Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628F7252012BC5800F8F2B9 /* Twitter.swift */; };
+		B628F7282012BC6300F8F2B9 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628F7272012BC6300F8F2B9 /* Facebook.swift */; };
 		B65BFA051FD3555A00D940A1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65BFA061FD3555A00D940A1 /* SwiftyJSON.framework */; };
 		B6792A341FD318CC008D575B /* UnregisteredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6792A331FD318CC008D575B /* UnregisteredViewController.swift */; };
 		B6792A381FD31A3C008D575B /* UnregisteredEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6792A371FD31A3C008D575B /* UnregisteredEventTableViewCell.swift */; };
@@ -97,6 +99,8 @@
 		5CC863FF6270E289B9A17493 /* Pods-vodic kulturnih dogadanja.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vodic kulturnih dogadanja.debug.xcconfig"; path = "Pods/Target Support Files/Pods-vodic kulturnih dogadanja/Pods-vodic kulturnih dogadanja.debug.xcconfig"; sourceTree = "<group>"; };
 		6261060265CDF6359B879B70 /* Pods-vodic kulturnih dogadanja.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vodic kulturnih dogadanja.release.xcconfig"; path = "Pods/Target Support Files/Pods-vodic kulturnih dogadanja/Pods-vodic kulturnih dogadanja.release.xcconfig"; sourceTree = "<group>"; };
 		ACEBA9047EE8F6A6F2399E79 /* Pods_vodic_kulturnih_dogadanja.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vodic_kulturnih_dogadanja.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B628F7252012BC5800F8F2B9 /* Twitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twitter.swift; sourceTree = "<group>"; };
+		B628F7272012BC6300F8F2B9 /* Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		B65BFA061FD3555A00D940A1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6792A331FD318CC008D575B /* UnregisteredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnregisteredViewController.swift; sourceTree = "<group>"; };
 		B6792A371FD31A3C008D575B /* UnregisteredEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnregisteredEventTableViewCell.swift; sourceTree = "<group>"; };
@@ -175,6 +179,8 @@
 				B6E3025E1FE5D920005BA991 /* GoogleService-Info.plist */,
 				52C9197D1FAE6F710062802F /* IBDesignables */,
 				52B5BC0E1F9E6FC300CF033D /* Info.plist */,
+				B628F7252012BC5800F8F2B9 /* Twitter.swift */,
+				B628F7272012BC6300F8F2B9 /* Facebook.swift */,
 				52B5BC0B1F9E6FC300CF033D /* LaunchScreen.storyboard */,
 				B6A59222200E1F9B00101FCF /* Localizable.strings */,
 				D02D2AF61FBCDE68004F096D /* LoginViewController.swift */,
@@ -356,17 +362,29 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-vodic kulturnih dogadanja/Pods-vodic kulturnih dogadanja-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,8 +453,10 @@
 				B6C4B5F01FE6C16800CBED58 /* CommentListTableViewCell.swift in Sources */,
 				B6A59218200E185C00101FCF /* SettingsViewController.swift in Sources */,
 				B6A22A8F1FDC7B5E0091853F /* UnregisteredSideMenuTableViewController.swift in Sources */,
+				B628F7282012BC6300F8F2B9 /* Facebook.swift in Sources */,
 				B6A250E11FD87ABD00DCD104 /* FavoriteViewController.swift in Sources */,
 				B6A22A891FDC65FD0091853F /* FavoriteDetailsViewController.swift in Sources */,
+				B628F7262012BC5800F8F2B9 /* Twitter.swift in Sources */,
 				B6792A341FD318CC008D575B /* UnregisteredViewController.swift in Sources */,
 				52422C921FA5F00B0020F583 /* StartScreenVC.swift in Sources */,
 				52422C901FA5EF0B0020F583 /* SideMenuVC.swift in Sources */,
