@@ -109,6 +109,7 @@ class EventDetailsViewController: UIViewController {
                     self.addFavoriteButton()
                 }
             }
+            self.checkIsEventFinished()
         }
         
     }
@@ -141,6 +142,12 @@ class EventDetailsViewController: UIViewController {
         let finalDate = dateFormatter.string(from: date)
         
         return finalDate
+    }
+    
+    func currentDateInMiliseconds() -> Int {
+        let currentDate = Date()
+        let since1970 = currentDate.timeIntervalSince1970
+        return Int(since1970*1000)
     }
     
     @objc private func addToFavorites() {
@@ -250,6 +257,13 @@ class EventDetailsViewController: UIViewController {
         let removeFavoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "removeFavorite.png"), style: .done, target: self, action:  #selector(self.removeFromFavorites))
         let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
         self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, removeFavoriteButton]
+    }
+    
+    func checkIsEventFinished() {
+        if (Int(eventBegin)! >= currentDateInMiliseconds() || Int(eventEnd)! >= currentDateInMiliseconds()) {
+            likeButton.isHidden = true
+            dislikeButton.isHidden = true
+        }
     }
     
     

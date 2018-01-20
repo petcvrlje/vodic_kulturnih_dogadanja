@@ -291,24 +291,32 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         if segue.identifier == "eventDetails" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 
-                var event = activeEvents[indexPath.row]
-                
                 if (searchBar.text?.isEmpty)! {
                     switch searchBar.selectedScopeButtonIndex {
-                    case 0: event = activeEvents[indexPath.row]
-                    case 1: event = activeEvents[indexPath.row]
+                    case 0:
+                        var event = activeEvents[indexPath.row]
+                        TabMainViewController.eventId = event["eventId"] as! String
+                    
+                    case 1:
+                        var event = allEvents[indexPath.row]
+                        TabMainViewController.eventId = event["eventId"] as! String
+                    
                     default: print("Error")
                     }
                 }
                 else {
                     switch searchBar.selectedScopeButtonIndex {
-                    case 0: event = filteredActiveEvents[indexPath.row]
-                    case 1: event = filteredAllEvents[indexPath.row]
+                    case 0:
+                        var event = filteredAllEvents[indexPath.row]
+                        TabMainViewController.eventId = event["eventId"] as! String
+                    case 1:
+                        var event = filteredAllEvents[indexPath.row]
+                        TabMainViewController.eventId = event["eventId"] as! String
                     default: print("Error")
                     }
                 }
                 
-                TabMainViewController.eventId = event["eventId"] as! String
+                
             }
         }
     }
