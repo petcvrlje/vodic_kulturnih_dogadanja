@@ -11,7 +11,6 @@ import UIKit
 class UnregisteredSideMenuTableViewController: UITableViewController {
     
     @IBOutlet weak var unregisteredHomeLabel: UILabel!
-    @IBOutlet weak var unregisteredSettingsLabel: UILabel!
     @IBOutlet weak var unregisteredSignUpLabel: UILabel!
     
     
@@ -19,7 +18,6 @@ class UnregisteredSideMenuTableViewController: UITableViewController {
         super.viewDidLoad()
         
         unregisteredHomeLabel.text = NSLocalizedString("menuHome", comment: "")
-        unregisteredSettingsLabel.text = NSLocalizedString("menuSettings", comment: "")
         unregisteredSignUpLabel.text = NSLocalizedString("unregisteredMenuSignUp", comment: "")
     }
 
@@ -30,10 +28,8 @@ class UnregisteredSideMenuTableViewController: UITableViewController {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "unregisteredContainter")
             self.present(vc!, animated: true, completion: nil)
         }
+
         else if indexPath.row == 1 {
-            
-        }
-        else if indexPath.row == 2 {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "signUp")
             self.present(vc!, animated: true, completion: nil)
         }
