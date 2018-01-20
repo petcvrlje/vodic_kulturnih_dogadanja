@@ -134,12 +134,14 @@ class EventDetailsViewController: UIViewController {
             
             print(self.checkFavorites.count)
             if self.checkFavorites.count == 1 {
-                let removeFavoriteButton = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(self.removeFromFavorites))
+                //let removeFavoriteButton = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(self.removeFromFavorites))
+                let removeFavoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "removeFavorite.png"), style: .done, target: self, action:  #selector(self.removeFromFavorites))
                 let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
                 self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, removeFavoriteButton]
             }
             else {
-                let addFavoriteButton = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(self.addToFavorites))
+                //let addFavoriteButton = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(self.addToFavorites))
+                let addFavoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "addFavorite.png"), style: .done, target: self, action:  #selector(self.addToFavorites))
                 let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
                 self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, addFavoriteButton]
             }
@@ -192,7 +194,7 @@ class EventDetailsViewController: UIViewController {
             print(response)
         }
         
-        let removeFavoriteButton = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(self.removeFromFavorites))
+        let removeFavoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "removeFavorite.png"), style: .done, target: self, action:  #selector(self.removeFromFavorites))
         let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
         self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, removeFavoriteButton]
     }
@@ -215,7 +217,7 @@ class EventDetailsViewController: UIViewController {
             print(response)
         }
         
-        let addFavoriteButton = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(self.addToFavorites))
+        let addFavoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "addFavorite.png"), style: .done, target: self, action:  #selector(self.addToFavorites))
         let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
         self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, addFavoriteButton]
     }
