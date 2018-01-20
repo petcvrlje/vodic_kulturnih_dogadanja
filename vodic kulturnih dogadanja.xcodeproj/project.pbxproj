@@ -43,6 +43,8 @@
 		B628F7282012BC6300F8F2B9 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = B628F7272012BC6300F8F2B9 /* Facebook.swift */; };
 		B6377E722013E607002132C5 /* removeFavorite.png in Resources */ = {isa = PBXBuildFile; fileRef = B6377E702013E604002132C5 /* removeFavorite.png */; };
 		B6377E732013E607002132C5 /* addFavorite.png in Resources */ = {isa = PBXBuildFile; fileRef = B6377E712013E606002132C5 /* addFavorite.png */; };
+		B6377E772013EEB4002132C5 /* TabFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6377E762013EEB4002132C5 /* TabFavoritesViewController.swift */; };
+		B6377E792013F0BE002132C5 /* xicon.png in Resources */ = {isa = PBXBuildFile; fileRef = B6377E782013F0BE002132C5 /* xicon.png */; };
 		B65BFA051FD3555A00D940A1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B65BFA061FD3555A00D940A1 /* SwiftyJSON.framework */; };
 		B6792A341FD318CC008D575B /* UnregisteredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6792A331FD318CC008D575B /* UnregisteredViewController.swift */; };
 		B6792A381FD31A3C008D575B /* UnregisteredEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6792A371FD31A3C008D575B /* UnregisteredEventTableViewCell.swift */; };
@@ -105,6 +107,8 @@
 		B628F7272012BC6300F8F2B9 /* Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		B6377E702013E604002132C5 /* removeFavorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = removeFavorite.png; sourceTree = "<group>"; };
 		B6377E712013E606002132C5 /* addFavorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addFavorite.png; sourceTree = "<group>"; };
+		B6377E762013EEB4002132C5 /* TabFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFavoritesViewController.swift; sourceTree = "<group>"; };
+		B6377E782013F0BE002132C5 /* xicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xicon.png; sourceTree = "<group>"; };
 		B65BFA061FD3555A00D940A1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6792A331FD318CC008D575B /* UnregisteredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnregisteredViewController.swift; sourceTree = "<group>"; };
 		B6792A371FD31A3C008D575B /* UnregisteredEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnregisteredEventTableViewCell.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 		52B5BC011F9E6FC300CF033D /* vodic kulturnih dogadanja */ = {
 			isa = PBXGroup;
 			children = (
+				B6377E762013EEB4002132C5 /* TabFavoritesViewController.swift */,
 				52B5BC021F9E6FC300CF033D /* AppDelegate.swift */,
 				52B5BC091F9E6FC300CF033D /* Assets.xcassets */,
 				B6C4B5EF1FE6C16800CBED58 /* CommentListTableViewCell.swift */,
@@ -211,6 +216,7 @@
 		52B5BC161F9E7D6600CF033D /* slike */ = {
 			isa = PBXGroup;
 			children = (
+				B6377E782013F0BE002132C5 /* xicon.png */,
 				5206029F1FC48E8C00A05850 /* 23799000_1479281325491003_2047333813_o.jpg */,
 				520AB4071FC366B8008CD277 /* menu 11.22.23.png */,
 				52422C9B1FA5FCC00020F583 /* Screenshot_3.png */,
@@ -351,6 +357,7 @@
 				521F0462201233CD001444FE /* heart.png in Resources */,
 				B6C4B5F81FF69BC800CBED58 /* favorites-remove-icon.jpg in Resources */,
 				52B5BC081F9E6FC300CF033D /* Main.storyboard in Resources */,
+				B6377E792013F0BE002132C5 /* xicon.png in Resources */,
 				B6C4B5F71FF69BC800CBED58 /* favorites-add-icon.jpg in Resources */,
 				521F045E20122C91001444FE /* settings-gears.png in Resources */,
 				B6E3025F1FE5D920005BA991 /* GoogleService-Info.plist in Resources */,
@@ -446,6 +453,7 @@
 			files = (
 				52C525301FA7C4E100F43004 /* RegistrationViewController.swift in Sources */,
 				D068F34E1FD6BDC800CD867F /* EventDetailsViewController.swift in Sources */,
+				B6377E772013EEB4002132C5 /* TabFavoritesViewController.swift in Sources */,
 				52B5BC051F9E6FC300CF033D /* ContainerVC.swift in Sources */,
 				B6A250E31FD87AE800DCD104 /* FavoriteTableViewCell.swift in Sources */,
 				52422CA01FA5FF640020F583 /* MainVC.swift in Sources */,

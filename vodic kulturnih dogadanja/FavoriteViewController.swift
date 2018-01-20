@@ -50,14 +50,11 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
                 if let resData = swiftyJsonVar[].arrayObject {
                     self.arrayFavorites = resData as! [[String:AnyObject]]
                 }
-                
-                print(self.arrayFavorites[0]["name"] as! String)
-                
+        
                 if self.arrayFavorites.count > 0 {
                     self.tableView.reloadData()
                 }
             }
-            self.viewDidLoad()
             //self.viewWillAppear(true)
         }
         
@@ -114,34 +111,12 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let favoriteDetailsViewcController = segue.destination as! FavoriteDetailsViewController
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {        
         if segue.identifier == "favoriteDetails" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let favoriteEvent = arrayFavorites[indexPath.row]
                 
-                let favoriteId = favoriteEvent["eventId"] as! String
-                favoriteDetailsViewcController.favoriteId = favoriteId
-                
-                let imageString = favoriteEvent["picture"] as? String
-                if let imageData = Data(base64Encoded: imageString!) {
-                    let decodedImage = UIImage(data: imageData)
-                    favoriteDetailsViewcController.favoriteImage = decodedImage
-                }
-                
-                if (favoriteEvent["end"] as! String)  == "0" {
-                    favoriteDetailsViewcController.favoriteEnd = ""
-                }
-                else {
-                    favoriteDetailsViewcController.favoriteEnd = favoriteEvent["end"] as! String
-                }
-                
-                favoriteDetailsViewcController.favoriteName = favoriteEvent["name"] as! String
-                favoriteDetailsViewcController.favoriteDescription = favoriteEvent["description"] as! String
-                favoriteDetailsViewcController.favoriteBegin = favoriteEvent["begin"] as! String
-                favoriteDetailsViewcController.favoritePrice = favoriteEvent["price"] as! String
-                favoriteDetailsViewcController.favoriteLink = favoriteEvent["link"] as! String
+                TabFavoritesViewController.eventId = favoriteEvent["eventId"] as! String
                 
             }
         }

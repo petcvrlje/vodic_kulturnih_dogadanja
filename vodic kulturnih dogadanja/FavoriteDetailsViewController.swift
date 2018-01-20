@@ -67,21 +67,55 @@ class FavoriteDetailsViewController: UIViewController {
         
         dateLabel.text = NSLocalizedString("date", comment: "")
         priceLabel.text = NSLocalizedString("price", comment: "")
+        
+        favoriteId = TabFavoritesViewController.eventId
 
-        favoriteDetailImage.image = favoriteImage
-        favoriteDetailName.text = favoriteName
-        favoriteDetailDescription.text = favoriteDescription
-        favoriteDetailPrice.text = favoritePrice + " kn"
-        favoriteDetailLink.setTitle(favoriteLink, for: .normal)
+        let userId = Int(self.defaults.string(forKey: "userId")!)
         
-        if formatDate(favoriteEnd) == "" {
-            favoriteDetailBegin.text = formatDate(favoriteBegin) + "h"
-        }
-        else {
-            favoriteDetailBegin.text = formatDate(favoriteBegin) + "h  -  " + formatDate(favoriteEnd) + "h"
+        paramEventId = Int(favoriteId)!
+        paramUserId = userId!
+        
+        let eventParam = ["eventId": paramEventId] as [String:Any]
+        
+        let URLEvent = "http://vodickulturnihdogadanja.1e29g6m.xip.io/event.php"
+        
+        Alamofire.request(URLEvent, method: .get, parameters: eventParam).responseJSON {
+            response in
+            print(response)
+            if let json = response.result.value as? NSDictionary{
+                let imageString = json["picture"] as? String
+                if let imageData = Data(base64Encoded: imageString!) {
+                    let decodedImage = UIImage(data: imageData)
+                    self.favoriteImage = decodedImage
+                }
+                
+                self.favoriteName = json["name"] as! String
+                self.favoriteDescription = json["description"] as! String
+                self.favoriteBegin = json["begin"] as! String
+                self.favoriteEnd = json["end"] as! String
+                self.favoritePrice = json["price"] as! String
+                self.favoriteLink = json["link"] as! String
+                
+                self.favoriteDetailImage.image = self.favoriteImage
+                self.favoriteDetailName.text = self.favoriteName
+                self.favoriteDetailDescription.text = self.favoriteDescription
+                
+                self.favoriteDetailPrice.text = self.favoritePrice + " kn"
+                self.favoriteDetailLink.setTitle(self.favoriteLink, for: .normal)
+                
+                if self.formatDate(self.favoriteEnd) == "" {
+                    self.favoriteDetailBegin.text = self.formatDate(self.favoriteBegin)
+                }
+                else {
+                    self.favoriteDetailBegin.text = self.formatDate(self.favoriteBegin) + "h  -  " + self.formatDate(self.favoriteEnd) + "h"
+                }
+            }
+            //self.viewDidLoad()
+            //self.viewWillAppear(true)
         }
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(removeFromFavorites))
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(removeFromFavorites))
+        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "xicon.png"), style: .done, target: self, action: #selector(removeFromFavorites))
         
     }
     
@@ -105,6 +139,8 @@ class FavoriteDetailsViewController: UIViewController {
         
 
         navigationItem.rightBarButtonItem = nil
+        
+        dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

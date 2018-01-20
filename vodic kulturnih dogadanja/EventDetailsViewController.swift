@@ -37,7 +37,6 @@ class EventDetailsViewController: UIViewController {
     var eventPrice = ""
     var eventLink = ""
     
-    
     var eventId = ""
     
     let defaults = UserDefaults.standard
