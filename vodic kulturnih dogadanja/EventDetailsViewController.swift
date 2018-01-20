@@ -29,6 +29,7 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
 
+    var eventId = ""
     var eventImage: UIImage?
     var eventName = ""
     var eventDescription = ""
@@ -37,18 +38,15 @@ class EventDetailsViewController: UIViewController {
     var eventPrice = ""
     var eventLink = ""
     
-    var eventId = ""
+    var numOfLikes = ""
+    var numOfDislikes = ""
+    var userEval = ""
+    var isFavorite = ""
     
     let defaults = UserDefaults.standard
     
     var paramEventId = 0
     var paramUserId = 0
-    
-    var arrayEvents = [[String:AnyObject]]()
-    var arrayFavorites = [[String:AnyObject]]()
-    var checkFavorites = [[String:AnyObject]]()
-    
-    var isFavorite = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,11 +63,11 @@ class EventDetailsViewController: UIViewController {
         paramEventId = Int(eventId)!
         paramUserId = userId!
         
-        let eventParam = ["eventId": paramEventId] as [String:Any]
+        let params  = ["userId": paramUserId, "eventId": paramEventId] as [String:Any]
         
-        let URLEvent = "http://vodickulturnihdogadanja.1e29g6m.xip.io/event.php"
+        let URL = "http://vodickulturnihdogadanja.1e29g6m.xip.io/eventLoggedUser.php"
         
-        Alamofire.request(URLEvent, method: .get, parameters: eventParam).responseJSON {
+        Alamofire.request(URL, method: .get, parameters: params).responseJSON {
             response in
             print(response)
             if let json = response.result.value as? NSDictionary{
@@ -85,6 +83,10 @@ class EventDetailsViewController: UIViewController {
                 self.eventEnd = json["end"] as! String
                 self.eventPrice = json["price"] as! String
                 self.eventLink = json["link"] as! String
+                self.numOfLikes = json["numOfLikes"] as! String
+                self.numOfDislikes = json["numOfDislikes"] as! String
+                self.userEval = json["userEval"] as! String
+                self.isFavorite = json["isFavorite"] as! String
                 
                 self.eventDetailImage.image = self.eventImage
                 self.eventDetailName.text = self.eventName
@@ -99,52 +101,16 @@ class EventDetailsViewController: UIViewController {
                 else {
                     self.eventDetailBegin.text = self.formatDate(self.eventBegin) + "h  -  " + self.formatDate(self.eventEnd) + "h"
                 }
-            }
-            //self.viewDidLoad()
-            //self.viewWillAppear(true)
-        }
-        
-        let URLFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favoriteList.php"
-        
-        let param = ["userId": paramUserId] as [String:Any]
-        
-        Alamofire.request(URLFavorites, method: .get, parameters: param).responseJSON {
-            response in
-            print(response)
-            if ((response.result.value) != nil) {
-                let swiftyJsonVar = JSON(response.result.value!)
                 
-                if let resData = swiftyJsonVar[].arrayObject {
-                    self.arrayFavorites = resData as! [[String:AnyObject]]
-                }
-                
-            }
-            
-            let event = self.eventId
-            
-            self.checkFavorites = self.arrayFavorites.filter({ (array: [String:AnyObject]) -> Bool in
-            if (array["eventId"]?.contains(event))! {
-                    return true
+                if self.isFavorite == "1" {
+                    self.removeFavoriteButton()
                 }
                 else {
-                    return false
+                    self.addFavoriteButton()
                 }
-            })
-            
-            print(self.checkFavorites.count)
-            if self.checkFavorites.count == 1 {
-                //let removeFavoriteButton = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(self.removeFromFavorites))
-                let removeFavoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "removeFavorite.png"), style: .done, target: self, action:  #selector(self.removeFromFavorites))
-                let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
-                self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, removeFavoriteButton]
-            }
-            else {
-                //let addFavoriteButton = UIBarButtonItem(title: "Add to favorites", style: .done, target: self, action: #selector(self.addToFavorites))
-                let addFavoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "addFavorite.png"), style: .done, target: self, action:  #selector(self.addToFavorites))
-                let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
-                self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, addFavoriteButton]
             }
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -166,14 +132,15 @@ class EventDetailsViewController: UIViewController {
         if someDate == "" {
             return ""
         }
+        
         let dateInInt = Int(someDate)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.YYYY. HH:mm"
-        let datum = dateFromMilliseconds(date: dateInInt!)
+        let date = dateFromMilliseconds(date: dateInInt!)
         
-        let konacniDatum = dateFormatter.string(from: datum)
+        let finalDate = dateFormatter.string(from: date)
         
-        return konacniDatum
+        return finalDate
     }
     
     @objc private func addToFavorites() {
@@ -193,9 +160,7 @@ class EventDetailsViewController: UIViewController {
             print(response)
         }
         
-        let removeFavoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "removeFavorite.png"), style: .done, target: self, action:  #selector(self.removeFromFavorites))
-        let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
-        self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, removeFavoriteButton]
+        removeFavoriteButton()
     }
     
     @objc private func removeFromFavorites() {
@@ -216,9 +181,7 @@ class EventDetailsViewController: UIViewController {
             print(response)
         }
         
-        let addFavoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "addFavorite.png"), style: .done, target: self, action:  #selector(self.addToFavorites))
-        let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
-        self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, addFavoriteButton]
+        addFavoriteButton()
     }
     
     @objc private func shareEvent() {
@@ -275,6 +238,18 @@ class EventDetailsViewController: UIViewController {
             
         }
     
+    }
+    
+    func addFavoriteButton() {
+        let addFavoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "addFavorite.png"), style: .done, target: self, action:  #selector(self.addToFavorites))
+        let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
+        self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, addFavoriteButton]
+    }
+    
+    func removeFavoriteButton() {
+        let removeFavoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "removeFavorite.png"), style: .done, target: self, action:  #selector(self.removeFromFavorites))
+        let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
+        self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, removeFavoriteButton]
     }
     
     

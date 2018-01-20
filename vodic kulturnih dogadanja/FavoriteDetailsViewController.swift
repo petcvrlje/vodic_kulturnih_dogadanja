@@ -21,7 +21,7 @@ class FavoriteDetailsViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
-    
+    var favoriteId = ""
     var favoriteImage : UIImage? = nil
     var favoriteName = ""
     var favoriteDescription = ""
@@ -30,7 +30,10 @@ class FavoriteDetailsViewController: UIViewController {
     var favoritePrice = ""
     var favoriteLink = ""
     
-    var favoriteId = ""
+    var numOfLikes = ""
+    var numOfDislikes = ""
+    var userEval = ""
+    var isFavorite = ""
     
     let defaults = UserDefaults.standard
     
@@ -75,11 +78,11 @@ class FavoriteDetailsViewController: UIViewController {
         paramEventId = Int(favoriteId)!
         paramUserId = userId!
         
-        let eventParam = ["eventId": paramEventId] as [String:Any]
+        let params  = ["userId": paramUserId, "eventId": paramEventId] as [String:Any]
         
-        let URLEvent = "http://vodickulturnihdogadanja.1e29g6m.xip.io/event.php"
+        let URL = "http://vodickulturnihdogadanja.1e29g6m.xip.io/eventLoggedUser.php"
         
-        Alamofire.request(URLEvent, method: .get, parameters: eventParam).responseJSON {
+        Alamofire.request(URL, method: .get, parameters: params).responseJSON {
             response in
             print(response)
             if let json = response.result.value as? NSDictionary{
@@ -95,6 +98,10 @@ class FavoriteDetailsViewController: UIViewController {
                 self.favoriteEnd = json["end"] as! String
                 self.favoritePrice = json["price"] as! String
                 self.favoriteLink = json["link"] as! String
+                self.numOfLikes = json["numOfLikes"] as! String
+                self.numOfDislikes = json["numOfDislikes"] as! String
+                self.userEval = json["userEval"] as! String
+                self.isFavorite = json["isFavorite"] as! String
                 
                 self.favoriteDetailImage.image = self.favoriteImage
                 self.favoriteDetailName.text = self.favoriteName
@@ -109,12 +116,10 @@ class FavoriteDetailsViewController: UIViewController {
                 else {
                     self.favoriteDetailBegin.text = self.formatDate(self.favoriteBegin) + "h  -  " + self.formatDate(self.favoriteEnd) + "h"
                 }
+                
             }
-            //self.viewDidLoad()
-            //self.viewWillAppear(true)
         }
-        
-        //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Remove from favorites", style: .done, target: self, action: #selector(removeFromFavorites))
+       
         self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "xicon.png"), style: .done, target: self, action: #selector(removeFromFavorites))
         
     }

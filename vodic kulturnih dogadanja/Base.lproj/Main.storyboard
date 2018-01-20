@@ -1347,9 +1347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3PW-oe-O1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-          FavoritesUpgrade
             <point key="canvasLocation" x="6805.6000000000004" y="407.94602698650675"/>
-          views
         </scene>
         <!--ContainerVC-->
         <scene sceneID="AyF-O5-k9K">
