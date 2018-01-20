@@ -10,5 +10,9 @@ pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'Firebase/Core'
 pod 'Firebase/Messaging'
+pod 'FBSDKCoreKit'
+pod 'FBSDKLoginKit'
+pod 'FBSDKShareKit'
+pod 'TwitterKit'
 
 end
