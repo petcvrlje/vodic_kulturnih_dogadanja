@@ -1347,7 +1347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3PW-oe-O1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6805.6000000000004" y="407.94602698650675"/>
+            <point key="canvasLocation" x="7070" y="-164"/>
         </scene>
         <!--ContainerVC-->
         <scene sceneID="AyF-O5-k9K">
@@ -1593,7 +1593,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MUP-n4-9va">
-                                                    <rect key="frame" x="0.0" y="-5" width="375" height="225"/>
+                                                    <rect key="frame" x="0.0" y="-29" width="375" height="249"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Design.png" translatesAutoresizingMaskIntoConstraints="NO" id="m2X-mB-nYC">
@@ -1656,7 +1656,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJM-Rj-rR6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3607" y="-804"/>
+            <point key="canvasLocation" x="3605.5999999999999" y="-804.64767616191909"/>
         </scene>
         <!--Event Details View Controller-->
         <scene sceneID="iN6-rD-r9W">
@@ -1728,7 +1728,7 @@
                                 <color key="shadowColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bui-ab-LBE">
-                                <rect key="frame" x="16" y="560" width="50" height="50"/>
+                                <rect key="frame" x="232" y="541" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="dislikeButton"/>
                                 <state key="normal" image="icons8-unlike-filled-50.png"/>
@@ -1744,7 +1744,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5N9-kI-sRq">
-                                <rect key="frame" x="74" y="560" width="50" height="50"/>
+                                <rect key="frame" x="300" y="541" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="likeButton"/>
                                 <state key="normal" image="icons8-good-quality-filled-50.png"/>
@@ -1752,6 +1752,36 @@
                                     <action selector="likeEvent:" destination="vB6-kl-qnU" eventType="touchUpInside" id="ynf-SN-QUF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RO2-p1-IUI">
+                                <rect key="frame" x="308" y="593" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="like"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.46948158740000001" green="0.66727870700000003" blue="0.97601705790000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Average:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Tk-8W-um7">
+                                <rect key="frame" x="20" y="512" width="75" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VR-Rk-uVa">
+                                <rect key="frame" x="109" y="512" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5l6-05-bnL">
+                                <rect key="frame" x="236" y="593" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="dislike"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.46948158740000001" green="0.66727870700000003" blue="0.97601705790000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1759,8 +1789,10 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" id="ra1-9r-2bP"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="averageGrade" destination="1VR-Rk-uVa" id="f29-MM-ANA"/>
                         <outlet property="dateLabel" destination="KIN-Mu-JMR" id="cSs-TZ-l0q"/>
                         <outlet property="dislikeButton" destination="bui-ab-LBE" id="BNE-mk-pzl"/>
+                        <outlet property="dislikeLabel" destination="5l6-05-bnL" id="cio-N5-C4k"/>
                         <outlet property="eventDetailBegin" destination="NPE-BQ-sL0" id="tgF-hb-Fcn"/>
                         <outlet property="eventDetailDescription" destination="GZd-yY-kGg" id="5p3-gA-rQb"/>
                         <outlet property="eventDetailImage" destination="Eq3-aJ-HNQ" id="S7a-1a-5dh"/>
@@ -1768,12 +1800,13 @@
                         <outlet property="eventDetailName" destination="WEh-x6-VZW" id="CBC-ed-vlN"/>
                         <outlet property="eventDetailPrice" destination="vfx-Wb-7j0" id="wNN-cz-PEn"/>
                         <outlet property="likeButton" destination="5N9-kI-sRq" id="taN-pd-kdl"/>
+                        <outlet property="likeLabel" destination="RO2-p1-IUI" id="FTS-BM-6QT"/>
                         <outlet property="priceLabel" destination="41e-Gd-Gbd" id="fEt-nu-jak"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="425-yb-bic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6806" y="-1648"/>
+            <point key="canvasLocation" x="6805.6000000000004" y="-1648.4257871064469"/>
         </scene>
         <!--Comment List View Controller-->
         <scene sceneID="lNK-wx-4ho">
