@@ -17,6 +17,9 @@ protocol SocialShare {
 class EventDetailsViewController: UIViewController {
     
     
+    @IBOutlet weak var averageGrade: UILabel!
+    @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet weak var dislikeLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var dislikeButton: UIButton!
     @IBOutlet weak var eventDetailImage: UIImageView!
@@ -91,6 +94,9 @@ class EventDetailsViewController: UIViewController {
                 self.eventDetailImage.image = self.eventImage
                 self.eventDetailName.text = self.eventName
                 self.eventDetailDescription.text = self.eventDescription
+                self.dislikeLabel.text = self.numOfDislikes
+                self.likeLabel.text = self.numOfLikes
+                self.averageGrade.text = self.userEval
                 
                 self.eventDetailPrice.text = self.eventPrice + " kn"
                 self.eventDetailLink.setTitle(self.eventLink, for: .normal)
@@ -223,8 +229,9 @@ class EventDetailsViewController: UIViewController {
         Alamofire.request(URLUpdate, method: .post, parameters: paramsDislike, encoding: JSONEncoding.default).responseString {
             (response) in
             print(response)
-            
         }
+        dislikeButton.isSelected = true
+
     }
     
     @IBAction func likeEvent(_ sender: UIButton) {
@@ -242,9 +249,9 @@ class EventDetailsViewController: UIViewController {
         Alamofire.request(URLUpdate, method: .post, parameters: paramsLike, encoding: JSONEncoding.default).responseString {
             (response) in
             print(response)
-            
         }
-    
+        likeButton.isSelected = true
+
     }
     
     func addFavoriteButton() {
@@ -263,6 +270,8 @@ class EventDetailsViewController: UIViewController {
         if (Int(eventBegin)! >= currentDateInMiliseconds() || Int(eventEnd)! >= currentDateInMiliseconds()) {
             likeButton.isHidden = true
             dislikeButton.isHidden = true
+            dislikeLabel.isHidden = true
+            likeLabel.isHidden = true
         }
     }
     

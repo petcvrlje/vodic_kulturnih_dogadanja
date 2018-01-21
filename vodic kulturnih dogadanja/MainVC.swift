@@ -131,7 +131,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
                     cell?.beginLabel.text = begin
                 }
                 else {
-                    cell?.beginLabel.text = begin + " - " + end
+                    cell?.beginLabel.text = begin + "h  -  " + end + "h"
                 }
             case 1:
                 var eventsAll = allEvents[indexPath.row]
@@ -152,7 +152,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
                     cell?.beginLabel.text = begin
                 }
                 else {
-                    cell?.beginLabel.text = begin + " - " + end
+                    cell?.beginLabel.text = begin + "h  -  " + end + "h"
                 }
             default:
                 print("Error")
@@ -179,7 +179,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
                     cell?.beginLabel.text = begin
                 }
                 else {
-                    cell?.beginLabel.text = begin + " - " + end
+                    cell?.beginLabel.text = begin + "h  -  " + end +  "h"
                 }
             case 1:
                 var dict = filteredAllEvents[indexPath.row]
@@ -201,7 +201,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
                     cell?.beginLabel.text = begin
                 }
                 else {
-                    cell?.beginLabel.text = begin + " - " + end
+                    cell?.beginLabel.text = begin + "h  -  " + end + "h"
                 }
             default:
                 print("Error")
@@ -222,7 +222,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         }
         let dateInInt = Int(someDate)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "dd.MM.YYYY HH:mm"
         let date = dateFromMilliseconds(date: dateInInt!)
         
         let finalDate = dateFormatter.string(from: date)
