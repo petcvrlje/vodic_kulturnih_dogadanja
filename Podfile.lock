@@ -33,6 +33,13 @@ PODS:
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/Logger (~> 2.1)
     - Protobuf (~> 3.1)
+  - GoogleMaps (2.5.0):
+    - GoogleMaps/Maps (= 2.5.0)
+  - GoogleMaps/Base (2.5.0)
+  - GoogleMaps/Maps (2.5.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.5.0):
+    - GoogleMaps/Base (= 2.5.0)
   - GoogleToolboxForMac/Defines (2.1.3)
   - GoogleToolboxForMac/Logger (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
@@ -57,6 +64,8 @@ DEPENDENCIES:
   - FBSDKShareKit
   - Firebase/Core
   - Firebase/Messaging
+  - GoogleMaps
+  - GooglePlaces
   - Localize-Swift
   - SwiftyJSON
   - TwitterKit
@@ -72,6 +81,8 @@ SPEC CHECKSUMS:
   FirebaseCore: 2e0b98fb2d64ca8140136beff15772bdd14d2dd7
   FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
   FirebaseMessaging: dfdcd307c2382290a1e297a81d0f18370f5b1bcd
+  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
+  GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
@@ -80,6 +91,6 @@ SPEC CHECKSUMS:
   TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
   TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
 
-PODFILE CHECKSUM: 8c20239c86e377f246a3af19c82cac56e880ff27
+PODFILE CHECKSUM: dd4d3ce4de49d3d20d6c388f7829d81418dd4ae5
 
 COCOAPODS: 1.3.1
