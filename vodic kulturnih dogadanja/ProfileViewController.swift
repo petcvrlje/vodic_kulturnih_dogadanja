@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-
+import Localize_Swift
 
 class ProfileViewController: UIViewController{
     
@@ -46,13 +46,13 @@ class ProfileViewController: UIViewController{
         
         super.viewDidLoad()
         
-        nameLabel.text = NSLocalizedString("name", comment: "")
-        surnameLabel.text = NSLocalizedString("surname", comment: "")
-        usernameLabel.text = NSLocalizedString("username", comment: "")
-        emailLabel.text = NSLocalizedString("email", comment: "")
-        editButton.setTitle(NSLocalizedString("edit", comment: ""), for: .normal)
+        nameLabel.text = "name".localized()
+        surnameLabel.text = "surname".localized()
+        usernameLabel.text = "username".localized()
+        emailLabel.text = "email".localized()
+        editButton.setTitle("edit".localized(), for: .normal)
         
-        navigationItem.title = NSLocalizedString("titleProfile", comment: "")
+        navigationItem.title = "titleProfile".localized()
         
         let URLProfile = "http://vodickulturnihdogadanja.1e29g6m.xip.io/user.php"
         

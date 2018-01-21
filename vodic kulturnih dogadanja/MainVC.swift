@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Localize_Swift
 
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
@@ -37,7 +38,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = NSLocalizedString("menuHome", comment: "")
+        navigationItem.title = "menuHome".localized()
         
         setupSearchBar()
         
@@ -262,11 +263,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
     
     func setupSearchBar() {
         searchBar.showsScopeBar = true
-        searchBar.scopeButtonTitles = ["Active events", "All events"]
+        searchBar.scopeButtonTitles = ["activeEvents".localized(), "allEvents".localized()]
         searchBar.selectedScopeButtonIndex = 0
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
-        searchBar.placeholder = NSLocalizedString("searchBar", comment: "")
+        searchBar.placeholder = "searchBar".localized()
     }
     
     func filterTableView(index: Int, text: String) {

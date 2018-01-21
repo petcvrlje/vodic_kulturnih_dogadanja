@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6652139632E350213659B0B187879814"
+               BlueprintIdentifier = "7F3C9325D7FE2690F6C02DB96117747E"
                BuildableName = "Pods_vodic_kulturnih_dogadanja.framework"
                BlueprintName = "Pods-vodic kulturnih dogadanja"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6652139632E350213659B0B187879814"
+            BlueprintIdentifier = "7F3C9325D7FE2690F6C02DB96117747E"
             BuildableName = "Pods_vodic_kulturnih_dogadanja.framework"
             BlueprintName = "Pods-vodic kulturnih dogadanja"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Localize_Swift
 
 class SideMenuVC: UITableViewController {
     
@@ -31,40 +32,8 @@ class SideMenuVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menuHomeLabel.text = NSLocalizedString("menuHome", comment: "")
-        menuProfileLabel.text = NSLocalizedString("menuProfile", comment: "")
-        menuFavoritesLabel.text = NSLocalizedString("menuFavorites", comment: "")
-        menuSettingsLabel.text = NSLocalizedString("menuSettings", comment: "")
-        menuLogoutLabel.text = NSLocalizedString("menuLogout", comment: "")
-        
-        let URLProfile = "http://vodickulturnihdogadanja.1e29g6m.xip.io/user.php"
-        
-        let defaults = UserDefaults.standard
-        
-        let userId = Int(defaults.string(forKey: "userId")!)
-        
-        let param = ["userId": userId!] as [String:Any]
-        
-        Alamofire.request(URLProfile, method: .get, parameters: param).responseJSON {
-            response in
-            print(response)
-            
-            if let json = response.result.value as? NSDictionary{
-                self.user_Name = json["name"] as! String
-                self.user_Surname = json["surname"] as! String
-                self.user_Email = json["email"] as! String
-                
-                let imageString = json["picture"] as? String
-                    if let imageData = Data(base64Encoded: imageString!) {
-                        let decodedImage = UIImage(data: imageData)
-                        self.user_Image = decodedImage
-                    }
-                self.userImage.image = self.user_Image
-                self.userNameSurname.text = self.user_Name + " " + self.user_Surname
-                self.userEmail.text = self.user_Email
-                }
-            }
-        //viewWillAppear(true)
+        updateUI()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUI), name: NSNotification.Name(rawValue: "update"), object: nil)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -95,5 +64,40 @@ class SideMenuVC: UITableViewController {
         }
     }
 
+    @objc func updateUI() {
+        menuHomeLabel.text = "menuHome".localized()
+        menuProfileLabel.text = "menuProfile".localized()
+        menuFavoritesLabel.text = "menuFavorites".localized()
+        menuSettingsLabel.text = "menuSettings".localized()
+        menuLogoutLabel.text = "menuLogout".localized()
+        
+        let URLProfile = "http://vodickulturnihdogadanja.1e29g6m.xip.io/user.php"
+        
+        let defaults = UserDefaults.standard
+        
+        let userId = Int(defaults.string(forKey: "userId")!)
+        
+        let param = ["userId": userId!] as [String:Any]
+        
+        Alamofire.request(URLProfile, method: .get, parameters: param).responseJSON {
+            response in
+            print(response)
+            
+            if let json = response.result.value as? NSDictionary{
+                self.user_Name = json["name"] as! String
+                self.user_Surname = json["surname"] as! String
+                self.user_Email = json["email"] as! String
+                
+                let imageString = json["picture"] as? String
+                if let imageData = Data(base64Encoded: imageString!) {
+                    let decodedImage = UIImage(data: imageData)
+                    self.user_Image = decodedImage
+                }
+                self.userImage.image = self.user_Image
+                self.userNameSurname.text = self.user_Name + " " + self.user_Surname
+                self.userEmail.text = self.user_Email
+            }
+        }
+    }
     
 }

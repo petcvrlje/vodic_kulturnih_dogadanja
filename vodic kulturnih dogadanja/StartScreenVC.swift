@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 class StartScreenVC: UIViewController {
     
@@ -17,8 +18,8 @@ class StartScreenVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loginLabel.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
-        continueWithoutLoginLabel.setTitle(NSLocalizedString("continueWithoutLogin", comment: ""), for: .normal)
+        loginLabel.setTitle("login".localized(), for: .normal)
+        continueWithoutLoginLabel.setTitle("continueWithoutLogin".localized(), for: .normal)
     }
 
     override func didReceiveMemoryWarning() {

@@ -51,3 +51,15 @@
 
 "notifications" = "Obavijesti";
 "language" = "Jezik";
+
+
+"activeEvents" = "Aktivni događaji";
+"allEvents" = "Svi događaji";
+
+"settingsChanged" = "Postavke uspješno promijenjene.";
+
+"OK" = "OK";
+
+"loginUnsuccessfull" = "Prijava neuspješna, pokušajte ponovno.";
+"emptyFields" = "Postoje prazna polja.";
+

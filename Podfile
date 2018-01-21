@@ -14,5 +14,6 @@ pod 'FBSDKCoreKit'
 pod 'FBSDKLoginKit'
 pod 'FBSDKShareKit'
 pod 'TwitterKit'
+pod 'Localize-Swift'
 
 end
