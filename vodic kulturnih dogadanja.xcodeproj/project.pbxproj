@@ -35,6 +35,7 @@
 		52C175DB1FDC8D710036F30A /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 52C175DA1FDC8D700036F30A /* background.jpg */; };
 		52C525301FA7C4E100F43004 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5252F1FA7C4E100F43004 /* RegistrationViewController.swift */; };
 		52C9197F1FAE6FCE0062802F /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C9197E1FAE6FCE0062802F /* DesignableView.swift */; };
+		52D2AB9D20154C19006FCC4B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D2AB9C20154C19006FCC4B /* MapViewController.swift */; };
 		52E6C0672011122600F22C0F /* Design.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E6C0662011122400F22C0F /* Design.png */; };
 		52E6C06A2011123400F22C0F /* icons8-unlike-filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E6C0682011123300F22C0F /* icons8-unlike-filled-50.png */; };
 		52E6C06B2011123400F22C0F /* icons8-good-quality-filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E6C0692011123400F22C0F /* icons8-good-quality-filled-50.png */; };
@@ -97,6 +98,7 @@
 		52C175DA1FDC8D700036F30A /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		52C5252F1FA7C4E100F43004 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		52C9197E1FAE6FCE0062802F /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		52D2AB9C20154C19006FCC4B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		52E6C0662011122400F22C0F /* Design.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Design.png; path = ../../Desktop/Design.png; sourceTree = "<group>"; };
 		52E6C0682011123300F22C0F /* icons8-unlike-filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-unlike-filled-50.png"; sourceTree = "<group>"; };
 		52E6C0692011123400F22C0F /* icons8-good-quality-filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-good-quality-filled-50.png"; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				D02D2AF61FBCDE68004F096D /* LoginViewController.swift */,
 				52B5BC061F9E6FC300CF033D /* Main.storyboard */,
 				52422C9F1FA5FF630020F583 /* MainVC.swift */,
+				52D2AB9C20154C19006FCC4B /* MapViewController.swift */,
 				522949731FDC5D0600769A90 /* ProfileEditViewController.swift */,
 				526A91881FDA9AC3003993AE /* ProfileViewController.swift */,
 				D068F34B1FD6908600CD867F /* RegisteredEventTableViewCell.swift */,
@@ -434,6 +437,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-vodic kulturnih dogadanja/Pods-vodic kulturnih dogadanja-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
@@ -475,6 +480,7 @@
 				B6A250E11FD87ABD00DCD104 /* FavoriteViewController.swift in Sources */,
 				B6A22A891FDC65FD0091853F /* FavoriteDetailsViewController.swift in Sources */,
 				B628F7262012BC5800F8F2B9 /* Twitter.swift in Sources */,
+				52D2AB9D20154C19006FCC4B /* MapViewController.swift in Sources */,
 				B6792A341FD318CC008D575B /* UnregisteredViewController.swift in Sources */,
 				52422C921FA5F00B0020F583 /* StartScreenVC.swift in Sources */,
 				52422C901FA5EF0B0020F583 /* SideMenuVC.swift in Sources */,

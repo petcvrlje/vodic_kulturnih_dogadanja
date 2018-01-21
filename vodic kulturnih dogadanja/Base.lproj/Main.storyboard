@@ -1316,10 +1316,10 @@
             </objects>
             <point key="canvasLocation" x="7276" y="567"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="ocE-ae-m6u">
             <objects>
-                <viewController id="yfu-EM-LFO" sceneMemberID="viewController">
+                <viewController id="yfu-EM-LFO" customClass="MapViewController" customModule="vodic_kulturnih_dogadanja" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xse-Ye-eBg"/>
                         <viewControllerLayoutGuide type="bottom" id="shr-uz-jej"/>
@@ -1328,26 +1328,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="c4z-cv-kcC">
-                                <rect key="frame" x="0.0" y="65" width="375" height="553"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mFb-uo-jpS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="lp8-cR-Gpo"/>
+                                    <constraint firstAttribute="width" constant="375" id="KvI-8f-gCF"/>
+                                    <constraint firstAttribute="height" constant="667" id="NHx-UY-pMz"/>
                                 </constraints>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="c4z-cv-kcC" firstAttribute="top" secondItem="CEw-YH-SQt" secondAttribute="topMargin" constant="-43" id="Y5y-Ml-JPu"/>
-                            <constraint firstAttribute="trailing" secondItem="c4z-cv-kcC" secondAttribute="trailing" id="e8g-sw-xbT"/>
-                            <constraint firstItem="c4z-cv-kcC" firstAttribute="leading" secondItem="CEw-YH-SQt" secondAttribute="leading" id="iNt-sY-T0B"/>
-                            <constraint firstItem="c4z-cv-kcC" firstAttribute="bottom" secondItem="shr-uz-jej" secondAttribute="top" id="xWC-f1-kxI"/>
+                            <constraint firstAttribute="trailing" secondItem="mFb-uo-jpS" secondAttribute="trailing" id="4i5-yV-2Gs"/>
+                            <constraint firstItem="mFb-uo-jpS" firstAttribute="leading" secondItem="CEw-YH-SQt" secondAttribute="leading" id="TfU-M7-TEt"/>
+                            <constraint firstItem="mFb-uo-jpS" firstAttribute="top" secondItem="CEw-YH-SQt" secondAttribute="top" id="VUK-Ke-TyX"/>
+                            <constraint firstAttribute="bottom" secondItem="mFb-uo-jpS" secondAttribute="bottom" id="w1N-DZ-GoL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e6a-43-0WL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3PW-oe-O1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7070" y="-164"/>
+            <point key="canvasLocation" x="7069.6000000000004" y="-164.16791604197903"/>
         </scene>
         <!--ContainerVC-->
         <scene sceneID="AyF-O5-k9K">
