@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Localize_Swift
 
 protocol SocialShare {
     func share(network: String, link:String, vc: UIViewController)
@@ -54,10 +55,10 @@ class EventDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dateLabel.text = NSLocalizedString("date", comment: "")
-        priceLabel.text = NSLocalizedString("price", comment: "")
-        self.tabBarController?.tabBar.items![0].title = NSLocalizedString("tabDetails", comment: "")
-        self.tabBarController?.tabBar.items![1].title = NSLocalizedString("tabComments", comment: "")
+        dateLabel.text = "date".localized()
+        priceLabel.text = "price".localized()
+        self.tabBarController?.tabBar.items![0].title = "tabDetails".localized()
+        self.tabBarController?.tabBar.items![1].title = "tabComments".localized()
         
         eventId = TabMainViewController.eventId
         
@@ -88,7 +89,7 @@ class EventDetailsViewController: UIViewController {
                 self.eventLink = json["link"] as! String
                 self.numOfLikes = json["numOfLikes"] as! String
                 self.numOfDislikes = json["numOfDislikes"] as! String
-                self.userEval = json["userEval"] as! String
+                self.userEval = String(describing: json["userEval"]!)
                 self.isFavorite = json["isFavorite"] as! String
                 
                 self.eventDetailImage.image = self.eventImage

@@ -59,3 +59,14 @@
 
 "notifications" = "Notifications";
 "language" = "Language";
+
+"activeEvents" = "Active events";
+"allEvents" = "All events";
+
+"settingsChanged" = "Settings successfully changed.";
+
+"OK" = "OK";
+
+"loginUnsuccessfull" = "Login unsuccessfull, please try again.";
+"emptyFields" = "You have empty fields.";
+

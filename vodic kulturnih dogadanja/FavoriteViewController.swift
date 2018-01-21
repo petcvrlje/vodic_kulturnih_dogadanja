@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Localize_Swift
 
 class FavoriteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -29,7 +30,7 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = NSLocalizedString("menuFavorites", comment: "")
+        navigationItem.title = "menuFavorites".localized()
 
         let URLFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favoriteList.php"
         

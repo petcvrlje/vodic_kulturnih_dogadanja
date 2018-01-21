@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Localize_Swift
 
 class LoginViewController: UIViewController {
 
@@ -28,8 +29,8 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonClick(_ sender: UIButton) {
         //provjera
         if (userNameTextField.text == nil || (userNameTextField.text?.isEmpty)!) || (passwordTextField.text == nil || (passwordTextField.text?.isEmpty)!) {
-            let emptyFieldsAlert = UIAlertController(title: "You have empty fields.", message: nil, preferredStyle: .alert)
-            emptyFieldsAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            let emptyFieldsAlert = UIAlertController(title: "emptyFields".localized(), message: nil, preferredStyle: .alert)
+            emptyFieldsAlert.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: nil))
             self.present(emptyFieldsAlert, animated: true, completion: nil)
             return
         }
@@ -51,7 +52,7 @@ class LoginViewController: UIViewController {
             print(statusCode)
             
             if (statusCode != 200) {
-                let alertController = UIAlertController(title: "LOGIN UNSUCCESSFUL", message: nil, preferredStyle: .alert)
+                let alertController = UIAlertController(title: "loginUnsuccessfull".localized(), message: nil, preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
                 return
@@ -73,14 +74,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        usernameLabel.text = NSLocalizedString("username", comment: "")
-        passwordLabel.text = NSLocalizedString("password", comment: "")
-        loginButton.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
-        registerButton.setTitle(NSLocalizedString("register", comment: ""), for: .normal)
-        cancelButton.setTitle(NSLocalizedString("cancel", comment: ""), for: .normal)
+        usernameLabel.text = "username".localized()
+        passwordLabel.text = "password".localized()
+        loginButton.setTitle("login".localized(), for: .normal)
+        registerButton.setTitle("register".localized(), for: .normal)
+        cancelButton.setTitle("cancel".localized(), for: .normal)
         
-        userNameTextField.placeholder = NSLocalizedString("usernamePlaceholder", comment: "")
-        passwordTextField.placeholder = NSLocalizedString("passwordPlaceholder", comment: "")
+        userNameTextField.placeholder = "usernamePlaceholder".localized()
+        passwordTextField.placeholder = "passwordPlaceholder".localized()
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Localize_Swift
 
 class RegistrationViewController: UIViewController {
     
@@ -59,20 +60,20 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        registrationLabel.text = NSLocalizedString("registration", comment: "")
-        usernameLabel.text = NSLocalizedString("username", comment: "")
-        passwordLabel.text = NSLocalizedString("password", comment: "")
-        emailLabel.text = NSLocalizedString("email", comment: "")
-        nameLabel.text = NSLocalizedString("name", comment: "")
-        surnameLabel.text = NSLocalizedString("surname", comment: "")
-        registerButton.setTitle(NSLocalizedString("register", comment: ""), for: .normal)
-        cancelButton.setTitle(NSLocalizedString("cancel", comment: ""), for: .normal)
+        registrationLabel.text = "registration".localized()
+        usernameLabel.text = "username".localized()
+        passwordLabel.text = "password".localized()
+        emailLabel.text = "email".localized()
+        nameLabel.text = "name".localized()
+        surnameLabel.text = "surname".localized()
+        registerButton.setTitle("register".localized(), for: .normal)
+        cancelButton.setTitle("cancel".localized(), for: .normal)
         
-        userNameTextField.placeholder = NSLocalizedString("usernamePlaceholder", comment: "")
-        passwordTextField.placeholder = NSLocalizedString("passwordPlaceholder", comment: "")
-        nameTextField.placeholder = NSLocalizedString("namePlaceholder", comment: "")
-        surnameTextField.placeholder = NSLocalizedString("surnamePlaceholder", comment: "")
-        emailTextField.placeholder = NSLocalizedString("emailPlaceholder", comment: "")
+        userNameTextField.placeholder = "usernamePlaceholder".localized()
+        passwordTextField.placeholder = "passwordPlaceholder".localized()
+        nameTextField.placeholder = "namePlaceholder".localized()
+        surnameTextField.placeholder = "surnamePlaceholder".localized()
+        emailTextField.placeholder = "emailPlaceholder".localized()
     }
 
     override func didReceiveMemoryWarning() {

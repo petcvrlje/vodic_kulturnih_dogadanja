@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Localize_Swift
 
 class ProfileEditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -43,11 +44,11 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = NSLocalizedString("name", comment: "")
-        surnameLabel.text = NSLocalizedString("surname", comment: "")
-        usernameLabel.text = NSLocalizedString("username", comment: "")
-        passwordLabel.text = NSLocalizedString("password", comment: "")
-        saveButton.setTitle(NSLocalizedString("save", comment: ""), for: .normal)
+        nameLabel.text = "name".localized()
+        surnameLabel.text = "surname".localized()
+        usernameLabel.text = "username".localized()
+        passwordLabel.text = "password".localized()
+        saveButton.setTitle("save".localized(), for: .normal)
 
         imagePicker.delegate = self
         

@@ -23,7 +23,7 @@ class CommentListViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addCommentButton.setTitle(NSLocalizedString("addComment", comment: ""), for: .normal)
+        addCommentButton.setTitle("addComment".localized(), for: .normal)
 
         let URL = "http://vodickulturnihdogadanja.1e29g6m.xip.io/commentList.php"
         

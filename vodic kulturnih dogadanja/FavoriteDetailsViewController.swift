@@ -68,8 +68,8 @@ class FavoriteDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dateLabel.text = NSLocalizedString("date", comment: "")
-        priceLabel.text = NSLocalizedString("price", comment: "")
+        dateLabel.text = "date".localized()
+        priceLabel.text = "price".localized()
         
         favoriteId = TabFavoritesViewController.eventId
 
@@ -100,7 +100,7 @@ class FavoriteDetailsViewController: UIViewController {
                 self.favoriteLink = json["link"] as! String
                 self.numOfLikes = json["numOfLikes"] as! String
                 self.numOfDislikes = json["numOfDislikes"] as! String
-                self.userEval = json["userEval"] as! String
+                self.userEval = String(describing: json["userEval"]!)
                 self.isFavorite = json["isFavorite"] as! String
                 
                 self.favoriteDetailImage.image = self.favoriteImage

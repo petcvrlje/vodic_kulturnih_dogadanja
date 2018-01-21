@@ -1768,7 +1768,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1VR-Rk-uVa">
-                                <rect key="frame" x="109" y="512" width="42" height="21"/>
+                                <rect key="frame" x="109" y="512" width="80" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
@@ -2049,6 +2049,17 @@
                                     <action selector="notificationsSwitched:" destination="EJx-Fb-SdX" eventType="valueChanged" id="wef-dL-085"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmP-PO-hpF">
+                                <rect key="frame" x="152" y="242" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveSettings:" destination="EJx-Fb-SdX" eventType="touchUpInside" id="Y03-a5-P0i"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -2065,6 +2076,7 @@
                         <outlet property="languageSegment" destination="96y-cf-Lp8" id="Wjp-a1-sNx"/>
                         <outlet property="notificationsLabel" destination="a01-yo-Kem" id="XaM-T8-REr"/>
                         <outlet property="notificationsSwitch" destination="9pB-mH-VcB" id="NDo-jR-JVL"/>
+                        <outlet property="saveButton" destination="HmP-PO-hpF" id="PjI-8P-Smv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHZ-uM-rCJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
