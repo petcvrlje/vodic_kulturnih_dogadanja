@@ -9,6 +9,7 @@
 import UIKit
 import Localize_Swift
 
+///Class for starting screen
 class StartScreenVC: UIViewController {
     
     @IBOutlet weak var loginLabel: UIButton!

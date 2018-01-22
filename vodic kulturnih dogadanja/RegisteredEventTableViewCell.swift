@@ -8,9 +8,9 @@
 
 import UIKit
 
+///Cell view for showing event for registered user
 class RegisteredEventTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var eventImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!

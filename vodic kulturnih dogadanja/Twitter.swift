@@ -9,6 +9,7 @@
 import Foundation
 import TwitterKit
 
+///Class for sharing event on Twitter
 class Twitter: NSObject, SocialShare {
     func share(network: String, link: String, vc: UIViewController) {
         if (network == "Twitter") {

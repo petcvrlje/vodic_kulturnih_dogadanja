@@ -1327,22 +1327,7 @@
                     <view key="view" contentMode="scaleToFill" id="CEw-YH-SQt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="mFb-uo-jpS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="KvI-8f-gCF"/>
-                                    <constraint firstAttribute="height" constant="667" id="NHx-UY-pMz"/>
-                                </constraints>
-                            </mapView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="mFb-uo-jpS" secondAttribute="trailing" id="4i5-yV-2Gs"/>
-                            <constraint firstItem="mFb-uo-jpS" firstAttribute="leading" secondItem="CEw-YH-SQt" secondAttribute="leading" id="TfU-M7-TEt"/>
-                            <constraint firstItem="mFb-uo-jpS" firstAttribute="top" secondItem="CEw-YH-SQt" secondAttribute="top" id="VUK-Ke-TyX"/>
-                            <constraint firstAttribute="bottom" secondItem="mFb-uo-jpS" secondAttribute="bottom" id="w1N-DZ-GoL"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e6a-43-0WL"/>
                 </viewController>

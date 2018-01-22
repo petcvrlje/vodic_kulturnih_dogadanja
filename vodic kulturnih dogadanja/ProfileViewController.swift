@@ -10,6 +10,7 @@ import Alamofire
 import SwiftyJSON
 import Localize_Swift
 
+///Class for showing user profile informations
 class ProfileViewController: UIViewController{
     
     @IBAction func onMoreTapped(){
@@ -31,8 +32,6 @@ class ProfileViewController: UIViewController{
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var editButton: UIButton!
     
-    
-    
     var profile_Image = ""
     var profile_Name = ""
     var profile_Surname = ""
@@ -40,8 +39,7 @@ class ProfileViewController: UIViewController{
     var profile_Email = ""
     var profile_Password = ""
     
-    var user = NSDictionary()
-    
+    ///Getting user profile informations and showing on screen
     override func viewDidLoad() {
         
         super.viewDidLoad()

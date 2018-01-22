@@ -11,6 +11,7 @@ import UserNotifications
 import Alamofire
 import Localize_Swift
 
+///Class for app settings for certain user
 class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @IBOutlet weak var notificationsSwitch: UISwitch!
@@ -52,6 +53,7 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
         // Dispose of any resources that can be recreated.
     }
     
+    ///Enabling and disabling notifications by switch
     @IBAction func notificationsSwitched(_ sender: UISwitch) {
         if (notificationsSwitch.isOn && !notificationsSwitch.isSelected) {
             notificationsSwitch.isSelected = true
@@ -64,6 +66,7 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
         }
     }
     
+    ///Enabling push notifications
     func enablePushNotifications() {
         if #available(iOS 10.0, *) {
             let notificationCenter = UNUserNotificationCenter.current()
@@ -84,7 +87,7 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
         }
     }
     
-    
+    ///Changing app language by switching on language segment. Saving language for future logins
     @IBAction func languageChanged(_ sender: UISegmentedControl) {
         switch  languageSegment.selectedSegmentIndex {
         case 0:
@@ -110,6 +113,7 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
         }
     }
     
+    ///Saving user settings to server
     @IBAction func saveSettings(_ sender: UIButton) {
         let userId = Int(self.defaults.string(forKey: "userId")!)
         let urlSaveSettings = "http://vodickulturnihdogadanja.1e29g6m.xip.io/settings.php"
@@ -135,6 +139,7 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
         
     }
     
+    ///Getting user settings
     func getSettings() {
         let userId = Int(self.defaults.string(forKey: "userId")!)
         let param = ["userId" : userId!] as [String:Any]
@@ -159,6 +164,7 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
         }
     }
     
+    ///Setting notification switch and langauge segment based on settings
     func settingsLook(notification: String, language: String) {
         getSettings()
         
@@ -194,6 +200,7 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
         notificationsSwitchLook()
     }
     
+    ///Set langauge segment depending on settings
     func languageSegmentLook() {
         if UserDefaults.standard.string(forKey: "LCLCurrentLanguageKey") == "en" {
             languageSegment.selectedSegmentIndex = 1
@@ -203,6 +210,7 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
         }
     }
     
+    ///Set notifications switch depending on settings
     func notificationsSwitchLook() {
         if UIApplication.shared.isRegisteredForRemoteNotifications {
             notificationsSwitch.setOn(true, animated: true)

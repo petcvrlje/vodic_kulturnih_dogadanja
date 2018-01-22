@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 
+///Class for presenting details about certain favorite event
 class FavoriteDetailsViewController: UIViewController {
     
     @IBOutlet weak var favoriteDetailImage: UIImageView!
@@ -40,6 +41,7 @@ class FavoriteDetailsViewController: UIViewController {
     var paramEventId = 0
     var paramUserId = 0
     
+    ///Opening link for events
     @IBAction func linkButtonClicked(_ sender: UIButton) {
         let url = URL(string: favoriteLink)
         UIApplication.shared.open(url!)
@@ -65,6 +67,7 @@ class FavoriteDetailsViewController: UIViewController {
         return finalDate
     }
     
+    ///Loading favorite event data and showing on screen
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -124,6 +127,7 @@ class FavoriteDetailsViewController: UIViewController {
         
     }
     
+    ///Removing event from favorites, sending post request to server
     @objc private func removeFromFavorites() {
         let URLRemoveFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favoriteDelete.php"
         

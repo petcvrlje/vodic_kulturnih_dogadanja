@@ -98,7 +98,7 @@
 		52C175DA1FDC8D700036F30A /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		52C5252F1FA7C4E100F43004 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		52C9197E1FAE6FCE0062802F /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
-		52D2AB9C20154C19006FCC4B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		52D2AB9C20154C19006FCC4B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		52E6C0662011122400F22C0F /* Design.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Design.png; path = ../../Desktop/Design.png; sourceTree = "<group>"; };
 		52E6C0682011123300F22C0F /* icons8-unlike-filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-unlike-filled-50.png"; sourceTree = "<group>"; };
 		52E6C0692011123400F22C0F /* icons8-good-quality-filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-good-quality-filled-50.png"; sourceTree = "<group>"; };

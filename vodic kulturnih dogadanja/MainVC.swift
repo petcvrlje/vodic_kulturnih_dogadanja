@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import Localize_Swift
 
+///Main class for events. Main screen when user is logged in.
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBAction func onMoreTapped(){
@@ -20,7 +21,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
     
     var activeEvents = [[String:AnyObject]]()
     var allEvents = [[String:AnyObject]]()
@@ -35,6 +35,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         return Int(since1970*1000)
     }
     
+    ///Seting up search bar, geting data for active events and all events and showing them on screen.
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -261,6 +262,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         
     }
     
+    ///Setting up searchbar
     func setupSearchBar() {
         searchBar.showsScopeBar = true
         searchBar.scopeButtonTitles = ["activeEvents".localized(), "allEvents".localized()]
@@ -270,6 +272,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         searchBar.placeholder = "searchBar".localized()
     }
     
+    ///Filtering results by event name 
     func filterTableView(index: Int, text: String) {
         switch searchBar.selectedScopeButtonIndex {
         case 0:
@@ -287,6 +290,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         }
     }
     
+    ///Preparing segue for forwarding event id
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if segue.identifier == "eventDetails" {

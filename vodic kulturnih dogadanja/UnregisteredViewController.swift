@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+///Class for showing events for unregistered user
 class UnregisteredViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBAction func onMoreTapped(){
@@ -26,7 +27,7 @@ class UnregisteredViewController: UIViewController, UITableViewDelegate, UITable
         return Int(since1970 * 1000)
     }
     
-    
+    ///Getting events from server and showing in table view
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -110,6 +111,7 @@ class UnregisteredViewController: UIViewController, UITableViewDelegate, UITable
         // Dispose of any resources that can be recreated.
     }
     
+    ///Preparing segue for forwarding event id
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let unregisteredDetailsViewController = segue.destination as! UnregisteredEventDetailsViewController
         
