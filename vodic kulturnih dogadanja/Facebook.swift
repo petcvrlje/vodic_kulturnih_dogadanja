@@ -9,6 +9,7 @@
 import Foundation
 import FBSDKShareKit
 
+//////Class for sharing event on Facebook
 class Facebook: NSObject, SocialShare, FBSDKAppInviteDialogDelegate {
     func share(network: String, link: String, vc: UIViewController) {
         if (network == "Facebook") {

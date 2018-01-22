@@ -8,6 +8,7 @@
 
 import UIKit
 
+///Cell view for showing favorite event
 class FavoriteTableViewCell: UITableViewCell {
     
     @IBOutlet weak var favoriteImageView: UIImageView!

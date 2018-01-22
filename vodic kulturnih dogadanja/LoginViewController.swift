@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import Localize_Swift
 
+///Class for loging in
 class LoginViewController: UIViewController {
 
     let URL_USER_LOGIN = "http://vodickulturnihdogadanja.1e29g6m.xip.io/userLogIn.php"
@@ -25,9 +26,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
+    ///Checking if there are empty fields, sending login data to server and loging in if reponse is successfull
     @IBAction func loginButtonClick(_ sender: UIButton) {
-        //provjera
         if (userNameTextField.text == nil || (userNameTextField.text?.isEmpty)!) || (passwordTextField.text == nil || (passwordTextField.text?.isEmpty)!) {
             let emptyFieldsAlert = UIAlertController(title: "emptyFields".localized(), message: nil, preferredStyle: .alert)
             emptyFieldsAlert.addAction(UIAlertAction(title: "OK".localized(), style: .default, handler: nil))
@@ -51,13 +51,13 @@ class LoginViewController: UIViewController {
             let statusCode = (response.response?.statusCode)!
             print(statusCode)
             
-            if (statusCode != 200) {
+            if (response.result.isFailure) {
                 let alertController = UIAlertController(title: "loginUnsuccessfull".localized(), message: nil, preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
-            else {
+            else if (response.result.isSuccess){
                 if let result = response.result.value as? Dictionary<String, String> {
                     self.defaultValues.set(result["tokenId"]!, forKey: "tokenId")
                     self.defaultValues.set(result["userId"]!, forKey: "userId")

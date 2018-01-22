@@ -8,6 +8,7 @@
 
 import UIKit
 
+///Class for showing event details (unregistered user) 
 class UnregisteredEventDetailsViewController: UIViewController {
 
     @IBOutlet weak var unregisteredEventImage: UIImageView!

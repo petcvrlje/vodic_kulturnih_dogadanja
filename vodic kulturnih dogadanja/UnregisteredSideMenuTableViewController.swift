@@ -8,6 +8,7 @@
 
 import UIKit
 
+///Class for side menu for unregistered user 
 class UnregisteredSideMenuTableViewController: UITableViewController {
     
     @IBOutlet weak var unregisteredHomeLabel: UILabel!

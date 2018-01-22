@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import Localize_Swift
 
+///Class for list of favorite events
 class FavoriteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBAction func onMoreTapped(){
@@ -27,6 +28,7 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         return Date(timeIntervalSince1970: TimeInterval(date)/1000)
     }
     
+    ///Gettings data about favorites from server; showing favorites in tableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,10 +58,7 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
                     self.tableView.reloadData()
                 }
             }
-            //self.viewWillAppear(true)
         }
-        
-       
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,6 +111,7 @@ class FavoriteViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
 
+    ///Preparing segue for forwarding favorite event id
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {        
         if segue.identifier == "favoriteDetails" {
             if let indexPath = self.tableView.indexPathForSelectedRow {

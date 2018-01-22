@@ -1,27 +1,24 @@
 //
-//  MapViewController.swift
+//  MapFavoriteViewController.swift
 //  vodic kulturnih dogadanja
 //
-//  Created by Faculty of Organisation and Informatics on 21/01/2018.
+//  Created by Petra Cvrljevic on 22/01/2018.
 //  Copyright © 2018 foi. All rights reserved.
 //
 
 import UIKit
 import Alamofire
-import GoogleMaps
 import SwiftyJSON
+import GoogleMaps
 import CoreLocation
-import MapKit
 
-///Class for showing event location on map
-class MapViewController: UIViewController {
+class MapFavoriteViewController: UIViewController {
 
-    ///Getting event location and showing it on map 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let URLEvent = "http://vodickulturnihdogadanja.1e29g6m.xip.io/event.php"
-        let eventId = TabMainViewController.eventId
+        let eventId = TabFavoritesViewController.eventId
         
         let param = ["eventId": eventId] as [String:Any]
         
@@ -48,7 +45,7 @@ class MapViewController: UIViewController {
                         marker.title = address
                         marker.map = mapView
                     }
-
+                    
                 }
             }
         }

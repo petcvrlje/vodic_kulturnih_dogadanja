@@ -8,6 +8,7 @@
 
 import UIKit
 
+///Cell view for showing comment
 class CommentListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var commentUser: UILabel!

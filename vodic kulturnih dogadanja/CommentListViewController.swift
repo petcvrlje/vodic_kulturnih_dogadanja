@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+///Class for showing list of comments for event
 class CommentListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +21,7 @@ class CommentListViewController: UIViewController, UITableViewDelegate, UITableV
     var arrayComments = [[String:AnyObject]]()
     var eventId = "0"
     
+    ///Alamofire request for comments; loading and showing comments
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,10 +34,8 @@ class CommentListViewController: UIViewController, UITableViewDelegate, UITableV
         
         Alamofire.request(URL, parameters: param).responseJSON {
             response in
-            //print(response)
             if ((response.result.value) != nil) {
                 let swiftyJsonVar = JSON(response.result.value!)
-                //print(swiftyJsonVar)
                 
                 if let resData = swiftyJsonVar[].arrayObject {
                     self.arrayComments = resData as! [[String:AnyObject]]
@@ -52,6 +52,7 @@ class CommentListViewController: UIViewController, UITableViewDelegate, UITableV
         return arrayComments.count
     }
     
+    ///Cell for comment
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentCell") as? CommentListTableViewCell
         
@@ -76,16 +77,19 @@ class CommentListViewController: UIViewController, UITableViewDelegate, UITableV
         return cell!
     }
     
+    ///Converting current date to miliseconds
     func currentDateInMiliseconds() -> Int {
         let currentDate = Date()
         let since1970 = currentDate.timeIntervalSince1970
         return Int(since1970*1000)
     }
     
+    ///Converting date in miliseconds to standard date format
     func dateFromMilliseconds(date: Int) -> Date {
         return Date(timeIntervalSince1970: TimeInterval(date)/1000)
     }
     
+    ///Formating date in format dd.MM.YYY HH:mm
     func formatDate(_ someDate: String) -> String {
         
         if someDate == "" {
@@ -93,7 +97,8 @@ class CommentListViewController: UIViewController, UITableViewDelegate, UITableV
         }
         let dateInInt = Int(someDate)
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.YYYY HH:mm"
+        dateFormatter.dateFormat = "dd.MM.YYY HH:mm"
+
         let datum = dateFromMilliseconds(date: dateInInt!)
         
         let konacniDatum = dateFormatter.string(from: datum)
@@ -101,6 +106,7 @@ class CommentListViewController: UIViewController, UITableViewDelegate, UITableV
         return konacniDatum
     }
     
+    ///Adding comment for event, sending comment to server
     @IBAction func addCommentPressed(_ sender: UIButton) {
         
         let userId = Int(UserDefaults.standard.string(forKey: "userId")!)
