@@ -26,6 +26,9 @@
 		52422C9C1FA5FCC00020F583 /* Screenshot_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 52422C9B1FA5FCC00020F583 /* Screenshot_3.png */; };
 		52422CA01FA5FF640020F583 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52422C9F1FA5FF630020F583 /* MainVC.swift */; };
 		526A91891FDA9AC3003993AE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A91881FDA9AC3003993AE /* ProfileViewController.swift */; };
+		52ACFDC12015F1E7003A6886 /* CommentFavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ACFDC02015F1E7003A6886 /* CommentFavoritesListViewController.swift */; };
+		52ACFDC32015F216003A6886 /* CommentFavoritesListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ACFDC22015F216003A6886 /* CommentFavoritesListTableViewCell.swift */; };
+		52ACFDC52015F3A9003A6886 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 52ACFDC42015F3A7003A6886 /* icon.png */; };
 		52B5BC031F9E6FC300CF033D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B5BC021F9E6FC300CF033D /* AppDelegate.swift */; };
 		52B5BC051F9E6FC300CF033D /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B5BC041F9E6FC300CF033D /* ContainerVC.swift */; };
 		52B5BC081F9E6FC300CF033D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B5BC061F9E6FC300CF033D /* Main.storyboard */; };
@@ -87,6 +90,9 @@
 		52422C9B1FA5FCC00020F583 /* Screenshot_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot_3.png; sourceTree = "<group>"; };
 		52422C9F1FA5FF630020F583 /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		526A91881FDA9AC3003993AE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		52ACFDC02015F1E7003A6886 /* CommentFavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentFavoritesListViewController.swift; sourceTree = "<group>"; };
+		52ACFDC22015F216003A6886 /* CommentFavoritesListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentFavoritesListTableViewCell.swift; sourceTree = "<group>"; };
+		52ACFDC42015F3A7003A6886 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		52B5BBFF1F9E6FC300CF033D /* vodic kulturnih dogadanja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "vodic kulturnih dogadanja.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B5BC021F9E6FC300CF033D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52B5BC041F9E6FC300CF033D /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
@@ -187,6 +193,8 @@
 				B6A22A881FDC65FD0091853F /* FavoriteDetailsViewController.swift */,
 				B6A250E21FD87AE800DCD104 /* FavoriteTableViewCell.swift */,
 				B6A250E01FD87ABD00DCD104 /* FavoriteViewController.swift */,
+				52ACFDC02015F1E7003A6886 /* CommentFavoritesListViewController.swift */,
+				52ACFDC22015F216003A6886 /* CommentFavoritesListTableViewCell.swift */,
 				B6E3025E1FE5D920005BA991 /* GoogleService-Info.plist */,
 				52C9197D1FAE6F710062802F /* IBDesignables */,
 				52B5BC0E1F9E6FC300CF033D /* Info.plist */,
@@ -222,6 +230,7 @@
 				B6377E782013F0BE002132C5 /* xicon.png */,
 				5206029F1FC48E8C00A05850 /* 23799000_1479281325491003_2047333813_o.jpg */,
 				520AB4071FC366B8008CD277 /* menu 11.22.23.png */,
+				52ACFDC42015F3A7003A6886 /* icon.png */,
 				52422C9B1FA5FCC00020F583 /* Screenshot_3.png */,
 				521F045920122C8F001444FE /* add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle.png */,
 				521F0460201233CC001444FE /* heart.png */,
@@ -363,6 +372,7 @@
 				B6377E792013F0BE002132C5 /* xicon.png in Resources */,
 				B6C4B5F71FF69BC800CBED58 /* favorites-add-icon.jpg in Resources */,
 				521F045E20122C91001444FE /* settings-gears.png in Resources */,
+				52ACFDC52015F3A9003A6886 /* icon.png in Resources */,
 				B6E3025F1FE5D920005BA991 /* GoogleService-Info.plist in Resources */,
 				521F045C20122C91001444FE /* add-people-interface-symbol-of-black-person-close-up-with-plus-sign-in-small-circle.png in Resources */,
 				B6377E722013E607002132C5 /* removeFavorite.png in Resources */,
@@ -464,8 +474,10 @@
 				52B5BC051F9E6FC300CF033D /* ContainerVC.swift in Sources */,
 				B6A250E31FD87AE800DCD104 /* FavoriteTableViewCell.swift in Sources */,
 				52422CA01FA5FF640020F583 /* MainVC.swift in Sources */,
+				52ACFDC12015F1E7003A6886 /* CommentFavoritesListViewController.swift in Sources */,
 				526A91891FDA9AC3003993AE /* ProfileViewController.swift in Sources */,
 				52B5BC031F9E6FC300CF033D /* AppDelegate.swift in Sources */,
+				52ACFDC32015F216003A6886 /* CommentFavoritesListTableViewCell.swift in Sources */,
 				D02D2AF71FBCDE68004F096D /* LoginViewController.swift in Sources */,
 				D068F34C1FD6908600CD867F /* RegisteredEventTableViewCell.swift in Sources */,
 				B6792A381FD31A3C008D575B /* UnregisteredEventTableViewCell.swift in Sources */,

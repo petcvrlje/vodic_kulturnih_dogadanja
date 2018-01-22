@@ -57,6 +57,7 @@ class EventDetailsViewController: UIViewController {
         
         dateLabel.text = "date".localized()
         priceLabel.text = "price".localized()
+        averageGrade.text = "average".localized()
         self.tabBarController?.tabBar.items![0].title = "tabDetails".localized()
         self.tabBarController?.tabBar.items![1].title = "tabComments".localized()
         
