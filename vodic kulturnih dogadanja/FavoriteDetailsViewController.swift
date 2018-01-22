@@ -12,6 +12,11 @@ import Alamofire
 ///Class for presenting details about certain favorite event
 class FavoriteDetailsViewController: UIViewController {
     
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var dislikeButton: UIButton!
+    @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet weak var dislikeLabel: UILabel!
+    @IBOutlet weak var averageLabel: UILabel!
     @IBOutlet weak var favoriteDetailImage: UIImageView!
     @IBOutlet weak var favoriteDetailName: UILabel!
     @IBOutlet weak var favoriteDetailDescription: UILabel!
@@ -73,7 +78,7 @@ class FavoriteDetailsViewController: UIViewController {
         
         dateLabel.text = "date".localized()
         priceLabel.text = "price".localized()
-        
+        averageLabel.text = "average".localized()
         favoriteId = TabFavoritesViewController.eventId
 
         let userId = Int(self.defaults.string(forKey: "userId")!)
@@ -108,6 +113,9 @@ class FavoriteDetailsViewController: UIViewController {
                 
                 self.favoriteDetailImage.image = self.favoriteImage
                 self.favoriteDetailName.text = self.favoriteName
+                self.dislikeLabel.text = self.numOfDislikes
+                self.likeLabel.text = self.numOfLikes
+                self.averageLabel.text = self.userEval
                 self.favoriteDetailDescription.text = self.favoriteDescription
                 
                 self.favoriteDetailPrice.text = self.favoritePrice + " kn"
@@ -127,6 +135,47 @@ class FavoriteDetailsViewController: UIViewController {
         
     }
     
+
+    @IBAction func dislikeEvent(_ sender: UIButton) {
+        let URLUpdate = "http://vodickulturnihdogadanja.1e29g6m.xip.io/evaluation.php"
+        
+        let dislike = 0
+        
+        let paramsDislike: Parameters=[
+            "eventId":paramEventId,
+            "userId":paramUserId,
+            "mark": dislike
+        ]
+        
+        Alamofire.request(URLUpdate, method: .post, parameters: paramsDislike, encoding: JSONEncoding.default).responseString {
+            (response) in
+            print(response)
+        }
+        dislikeButton.isSelected = true
+        
+    }
+    
+    @IBAction func likeEvent(_ sender: UIButton) {
+        
+        let URLUpdate = "http://vodickulturnihdogadanja.1e29g6m.xip.io/evaluation.php"
+        
+        let like = 1
+        
+        let paramsLike: Parameters=[
+            "eventId":paramEventId,
+            "userId":paramUserId,
+            "mark": like
+        ]
+        
+        Alamofire.request(URLUpdate, method: .post, parameters: paramsLike, encoding: JSONEncoding.default).responseString {
+            (response) in
+            print(response)
+        }
+        likeButton.isSelected = true
+        
+    }
+    
+
     ///Removing event from favorites, sending post request to server
     @objc private func removeFromFavorites() {
         let URLRemoveFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favoriteDelete.php"

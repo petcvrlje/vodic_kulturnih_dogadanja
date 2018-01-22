@@ -70,3 +70,4 @@
 "loginUnsuccessfull" = "Login unsuccessfull, please try again.";
 "emptyFields" = "You have empty fields.";
 
+"average" = "Average grade:";
