@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import GoogleMaps
-import CoreLocation
 import Alamofire
+import GoogleMaps
 import SwiftyJSON
+import CoreLocation
 import MapKit
 
 ///Class for showing event location on map
@@ -19,7 +19,7 @@ class MapViewController: UIViewController {
     ///Getting event location and showing it on map 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let URLEvent = "http://vodickulturnihdogadanja.1e29g6m.xip.io/event.php"
         let eventId = TabMainViewController.eventId
         
@@ -48,7 +48,10 @@ class MapViewController: UIViewController {
                         marker.title = address
                         marker.map = mapView
                     }
-                }}}
+
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
