@@ -6,10 +6,13 @@
 //  Copyright © 2017 foi. All rights reserved.
 //
 
+
+
 import UIKit
 import Alamofire
 import Localize_Swift
 
+///Class for sideMenu
 class SideMenuVC: UITableViewController {
     
     
@@ -64,6 +67,7 @@ class SideMenuVC: UITableViewController {
         }
     }
 
+   ///Function for updating sideMenu labels (includes Alamofire request for showing user name, surname and email)
     @objc func updateUI() {
         menuHomeLabel.text = "menuHome".localized()
         menuProfileLabel.text = "menuProfile".localized()

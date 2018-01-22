@@ -11,12 +11,13 @@ import Alamofire
 import SwiftyJSON
 import Localize_Swift
 
+///Protocol for modularity (sharing event on Facebook and Twitter)
 protocol SocialShare {
     func share(network: String, link:String, vc: UIViewController)
 }
 
+///Class for presenting details about certain event
 class EventDetailsViewController: UIViewController {
-    
     
     @IBOutlet weak var averageGrade: UILabel!
     @IBOutlet weak var likeLabel: UILabel!
@@ -41,6 +42,7 @@ class EventDetailsViewController: UIViewController {
     var eventEnd = ""
     var eventPrice = ""
     var eventLink = ""
+    var eventLocation = ""
     
     var numOfLikes = ""
     var numOfDislikes = ""
@@ -52,6 +54,7 @@ class EventDetailsViewController: UIViewController {
     var paramEventId = 0
     var paramUserId = 0
     
+    ///Loading event data and showing on screen
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -91,6 +94,7 @@ class EventDetailsViewController: UIViewController {
                 self.numOfDislikes = json["numOfDislikes"] as! String
                 self.userEval = String(describing: json["userEval"]!)
                 self.isFavorite = json["isFavorite"] as! String
+                self.eventLocation = json["location"] as! String
                 
                 self.eventDetailImage.image = self.eventImage
                 self.eventDetailName.text = self.eventName
@@ -117,6 +121,8 @@ class EventDetailsViewController: UIViewController {
                 }
             }
             self.checkIsEventFinished()
+            
+            print(self.eventLocation)
         }
         
     }
@@ -126,6 +132,7 @@ class EventDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    ///Opening link for events
     @IBAction func linkButtonClicked(_ sender: UIButton) {
         let url = URL(string: eventLink)
         UIApplication.shared.open(url!)
@@ -157,6 +164,7 @@ class EventDetailsViewController: UIViewController {
         return Int(since1970*1000)
     }
     
+    ///Adding event as favorite, sending post request to server
     @objc private func addToFavorites() {
         
         let URLAddFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favorite.php"
@@ -177,6 +185,7 @@ class EventDetailsViewController: UIViewController {
         removeFavoriteButton()
     }
     
+    ///Removing event as favorite, sending post request to server
     @objc private func removeFromFavorites() {
         let URLRemoveFavorites = "http://vodickulturnihdogadanja.1e29g6m.xip.io/favoriteDelete.php"
         
@@ -198,6 +207,7 @@ class EventDetailsViewController: UIViewController {
         addFavoriteButton()
     }
     
+    ///Moularity: Sharing event on Facebook and Twitter
     @objc private func shareEvent() {
         let actionSheetController = UIAlertController(title: "Choose where to share.", message: nil, preferredStyle: .actionSheet)
         let facebookAction = UIAlertAction(title: "Facebook", style: .default) { (action) in
@@ -216,6 +226,7 @@ class EventDetailsViewController: UIViewController {
         present(actionSheetController, animated: true, completion: nil)
     }
     
+    ///Disliking event; sending post request to server
     @IBAction func dislikeEvent(_ sender: UIButton) {
         let URLUpdate = "http://vodickulturnihdogadanja.1e29g6m.xip.io/evaluation.php"
         
@@ -235,6 +246,7 @@ class EventDetailsViewController: UIViewController {
 
     }
     
+    ///Liking event; sending post request to server
     @IBAction func likeEvent(_ sender: UIButton) {
     
         let URLUpdate = "http://vodickulturnihdogadanja.1e29g6m.xip.io/evaluation.php"
@@ -255,18 +267,21 @@ class EventDetailsViewController: UIViewController {
 
     }
     
+    ///Showing add to favorite button
     func addFavoriteButton() {
         let addFavoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "addFavorite.png"), style: .done, target: self, action:  #selector(self.addToFavorites))
         let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
         self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, addFavoriteButton]
     }
     
+    ///Showing remove from favorite button
     func removeFavoriteButton() {
         let removeFavoriteButton = UIBarButtonItem(image: #imageLiteral(resourceName: "removeFavorite.png"), style: .done, target: self, action:  #selector(self.removeFromFavorites))
         let shareEventButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(self.shareEvent))
         self.tabBarController?.navigationItem.rightBarButtonItems = [shareEventButton, removeFavoriteButton]
     }
     
+    ///Checking if event is finished (hiding like, dislike buttons and labels)
     func checkIsEventFinished() {
         if (Int(eventBegin)! >= currentDateInMiliseconds() || Int(eventEnd)! >= currentDateInMiliseconds()) {
             likeButton.isHidden = true

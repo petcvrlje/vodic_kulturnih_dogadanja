@@ -13,8 +13,10 @@ import SwiftyJSON
 import CoreLocation
 import MapKit
 
+///Class for showing event location on map
 class MapViewController: UIViewController {
 
+    ///Getting event location and showing it on map 
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,6 +48,7 @@ class MapViewController: UIViewController {
                         marker.title = address
                         marker.map = mapView
                     }
+
                 }
             }
         }

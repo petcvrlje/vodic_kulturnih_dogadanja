@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import Localize_Swift
 
+///Class for editing user profile
 class ProfileEditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     let imagePicker:UIImagePickerController = UIImagePickerController()
@@ -41,6 +42,7 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
     var profile_Password = ""
     var new_pass = ""
     
+    ///Gettings user data from server, showing it on screen
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,6 +77,7 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
         viewWillAppear(true)
     }
 
+    ///Function for adding(changing) user picture
     @IBAction func addPictureButtonClick(_ sender:UIButton){
         let alert = UIAlertController(title: "Choose one: ", message: "",preferredStyle: UIAlertControllerStyle.actionSheet)
         alert.addAction(UIAlertAction(title: "Photo library", style:.default, handler:{
@@ -109,16 +112,10 @@ class ProfileEditViewController: UIViewController, UIImagePickerControllerDelega
         dismiss(animated: true, completion: nil)
     }
     
+    ///Saving user data and sending it on server
     @IBAction func saveDataButton(_ sender: UIButton){
         
         let URLUpdate = "http://vodickulturnihdogadanja.1e29g6m.xip.io/userEdit.php"
-        /*
-        if  (profileName.text == nil || (profileName.text?.isEmpty)!) || (profileSurname.text == nil || (profileSurname.text?.isEmpty)!) || (profileUsername.text == nil || (profileUsername.text?.isEmpty)!) {
-            let emptyFieldsAlert = UIAlertController(title: "You have empty fields.", message: nil, preferredStyle: .alert)
-            emptyFieldsAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(emptyFieldsAlert, animated: true, completion: nil)
-            return
-        }*/
         
         if(profilePassword.text != profilePasswordNew.text){
             let passDontMatch = UIAlertController(title: "Your passwords do not match.", message: nil, preferredStyle: .alert)

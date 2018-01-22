@@ -8,6 +8,7 @@
 
 import UIKit
 
+///Cell view for showing event (unregistered user)
 class UnregisteredEventTableViewCell: UITableViewCell {
 
     @IBOutlet weak var unregisteredImageView: UIImageView!

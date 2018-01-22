@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import Localize_Swift
 
+///Class for registering new user 
 class RegistrationViewController: UIViewController {
     
     let URL_USER_REGISTER = "http://vodickulturnihdogadanja.1e29g6m.xip.io/user.php"
