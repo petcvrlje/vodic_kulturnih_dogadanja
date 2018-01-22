@@ -7,14 +7,48 @@
 //
 
 import UIKit
+import Alamofire
 import GoogleMaps
+import SwiftyJSON
+import CoreLocation
+import MapKit
 
 class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let URLEvent = "http://vodickulturnihdogadanja.1e29g6m.xip.io/event.php"
+        let eventId = TabMainViewController.eventId
+        
+        let param = ["eventId": eventId] as [String:Any]
+        
+        Alamofire.request(URLEvent, method: .get, parameters: param).responseJSON {
+            response in
+            print(response)
+            if let json = response.result.value as? NSDictionary{
+                let address = json["location"] as! String
+                
+                let geocoder = CLGeocoder()
+                geocoder.geocodeAddressString(address) { (placemarks, error) in
+                    if (error != nil) {
+                        print("Error", error ?? "")
+                    }
+                    if let placemark = placemarks?.first {
+                        let coordinates: CLLocationCoordinate2D = placemark.location!.coordinate
+                        
+                        let camera = GMSCameraPosition.camera(withLatitude: coordinates.latitude, longitude: coordinates.longitude, zoom: 16.0)
+                        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+                        self.view = mapView
+                        
+                        let marker = GMSMarker()
+                        marker.position = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
+                        marker.title = address
+                        marker.map = mapView
+                    }
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
